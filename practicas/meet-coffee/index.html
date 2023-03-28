@@ -165,11 +165,14 @@
         .events__img {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 25px;
         }
 
         .events__img img {
             border-radius: 6px;
+            width: 100%;
         }
 
         .events__img-name {
@@ -246,16 +249,22 @@
     <section class="events">
         <h2 class="events__title">Eventos anteriores</h2>
         <div class="events__gallery">
-            <div class="events__img">
-                <img src="./assets/img/simposio-vegan.jpg" alt="pic 1">
+            <div>
+                <div class="events__img">
+                    <img src="./assets/img/simposio-vegan.jpg" alt="pic 1">
+                </div>
                 <h5 class="events__img-name">Simposio VeganDB</h5>
             </div>
-            <div class="events__img">
-                <img src="./assets/img/machine-learning.jpg" alt="pic 2">
+            <div>
+                <div class="events__img">
+                    <img src="./assets/img/machine-learning.jpg" alt="pic 2">
+                </div>
                 <h5 class="events__img-name">Machine learnig 101</h5>
             </div>
-            <div class="events__img">
-                <img src="./assets/img/scrum-sin-scream.jpg" alt="pic 3">
+            <div>
+                <div class="events__img">
+                    <img src="./assets/img/scrum-sin-scream.jpg" alt="pic 3">
+                </div>
                 <h5 class="events__img-name">Scrum sin scream</h5>
             </div>
         </div>
