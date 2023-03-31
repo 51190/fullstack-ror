@@ -9,7 +9,7 @@
 │   ├── 📂 css # 👈 para las hojas de estilos
 │   ├── 📂 img # 👈 para las imágenes
 │   └── 📂 favicon # 👈 para los favicon
-└── index.html # página de aterrizaje
+└── iguana.html # página principal
 ```
 
 ### 2 Uso de Display o float:
