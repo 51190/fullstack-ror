@@ -15,9 +15,10 @@ fetch("assets/data/desafios.json")
         desafios.forEach((item, index) => {
             const bullet = document.createElement("wc-bullet-chain");
             let li = document.createElement("li");
-            li.textContent = item.modulo;
+            li.innerHTML = item.modulo;
             li.style.fontSize = "22px";
             li.style.color = "#c15";
+            li.style.fontWeight = "bold";
             bullet.appendChild(li);
             // GUIADOS
             let guiados = desafios.map((item) => item.guiados)
@@ -54,6 +55,7 @@ fetch("assets/data/desafios.json")
                         anchor.setAttribute("href", desafio.github_page);
                         anchor.setAttribute("target", "_blank");
                         anchor.style.textDecoration = "none";
+                        anchor.style.color = "#333";
                         anchor.innerHTML = item.badges.github_page;
                         details.appendChild(anchor);
                     }

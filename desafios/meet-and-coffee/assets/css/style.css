@@ -101,7 +101,6 @@ nav {
 /* SECTION PERFIL  */
 .perfil {
     background-color: #A4452C;
-    height: 500px;
     width: 100%;
     padding: 100px 0;
     text-align: center;
@@ -109,7 +108,6 @@ nav {
 
 .perfil__img {
     display: inline-block;
-    height: 300px;
     width: 310px;
     margin-right: 25px;
 }
@@ -118,13 +116,17 @@ nav {
     height: 100%;
     width: 100%;
     border-radius: 6px;
+    transition: filter .3s ease;
+}
+
+.perfil__img img:hover {
+    filter: hue-rotate(90deg);
 }
 
 .perfil__text {
     display: inline-block;
     width: 490px;
     color: #fff;
-    height: 300px;
     text-align: left;
 }
 
@@ -151,7 +153,6 @@ nav {
 
 /* SECTION EVENTS  */
 .events {
-    height: 700px;
     width: 100%;
     text-align: center;
     padding: 120px 0;

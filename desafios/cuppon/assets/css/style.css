@@ -13,3 +13,17 @@
 #form {
   background-color: var(--verde);
 }
+
+.card-body {
+  transition: color .3s ease;
+}
+
+.card-body .oferta {
+  color: var(--verde);
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.card-img-top:hover+.card-body {
+  color: var(--verde);
+}

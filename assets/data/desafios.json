@@ -39,9 +39,9 @@
 			},
 			{
 				"titulo": "Iguana Page",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/iguana-page",
-				"github_page": "desafios/iguana-page/index.html"
+				"github": "https://github.com/mach-911/fullstack-ror/tree/iguana-page",
+				"github_page": "desafios/evaluados/iguana-page/index.html",
+				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/iguana-page.zip"
 			},
 			{
 				"titulo": "Cuppon",
