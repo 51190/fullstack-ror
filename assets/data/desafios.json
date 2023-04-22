@@ -1,28 +1,31 @@
 [
 	{
 		"modulo": "Fundamentos de desarrollo front-end",
+		"badges": {
+			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center; margin-right: 10px;'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center; margin-right: 25px;'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+		},
 		"guiados": [
 			{
 				"titulo": "Meet and coffee",
-				"badge": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/meet-and-coffee",
 				"github_page": "desafios/meet-and-coffee/index.html"
 			},
 			{
 				"titulo": "Suricata",
-				"badge": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/suricata",
 				"github_page": "desafios/suricata/index.html"
 			},
 			{
 				"titulo": "Olivia ros",
-				"badge": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/olivia-ros",
 				"github_page": "desafios/olivia-ros/index.html"
 			},
 			{
 				"titulo": "Notas finales",
-				"badge": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/guiados/notas-finales",
 				"github_page": "desafios/guiados/notas-finales/index.html"
 			}
@@ -30,7 +33,6 @@
 		"evaluados": [
 			{
 				"titulo": "Curriculum Vitae",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/curriculum-vitae",
 				"github_page": "desafios/evaluados/curriculum-vitae/index.html",
 				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/curriculum-vitae.zip"
@@ -63,6 +65,13 @@
 	},
 	{
 		"modulo": "Fundamentos de base de datos",
+		"badges": {
+			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+		},
 		"guiados": [
 			{
 				"titulo": "",

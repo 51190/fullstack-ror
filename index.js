@@ -8,6 +8,7 @@ const verificar = (item) => {
     return item.length > 0;
 }
 
+
 fetch("assets/data/desafios.json")
     .then(res => res.json())
     .then((desafios) => {
@@ -21,6 +22,7 @@ fetch("assets/data/desafios.json")
             // GUIADOS
             let guiados = desafios.map((item) => item.guiados)
             guiados[index].forEach(desafio => {
+                let anchor;
                 if (verificar(desafio.titulo)) {
                     li = document.createElement("li");
                     const details = document.createElement("details");
@@ -28,7 +30,6 @@ fetch("assets/data/desafios.json")
                     details.style.border = "1px solid #aaa";
                     details.style.borderRadius = "4px";
                     details.style.padding = "0.5em 0.5em";
-                    details.style.display = "flex";
                     const summary = document.createElement("summary");
                     summary.style.fontWeight = "bold";
                     summary.style.fontWeight = "#82d";
@@ -37,20 +38,25 @@ fetch("assets/data/desafios.json")
                     summary.style.cursor = "pointer";
                     summary.style.userSelect = "none";
                     summary.style.color = "#777";
-                    summary.innerHTML = `${desafio.badge} ${desafio.titulo}`;
+                    summary.innerHTML = `${item.badges.guiado} ${desafio.titulo}`;
                     details.appendChild(summary);
-                    let anchor = document.createElement("a");
-                    anchor.setAttribute("href", desafio.github);
-                    anchor.setAttribute("target", "_blank");
-                    anchor.style.textDecoration = "none";
-                    anchor.textContent = "⚓ github";
-                    details.appendChild(anchor);
-                    anchor = document.createElement("a");
-                    anchor.setAttribute("href", desafio.github_page);
-                    anchor.setAttribute("target", "_blank");
-                    anchor.style.textDecoration = "none";
-                    anchor.textContent = "⚓ github-page";
-                    details.appendChild(anchor);
+                    if (verificar(desafio.github)) {
+                        anchor = document.createElement("a");
+                        anchor.setAttribute("href", desafio.github);
+                        anchor.setAttribute("target", "_blank");
+                        anchor.style.textDecoration = "none";
+                        anchor.style.color = "#333";
+                        anchor.innerHTML = item.badges.github;
+                        details.appendChild(anchor);
+                    }
+                    if (verificar(desafio.github_page)) {
+                        anchor = document.createElement("a");
+                        anchor.setAttribute("href", desafio.github_page);
+                        anchor.setAttribute("target", "_blank");
+                        anchor.style.textDecoration = "none";
+                        anchor.innerHTML = item.badges.github_page;
+                        details.appendChild(anchor);
+                    }
                     li.appendChild(details);
                     bullet.appendChild(li);
                 }
@@ -64,7 +70,6 @@ fetch("assets/data/desafios.json")
                 details.style.border = "1px solid #aaa";
                 details.style.borderRadius = "4px";
                 details.style.padding = "0.5em 0.5em";
-                details.style.display = "flex";
                 const summary = document.createElement("summary");
                 summary.style.fontWeight = "bold";
                 summary.style.fontWeight = "#82d";
@@ -73,23 +78,27 @@ fetch("assets/data/desafios.json")
                 summary.style.cursor = "pointer";
                 summary.style.userSelect = "none";
                 summary.style.color = "#555";
-                summary.innerHTML = `${desafio.badge} ${desafio.titulo}`;
+                summary.innerHTML = `${item.badges.evaluado} ${desafio.titulo}`;
                 details.appendChild(summary);
                 let anchor;
                 if (desafio.github) {
                     anchor = document.createElement("a");
                     anchor.setAttribute("href", desafio.github);
                     anchor.setAttribute("target", "_blank");
+                    anchor.setAttribute("title", "Github");
                     anchor.style.textDecoration = "none";
-                    anchor.textContent = "⚓ github";
+                    anchor.style.color = "#333";
+                    anchor.innerHTML = item.badges.github;
                     details.appendChild(anchor);
                 }
                 if (desafio.github_page) {
                     anchor = document.createElement("a");
                     anchor.setAttribute("href", desafio.github_page);
                     anchor.setAttribute("target", "_blank");
+                    anchor.setAttribute("title", "Github Page");
                     anchor.style.textDecoration = "none";
-                    anchor.textContent = "⚓ github-page";
+                    anchor.style.color = "#333";
+                    anchor.innerHTML = item.badges.github_page;
                     details.appendChild(anchor);
                 }
                 if (desafio.youtube) {
@@ -97,14 +106,17 @@ fetch("assets/data/desafios.json")
                     anchor.setAttribute("href", desafio.youtube);
                     anchor.setAttribute("target", "_blank");
                     anchor.style.textDecoration = "none";
+                    anchor.style.color = "#333";
                     anchor.textContent = "⚓ youtube";
                     details.appendChild(anchor);
                 }
                 if (desafio.zip) {
                     anchor = document.createElement("a");
                     anchor.setAttribute("href", desafio.zip);
+                    anchor.setAttribute("title", "Descargar");
                     anchor.style.textDecoration = "none";
-                    anchor.textContent = "⚓ Zip";
+                    anchor.style.color = "#333";
+                    anchor.innerHTML = item.badges.zip;
                     details.appendChild(anchor);
                 }
                 li.appendChild(details);

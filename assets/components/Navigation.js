@@ -34,11 +34,11 @@ template.innerHTML = /*html*/`
 	<ul class="menu">
 		<li><a href="/" class="menu__link">Fullstack Ruby On Rails</a></li>
 		<li><a href="https://dblogging.github.io/enidev-frontend/" target="_blank" class="menu__link">
-    <img src="assets/components/front-end.png" height="30" alt="imagen">
+    <img src="assets/img/front-end.png" height="30" alt="imagen">
     &nbsp;
     Blog front-end</a></li>
     <li><a href="https://dblogging.github.io/" target="_blank" class="menu__link">
-    <img src="assets/components/back-end.png" height="30" alt="imagen">
+    <img src="assets/img/back-end.png" height="30" alt="imagen">
     &nbsp;
     Blog back-end</a></li>
 	</ul>

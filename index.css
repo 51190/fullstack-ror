@@ -18,3 +18,7 @@ main {
 	padding-right: 20px;
 	border-radius: 15px;
 }
+
+figure {
+	display: inline-block;
+}
