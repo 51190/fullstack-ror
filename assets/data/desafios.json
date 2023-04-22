@@ -45,9 +45,9 @@
 			},
 			{
 				"titulo": "Cuppon",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/cuppon",
-				"github_page": "desafios/cuppon/index.html"
+				"github": "https://github.com/mach-911/fullstack-ror/tree/cuppon",
+				"github_page": "desafios/evaluados/cuppon/index.html",
+				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/cuppon.zip"
 			},
 			{
 				"titulo": "Ricomida",
