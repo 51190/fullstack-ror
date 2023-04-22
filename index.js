@@ -100,6 +100,13 @@ fetch("assets/data/desafios.json")
                     anchor.textContent = "⚓ youtube";
                     details.appendChild(anchor);
                 }
+                if (desafio.zip) {
+                    anchor = document.createElement("a");
+                    anchor.setAttribute("href", desafio.zip);
+                    anchor.style.textDecoration = "none";
+                    anchor.textContent = "⚓ Zip";
+                    details.appendChild(anchor);
+                }
                 li.appendChild(details);
                 bullet.appendChild(li);
             })
