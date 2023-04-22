@@ -84,7 +84,7 @@ fetch("assets/data/desafios.json")
                     anchor.textContent = "⚓ github";
                     details.appendChild(anchor);
                 }
-                if (desafio.gh_page) {
+                if (desafio.github_page) {
                     anchor = document.createElement("a");
                     anchor.setAttribute("href", desafio.github_page);
                     anchor.setAttribute("target", "_blank");
@@ -102,7 +102,6 @@ fetch("assets/data/desafios.json")
                 }
                 li.appendChild(details);
                 bullet.appendChild(li);
-
             })
             // EXAMEN
             li = document.createElement("li");
