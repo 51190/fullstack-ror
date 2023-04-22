@@ -4,10 +4,11 @@ template.innerHTML = /*html*/`
 <style>
   :host {
     display: block;
-		background: #234;
+		background: #D30001;
   }
 	nav {
-    padding: 8px 0;
+    padding: 4px 0;
+    box-shadow: 3px 9px 12px #00000040 inset;
 	}
 	.menu {
 		height: 100%;
@@ -23,11 +24,23 @@ template.innerHTML = /*html*/`
 	.menu__link {
 		text-decoration: none;
 		color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 	}
+
 </style>
 <nav>
 	<ul class="menu">
 		<li><a href="/" class="menu__link">Fullstack Ruby On Rails</a></li>
+		<li><a href="https://dblogging.github.io/enidev-frontend/" target="_blank" class="menu__link">
+    <img src="assets/components/front-end.png" height="30" alt="imagen">
+    &nbsp;
+    Blog front-end</a></li>
+    <li><a href="https://dblogging.github.io/" target="_blank" class="menu__link">
+    <img src="assets/components/back-end.png" height="30" alt="imagen">
+    &nbsp;
+    Blog back-end</a></li>
 	</ul>
 </nav>
 `

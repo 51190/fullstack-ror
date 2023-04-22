@@ -76,6 +76,11 @@
 				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "",
 				"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
+			},
+			{
+				"titulo": "Definición de tablas",
+				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
 			}
 		],
 		"examen": {
