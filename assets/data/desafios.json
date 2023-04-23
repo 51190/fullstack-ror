@@ -4,9 +4,11 @@
 		"badges": {
 			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center; margin-right: 10px;'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
-			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center; margin-right: 25px;'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
 		},
 		"guiados": [
 			{
@@ -58,7 +60,6 @@
 		],
 		"examen": {
 			"titulo": "Viajes Chile",
-			"badge": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
 			"github": "https://github.com/mach-911/viajes-chile",
 			"github_page": "https://mach-911.github.io/viajes-chile/"
 		}
@@ -68,9 +69,11 @@
 		"badges": {
 			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
 			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
 			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
 		},
 		"guiados": [
 			{
@@ -91,12 +94,17 @@
 				"titulo": "Definición de tablas",
 				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
+			},
+			{
+				"titulo": "Definición de tablas",
+				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"github": "https://github.com/bulzarek"
 			}
 		],
 		"examen": {
 			"titulo": "",
-			"badge": "<small style='color: #222; background: #d47; padding: 3px 5px; border-radius: 8px'>examen</small>",
-			"github": ""
+			"github": "",
+			"github_page": ""
 		}
 	}
 ]
