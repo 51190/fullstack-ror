@@ -23,8 +23,9 @@
 			},
 			{
 				"titulo": "Olivia ros",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/olivia-ros",
-				"github_page": "desafios/guiados/olivia-ros/index.html"
+				"github": "https://github.com/mach-911/fullstack-ror/tree/olivia-ros",
+				"github_page": "desafios/guiados/olivia-ros/index.html",
+				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/olivia-ros.zip"
 			},
 			{
 				"titulo": "Notas finales",
