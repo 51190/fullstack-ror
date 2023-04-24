@@ -2,7 +2,7 @@
 
 :root {
 	--main-dark: #373A3C;
-	--secondary:  #17A2B8;
+	--secondary: #17A2B8;
 }
 
 * {
@@ -17,7 +17,6 @@ body {
 	max-height: 100vw;
 	font-family: 'Open Sans', sans-serif;
 }
-
 
 .navbar {
 	background: var(--main-dark);
@@ -34,4 +33,22 @@ body {
 #mis-trabajos {
 	background: var(--secondary);
 	width: 100%;
+}
+
+.card-header {
+	padding: 0;
+	height: 300px;
+}
+
+.card-img-top {
+	height: 100%;
+	object-fit: cover;
+}
+
+@media(max-width: 768px) {
+	#hero-section {
+		background-image:
+			linear-gradient(#00000090, #444),
+			url(../img/bg-hero.jpg);
+	}
 }

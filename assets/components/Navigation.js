@@ -7,9 +7,11 @@ template.innerHTML = /*html*/`
     align-items: center;
     position: fixed;
     width: 100%;
+    height: 75px;
     top: 0;
     right: 0;
     z-index: 1;
+		background: #D30001;
   }
 	nav {
     width: 100%;
@@ -25,7 +27,7 @@ template.innerHTML = /*html*/`
 	.menu {
     display: flex;
     width: 100%;
-		height: 100%;
+		height: auto;
 		background: #D30001;
     flex-direction: column;
 		justify-content: center;
@@ -33,8 +35,9 @@ template.innerHTML = /*html*/`
 		list-style: none;
     margin: 0 auto;
     padding: 4px 0;
-    transform: translateY(-100);
+    transform: translateY(-100%);
     box-shadow: 3px 9px 12px #00000040 inset;
+    transition: transform .4s ease;
 	} 
   .menu li {
     margin-bottom: 20px;
@@ -49,7 +52,7 @@ template.innerHTML = /*html*/`
 	}
 
   .menu-show {
-    transform: translateY(0);
+    transform: translateY(40%);
   }
 
   @media(min-width: 768px){
@@ -57,6 +60,7 @@ template.innerHTML = /*html*/`
       flex-direction: row;
       justify-content: flex-start;
       gap: 20px;
+      padding-left: 40px;
       transform: translateY(0);
     }
     .menu li {
@@ -70,9 +74,9 @@ template.innerHTML = /*html*/`
 </style>
 <nav>
   <div id="toggle-menu" class="toggle-menu">
-    <img src="" alt="img">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" fill="#f9a9a9" /></svg>
   </div>
-	<ul class="menu">
+	<ul class="menu" id="main-menu">
 		<li><a href="/" class="menu__link">Fullstack Ruby On Rails</a></li>
 		<li><a href="https://dblogging.github.io/enidev-frontend/" target="_blank" class="menu__link">
     <img src="assets/img/front-end.png" height="30" alt="imagen">
@@ -95,8 +99,12 @@ export class Navigation extends HTMLElement {
   }
 
   connectedCallback() {
-    const toggleMenu = document.getElementById("toggle-menu");
-
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    const toggleMenu = this.shadowRoot.querySelector("#toggle-menu");
+    const mainMenu = this.shadowRoot.querySelector("#main-menu");
+
+    toggleMenu.addEventListener('click', () => {
+      mainMenu.classList.toggle("menu-show");
+    });
   }
 }
