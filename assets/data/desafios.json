@@ -78,10 +78,9 @@
 		},
 		"guiados": [
 			{
-				"titulo": "",
-				"badge": "",
+				"titulo": "Modelo entidad-relación - Películas Actores",
 				"github": "",
-				"github_page": ""
+				"github_page": "desafios/guiados/actores-peliculas/index.html"
 			}
 		],
 		"evaluados": [
