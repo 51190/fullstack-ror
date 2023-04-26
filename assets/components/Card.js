@@ -6,26 +6,31 @@ template.innerHTML = /*html*/`
         font-family: sans-serif;    
     }
     .card {
-        background:#212529;
+        background: linear-gradient(165deg, #D3000130 50%, #fff 50%);
         border-radius: 25px;
-        color: #ddd;
-        overflow-y:hidden;
+        overflow:hidden;
         transition: box-shadow .2s linear;
         padding: 15px;
+        box-shadow: 2px 0 3px 0 #612121 inset,
+                0 2px 3px 2px #F12121 inset,
+                0 0 3px 6px #516 inset;
     }
     .card-header {
-        height: 10em;
+        display: block;
+        width: 11rem;
         padding: 0 10px;
         text-align: center;
+        margin: 0 auto;
     }
     ::slotted(img){
-        height:100%;
+        width:100%;
         transition: transform .3s ease;
     }
     ::slotted(h5){
         text-transform: uppercase;
         font-size: 1.09rem;
         margin: 0;
+        color: #433241;
     }
     ::slotted(h6){
         font-size: 1.03rem;
@@ -37,29 +42,27 @@ template.innerHTML = /*html*/`
         margin: 5px 0 0 0;
         font-weight: normal;
         font-style: italic;
+        color: #D30001;
     }
-    ::slotted(h5), ::slotted(h6), ::slotted(p){
-        text-align: center;
-    }
+ 
     .card:hover ::slotted(img) {
         transform: scale(1.1);
     }
 
     .card-body {
-        color: #D30001;
-        color: #ddd;
         padding:10px;
         inline-size: 200px;
         overflow-wrap: break-word;
+        text-align: center;
+        margin: auto;
+
     }
 
     @media(hover: hover){
         .card:hover {
             cursor: pointer;
             /*background: #612121;*/
-            box-shadow: 2px 0 3px 0 #612121 inset,
-                0 2px 3px 2px #F12121 inset,
-                0 0 3px 6px #516 inset;
+   
         }
     }
 </style>

@@ -12,14 +12,18 @@
     main#software {
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         gap: 25px;
-        width: 85%;
+        width: 80%;
         margin: 100px auto;
+        opacity: 0;
+        transition: opacity .6s ease;
     }
 
     @media (min-width: 768px) {
         main#software {
             flex-flow: row wrap;
+            text-align: center;
         }
     }
 </style>
@@ -31,7 +35,7 @@
         <enidev-card data-href="https://www.postgresql.org/">
             <img slot="imagen"
                 src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/postgresql.svg">
-            <h5 slot="title">Postgres</h5>
+            <h5 slot="title">🐘 Postgres</h5>
             <h6 slot="subtitle">Gestor de base de datos</h6>
             <p slot="features">Base de datos moldada orientado a objetos - Opensource</p>
         </enidev-card>
@@ -41,6 +45,14 @@
             <h6 slot="subtitle">Control de versiones</h6>
             <p slot="features">Arquitectura distribuida - Opensource</p>
         </enidev-card>
+
+        <enidev-card data-href="https://github.com/">
+            <img slot="imagen" src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/github.svg">
+            <h5 slot="title">☁️ Github</h5>
+            <h6 slot="subtitle">Plataforma de alojamiento</h6>
+            <p slot="features">Arquitectura distribuida - Opensource</p>
+        </enidev-card>
+
         <enidev-card data-href="https://code.visualstudio.com/">
             <img slot="imagen"
                 src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.visualstudio.svg">
@@ -56,6 +68,33 @@
             <p slot="features">Interpretado - Opensource</p>
         </enidev-card>
 
+        <enidev-card data-href="https://learn.microsoft.com/es-es/windows/wsl/install">
+            <img slot="imagen" src="https://enidev911.github.io/assets/img/software/windows-subsystem-for-linux.png">
+            <h5 slot="title">🐧 WSL</h5>
+            <h6 slot="subtitle">Windows Subsystem For Linux</h6>
+            <p slot="features">Linux real (kernel) - Opensource</p>
+        </enidev-card>
+
+        <enidev-card data-href="https://rubyonrails.org/">
+            <img slot="imagen"
+                src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/ruby-on-rail.svg">
+            <h5 slot="title">💎 Ruby on Rails</h5>
+            <h6 slot="subtitle">Rails framework</h6>
+            <p slot="features">Fullstack framework MVC - Opensource</p>
+        </enidev-card>
+
+        <enidev-card data-href="https://dbeaver.com/">
+            <img slot="imagen" src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/dbeaver.svg"
+                style="background: #fff; border-radius: 6em;">
+            <h5 slot="title">🦫 Dbeaver</h5>
+            <h6 slot="subtitle">Cliente para administrar diferentes fuentes de datos</h6>
+            <p slot="features">Cliente administrador avanzado - Opensource</p>
+        </enidev-card>
+        <script>
+            window.addEventListener("load", () => {
+                document.getElementById("software").style.opacity = 1;
+            })
+        </script>
     </main>
 
 </body>
