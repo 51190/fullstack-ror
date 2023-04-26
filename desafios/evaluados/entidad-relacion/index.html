@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío evaluado: entidad relación</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .doc-body {
+        font-family: sans-serif;
+        width: 80%;
+        margin: 3rem auto;
+    }
+
+    iframe {
+        border-radius: 10px;
+    }
+
+    figure {
+        width: 90%;
+        margin: 40px auto;
+    }
+
+    figure img {
+        width: 100%;
+    }
+
+    fieldset {
+        margin: 30px 0;
+        position: relative;
+    }
+
+    legend {
+        font-size: 30px;
+        padding: 0 20px;
+    }
+
+    a {
+        position: absolute;
+        bottom: -18px;
+        right: 45%;
+        background-color: black;
+        color: antiquewhite;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="doc-body">
+        <h1 align="center">Desafío 4: Modelos Entidad-Relación y Relacional</h1>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Modelo Conceptual
+                </strong>
+            </legend>
+            <figure>
+                <iframe frameborder="0" style="width:100%;height:790px;"
+                    src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=#R7V1bc5s6EP41njnnwR50F48OdltmEjsTp3PapzOOTRymtskQcju%2F%2FoiAMJJw6hBuTtqXwAICrz7tfrtaqT3kbJ6%2BhvPbm7Ng6a170Fo%2B9dCoByEEHIs%2FseQ5kQAIrUSyCv1lIssJZv5%2FXnqjlN77S%2B8ulSWiKAjWkX%2BrChfBdustIkU2D8PgUb3tOlgvFcHtfOUpnxELZov52jNu%2B8dfRjeJlEO2k3%2Fz%2FNWNfDOgdnJlM5c3pw3f3cyXwWNOhMY95IRBECVHmyfHW8faU%2FXyZc%2FV7MNCbxsd8gAmyRMP8%2FV9%2BuPSD4ue5a%2F1tsthrDRxtg22QnhyE23W4gyIwzC43y69uDVLnN1F8zBK%2BwtgIRDP5k%2FF5ZUXnXuhv%2FEiL5zdzhf%2BdiWucnFxcR8%2BvLQEXh6MwucfabMvJz%2FjkwGRp6On%2FMXRszx78qMfsg1xnHtKnO0eik%2Be81%2Bt%2FcREC95ypXf5TrOp6C64DxfpXRhlfSjQ7wXiV4bP4p7HHUpI2vM3OYBIWeit55H%2FoL5ynoJ1lTWXveE88MXHQEuOLIaSR55l51pqE8mnpk%2FlUaE1RCQ89zWU9qPekDjI%2Feyd6AV0exCLGwVgqoFiAHYTneWQSFsFos0U%2FEAGygIRDezcP640C2htsEQGKi%2Fd8WRsQDO8CTZX9%2BL1J483fuTFkImvPArH9xpMr%2BaLX%2BIwjAUn1%2F567QTrIHxpEl1fX8PF4gXLYfDLy11Z0itKaAaJBy%2BMvKfXQWEiIH0AIdVWAIAGqS%2FIYQRY2ASJjfbjQVH5K%2Fqlhn7PxiPXmc5MDSuK%2B42WK1AMACp2gbSFebXQgrHDrferRRKcnF7%2B6sUfQNdRDBtxsIoPJlIiGsyEPTQ0bgSFN0I638Sa217dxX%2F%2BNpQu1BepmlXBmJrhPHJT0Xztr7bidCHU7Qn5SdwZvqBOw%2FTCxl8u49cUdqXa2VXAnBClN5mJ8aK%2BRFX0pUmtxrPzseMOT93RcNQ60HUn3yzQuaEc11SJeEZQ%2Bn1gyaljfneb8Pxr%2F%2BnFplagH2ZRRT%2BoyEDyuvRjG%2FoZjWfOhXvuuNNJxxSFgOrtLRNIdoGe7Ar0JNniR6CP2ZU95LF3MBFMviQ%2F0tpigpSr2ADSHr%2BVCSKicr8sgq6e%2BxWQv6PFlFUPpuxWMcVsDVO0HKYoJAPOreyfBlXLHgCSCz5YbYAzY2BnOnK%2FTjtm55nGjIFp5%2Bvyh9LFdJgv6NmXPmmOLiDTDV58v%2ByWfoCt8s2%2BjOab0I9p0ifTs5MLM6BvVUW2Gqz0GW1OQ6YNGrkXY6d7dLMvU4ZSS6BBHDWbLm85W9krRQ4Sb9Ye4dSiWoLVJg4lBwyyAQOEQc4IJIjr6TIwYBxDBiBmmBoUpMJMpJkqOwbIpYlumc3%2BmZMXp7l3IN3hsloGm0%2BPowLgtpoy52qygVsDDssBFwDVi9SZJWdHic2SSMswnU3Y%2FB7VJdEJO4ZOgakBzMwdgWosLsCav6jFSQfjFmrhhZ6ErRC3ZvbxA%2BO2nBtvF29YtWGVmUJYG6TMhO0fSHUJUkR1sLhkzsiEFKgLUticDHSmk9n308uhAa22Z0kxSJtoYvIIm8mg86HjjieX4%2Fbnj43aGctuUDPHGSx0npBR05hhqxgGDTlIriZBsjm3t9ozvG%2FyrgZ7Bg1wDuOqmtEHKqsxiAsxk1O1FdXgDoVjLSag2i7C1DwjtsuNzAaLMLGZHp9NT13HLWIaxzo0kbQ%2FmWOGTVa8EZPN%2FSnteld%2FMnV8IBncNVDbRbo%2FHcmw6tgRMhl6XdMkxPT0rTmiuqtymivpxgW%2BjuwBQUOTLbZWMkFLVve8bbIFa2%2BpzhES0xF2bVz3oaVmXzFsbpaYmAzzy9j5ZrKElmeIieoaiJyoaEJFRYnAw1z3R%2FXUUKukzRb9NOCpJSl4rTuKKden6Q5ETQNSW3eYBvbb9KJr9sNWIwVqNUed6HFWmBSRoFcpUP0pgTx1kn6rOwk8auvRfck0AZD55awhreClOnZEjzO7nGWJKeMKSbcQfB2j4iR7w7vwR1tNSfVxnlwzzlTWTihUrpcFolaXVycQTRo6uZj%2BezL90S1HIsdH5keaq1Skx1niUDij0yVPQjvnSfpx7Jxbp8CoOg5pvLK39Gy3aiqMZHZ1Y5qZ%2BdEjAmz92R%2FSqgthmiWTNddvB5SWvCCgNkCZoUbn1kQwbXkcbjBRwT7VzhuHD7q8ZWetDjp9oVvpqUSmMDyGtW1iLDtXv5nlQGsYkWZs28VVOAyrDpRIfTUxKI8zxGpw7WkCotaGpDY1gXFJR8hsS9nZRi0bwby2xabMjJ06utCLUi1O5WYlXW3j8DjDp0bLeRMktTcSVUpqMMmDV4Hb6pAmrLa1XNKf51B16jrjieO2X9HbR1BVaKP7wfAOpb1b5JutVsj3gZY5MFaOHRzl2Xv20Kp%2BSHEzihmfuZcfqKS0r2930exObdxkpIV1a9ahdWt7Zls%2FTd1aP1uFpA%2BzBuZfucn%2BurjVSB9rpqi5tAg3mV9a4pLiOJSYdSeuIM0dUxzRqoMyU9yE6kx6s0d1l%2BOLM3fSNd1hLfCHcgarAd3J6WAlLBt%2BnfQc1LPR7NJ1uqYtIqs8U20VAE36n6p9kiw77AJbfN9cQR2LlXircVlf36mtXzIuEwGJttSSaLmW6likfZy58BKTT83OlkqrpqQNWt08ro84eaXUmOf3OaByF84S0NUqmKWtrAG6HYqc6ywYK2kLW939UjAKns%2FyapjI4rj3m8b69nixj3NGovOFJJIsd8g0YmhrhWIKyCDgquXUmNzh6NX3UGD1obdoSeznrsYnWm6uvuyDON39TzZJ5%2B3%2BQyA0%2Fh8%3D"></iframe>
+                <figcaption align="center"><strong>Modelo conceptual:</strong> entidades, atributos y relaciones
+                </figcaption>
+            </figure>
+            <a href="./modelo-conceptual.drawio" download>Descargar</a>
+        </fieldset>
+
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Modelo Lógico
+                </strong>
+            </legend>
+            <figure>
+                <iframe frameborder="0" style="width:100%;height:502px;"
+                    src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=#R7V1Rb6M4EP41le4eeoohNOSxSbt70rW6Vfek23taueAm1hIcEdqm%2B%2BvPBpsANgESwoJhVWmDMQbmm%2Flsz4zNlbnc7D8HcLt%2BJC7yroyJu78y764M%2Bg8A%2Bh8r%2BYhLTGsWF6wC7MZF4FDwFf9EvHDCS1%2Bxi3aZiiEhXoi32UKH%2BD5ywkwZDALynq32QrzsXbdwhaSCrw705NJ%2FsRuu41LbmB3K%2F0R4tRZ3Bjfz%2BMwzdH6sAvLq8%2Fv5xEfxmQ0UzfB33K2hS95TReb9lbkMCAnjX5v9EnlMrEJi8XWfCs4mjxwgP6xygRFf8Aa9V%2F7W%2FLnCDyEG5FKp8EPaKg4%2FnpAHQ0z8%2B8OZBfLdWyZzWun%2B6ScKyD%2FkEfoU%2BcUuhEF4OMdkEVX%2FhOmTmHdAVOHHk%2BhsGHx8Sx%2F8xw7%2BsMTh3T598u6DH8lvzwWyI6%2BBw9%2FHsLguwWCFRDU7LmPvmrqQy%2BwzIhtE70MrvB8UAUw4huu0EojCIJLRW1aVINfIVdJgco8vBNNnNibCengz3HRm80m2hfiF%2BEVpfI%2B3M7WsbDuxEKR26I%2FUax%2BKIu1Ra5I5PE1SKJKo1hlFAtOsBhj2yZqUbcicXEyVppIqPSIXO0RSKMqeW%2FYzhM%2BR6kTo845kymCkXUMIsY8Crh4O8Ty43eGoelyyxp77AD%2FIaygaEkeLF7xH7lPcj7C6VPEeaGM7riMvtHGhzuw09PDKp78dqjPsjosA7eizPMBdyGsUatUbCkK0P6ow%2FOx1AqAwadFdpjTKsFQaleeQtPJk0DoCjVVu5QIU%2Bpohht4T7Zqhv4rwyYqfydANyPYfYT%2BsYMv0BwX3b1REiaCpPS%2BJRxiKfmz1UbXoPawF%2FaNvtmRGbdEHWNJjcDimf6x6EC6JvwsDiCPRIwrKO2LALEKy5ffx0It4jIDLjf1%2BJmFINoUQTitDKBCrCJjZAF43El5f%2FqqDGKGv9eJFhLvGrov82KjYeAseUFQApJRqIsm8iPOmJEvZqizllFjNmlLljR0EULs16FHl9WGIFmz4tzuTCGcSepuICL%2FTCkvj6nbSQSgFC8Z1F7stdLC%2FeoivvMlhbZ2J9T6LQtqijEaxr9Rcs%2BDbQ6Za9RisNtXOWqTa%2BVl4tWSdskztyjLViFjFmCkFVvAadhCvUjY9B1Cd2VM4n0b6PIM%2Bk0loG%2FwJKviifr1BylIF1edwOjGo7O%2FxyeY5QB3E7AQSrQGqziw6O88mRxaNTaVFFp1V8MP%2BeouUpZpo2qBYdCa7Ol0cIMfBxO8gbCcQaQ1cdSZSMBmZtAEmvWlzPDqRqfRTF52nitHLZJBsCiYynaLdFjkUF%2BxCl7lNuwffKaPTGvhqzaoy3oyrXr0QFgKtihWaesYKE7pMEnBU9Alk1JJY71n8OcYKZQhrd3nKuYMCskZ6PG2ihWCQ4UIgxwv72eOVhwhrAHysA6xpSGUdYIXmGkZ8DBI2wLHKWYWyW2yAY%2BUwYV8mFY1FCo%2FJsT6n5ltr1sJE6ym8GF2xYZs%2B04lmQoY1LeYEMr0w1GPIsAEytVscsAqA%2BkemNSZzGg1QFUnih4S27sF2ApXWn6TrOS6djQNTtR6o6LXY363M7b7U7H%2FWowy2MrnG%2Bqc1mQJbHpq%2BIGdd7PrsPJOeiqrOVGoowlAjldanUuWqi0uNSxWBqA5aZSW5cv3TmkqNiRyrWJNAXyYtBFVrJj0zRX9kUt4Lt8mkpjzI6aBVVjO6WP%2F0ZlJTdqL5rxsUkO%2FPZN9B5Bri0yJoteZTeZDzhbvGC4EeUPbFtZlbMW9UXU0BrCaYc0y%2FkM20mfSLCyUc6rNYe5irtRXLtXseKizPwxjXase3HN3dDZBtm9ndfV2uPcz12opZoDbrtccF21FrY8SwCQqdt0ihfYoXZpakDZJCFdFCnRZs1wBVZxZVLYkZJI2WOexKfNxGm0PRM1fKdMrHXRQ80IhJVetkNFi1fSqyOtOpIpoBJISp1Jhc1%2BHmsAttQH6gHGgKHCU%2FNMMAO9C75Sc2VC0iVXlf4xB9pcixe74HcMswZm%2BI3MJxTn2PtdgdWDisxS4oKRCmxmVI0DQkSf9GX%2BvW%2F11feQOQlbepGL3fXKjTMeVxgs6andsFeWpakqQv1b3bMofcpxalF3YYQwqVWfMsPpYYzpeGyppYk2XL3FOnG%2B%2F5mFmNoV0dxF8QKrPlnMiehsoS3RuWM6J8ow6N9zeugbnOg2t70BkK6pFNfdptM2hmyxPfDlqoQqqDzEew5XwEh7h4VfwdjQ6z6lmgas2iY9ysARZtM25m9zRuZg8ybiY0I%2B3sRTsnwNt%2Bu3tPRFZnKp1XiJ316BtmaI%2FDb7xN9jt1FT06XMQOan33TMxfMl%2FQE1sSdubLZ9dToS3JSDmnPVU%2FfXZtgmxLFsi11Ny3z4BiKZrOjllzWgDSGV1I9R1e5fmM9kGHa1OwmlBmy5QkfrE9dRWOnwdMJeNgXXbsLFtcdxQcK%2F%2BRReWOnQpwko%2FKnYfOoD0y1TG0j2ePtOkJBwqfTI9c4aWStkoHEX2fYACFn8bjnKihI%2FxUxHWeeIDRidMI8bb6eYA%2BuXFK5TqA7ZIUjpy%2Bu8NPhVVrLp2P23g2waVtesTB3NCHS%2Bf6%2B8TBXM6%2FcTFc%2BWQXYkdjQi3CVm9CHZeUNEGora4pAXN91pRwBdScUWU3TrSZ53fsYwfrTKkDXFYC5rLLZ6TUEyi1qnu8GUo9z0nTLUqdDYBSZQdNTKn0Lhvs68ypBejqzKnGdPShNsKpyg94XIhTjak%2BTlSugFpzaqIIen3B41RkteZT6zyf3MinXI7Kb3hcik8t2THXQbOsZnWxAmrOp7JvzeFfMNaaUYuw1ZpRFd9%2B7EO64VkZbYnXU6y8V3hBL5XfaViyEzQSOC0CGst8atkZmVtTeTX99GIyr7BGMJ1ET3vrNVkRH3olCfR%2FR6JuMX8%2BfuxcPntpcrzY0yOdHF%2BlK7twLnzWChPLqJsKD2Yga855nWkuE96wZCdptzPhzzPafOqvIpnpcjuP11z50l2jPX3RS11DF2UZQ6%2FgA7iooU%2BNnH1OTjR0K7%2Fkxc41VGDoFGX4karGJ2%2FFD5zfmWdqHX2ufH0rW5%2F%2BiJ%2FgZNa5KVgTMrQxA5B3SGpozEAPA0LCNET0pdaPxEWsxv8%3D"></iframe>
+                <figcaption align="center"><strong>Modelo lógico:</strong> de entidades, se añade una entidad intermedia
+                    &lt;&lt;Consulta&gt;&gt; para conectar con
+                    Pacientes y Médicos y con &lt;&lt;Licencia&gt;&gt; podemos conocer en que consulta se emitió y que
+                    médico lo hizo.</figcaption>
+            </figure>
+            <a href="./modelo-logico.drawio" download>Descargar</a>
+        </fieldset>
+
+    </div>
+</body>
+
+</html>
