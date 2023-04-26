@@ -1,8 +1,11 @@
 import { Navigation } from './assets/components/Navigation.js'
+import { Card } from './assets/components/Card.js'
 
 customElements.define("main-nav", Navigation);
+customElements.define("enidev-card", Card);
 
-const main = document.getElementById("main")
+
+const main = document.querySelector("main");
 
 const verificar = (item) => {
     return item.length > 0;
@@ -96,11 +99,29 @@ const crearItem = (item, index, arreglo) => {
     return bullet;
 }
 
-fetch("assets/data/desafios.json")
-    .then(res => res.json())
-    .then((desafios) => {
-        desafios.forEach((item, index, arr) => {
-            main.appendChild(crearItem(item, index, arr));
+
+
+main.getAttribute("id") === "main" ?
+    fetch("assets/data/desafios.json")
+        .then(res => res.json())
+        .then((desafios) => {
+            desafios.forEach((item, index, arr) => {
+                main.appendChild(crearItem(item, index, arr));
+            })
         })
-    })
-    .catch(err => console.error(err.message))
+        .catch(err => console.error(err.message))
+
+    : main.getAttribute("id") === "software" ?
+        fetch("assets/data/software.json")
+            .then(res => res.json())
+            .then((softwares) => {
+                softwares.forEach((item, index, arr) => {
+                    // const card = document.createElement("enidev-card");
+                    // const h4 = document.createElement("h4");
+                    // h4.setAttribute("slot", "title");
+                    console.log(item)
+                })
+            })
+            .catch(err => console.error(err.message))
+
+        : ""

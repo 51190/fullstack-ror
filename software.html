@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software</title>
+    <script type="module" src="./index.js"></script>
+</head>
+<style>
+    main#software {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 85%;
+        margin: 100px auto;
+    }
+
+    @media (min-width: 768px) {
+        main#software {
+            flex-flow: row wrap;
+        }
+    }
+</style>
+
+<body>
+    <main-nav></main-nav>
+
+    <main id="software">
+        <enidev-card data-href="https://www.postgresql.org/">
+            <img slot="imagen"
+                src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/postgresql.svg">
+            <h5 slot="title">Postgres</h5>
+            <h6 slot="subtitle">Gestor de base de datos</h6>
+            <p slot="features">Base de datos moldada orientado a objetos - Opensource</p>
+        </enidev-card>
+        <enidev-card data-href="https://git-scm.com/">
+            <img slot="imagen" src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/git-scm.svg">
+            <h5 slot="title">🗂️ Git</h5>
+            <h6 slot="subtitle">Control de versiones</h6>
+            <p slot="features">Arquitectura distribuida - Opensource</p>
+        </enidev-card>
+        <enidev-card data-href="https://code.visualstudio.com/">
+            <img slot="imagen"
+                src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.visualstudio.svg">
+            <h5 slot="title">✏️ Visual Studio Code</h5>
+            <h6 slot="subtitle">Editor de código</h6>
+            <p slot="features">WSL Remoto - Opensource</p>
+        </enidev-card>
+
+        <enidev-card data-href="https://www.ruby-lang.org/es/">
+            <img slot="imagen" src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/ruby.svg">
+            <h5 slot="title">💎 Ruby</h5>
+            <h6 slot="subtitle">Lenguaje de programación</h6>
+            <p slot="features">Interpretado - Opensource</p>
+        </enidev-card>
+
+    </main>
+
+</body>
+
+</html>

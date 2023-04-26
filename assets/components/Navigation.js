@@ -12,6 +12,7 @@ template.innerHTML = /*html*/`
     right: 0;
     z-index: 1;
 		background: #D30001;
+    font-family: sans-serif;
   }
 	nav {
     width: 100%;
@@ -86,6 +87,8 @@ template.innerHTML = /*html*/`
     <img src="assets/img/back-end.png" height="30" alt="imagen">
     &nbsp;
     Blog back-end</a></li>
+    <li><a href="software.html" class="menu__link">
+    Software</a></li>
 	</ul>
 </nav>
 `
