@@ -101,9 +101,10 @@
 			}
 		],
 		"examen": {
-			"titulo": "",
+			"titulo": "Fundamentos base de datos relacionales",
 			"github": "",
-			"github_page": ""
+			"github_page": "",
+			"youtube": "https://www.youtube.com/watch?v=DdTgsNYJ170"
 		}
 	}
 ]
