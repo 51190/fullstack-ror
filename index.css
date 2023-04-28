@@ -7,14 +7,21 @@
 }
 
 main {
-	display: flex;
+	/* display: flex;
 	justify-content: space-around;
 	align-items: baseline;
 	flex-wrap: wrap;
 	width: 90%;
+	margin: 90px auto; */
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 25px;
+	width: 90%;
 	margin: 90px auto;
 	font-family: 'Open Sans', sans-serif;
+	align-items: baseline;
 }
+
 
 .card {
 	display: inline-block;
@@ -24,4 +31,11 @@ main {
 
 figure {
 	display: inline-block;
+}
+
+@media (min-width: 992px) {
+	main {
+		grid-template-columns: repeat(3, 1fr);
+		font-size: 0.8rem;
+	}
 }

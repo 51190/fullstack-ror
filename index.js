@@ -32,7 +32,6 @@ const crearDetalle = (badge, desafio, modo) => {
     details.style.backgroundColor = "#FFF";
     const summary = document.createElement("summary");
     summary.style.fontWeight = "bold";
-    summary.style.fontWeight = "#82d";
     summary.style.margin = "-0.5em -0.5em 0";
     summary.style.padding = "0.5em";
     summary.style.cursor = "pointer";
