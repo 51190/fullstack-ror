@@ -66,9 +66,6 @@ const crearDetalle = (badge, desafio, modo) => {
     }
     return details;
 }
-const show = () => {
-    alert("holas")
-}
 
 const crearItem = (item, index, arreglo) => {
     const bullet = document.createElement("wc-bullet-chain");
@@ -111,6 +108,7 @@ const crearItem = (item, index, arreglo) => {
 
 
 
+
 main.getAttribute("id") === "main" ?
     fetch("assets/data/desafios.json")
         .then(res => res.json())
@@ -118,8 +116,6 @@ main.getAttribute("id") === "main" ?
             desafios.forEach((item, index, arr) => {
                 main.appendChild(crearItem(item, index, arr));
             })
-        })
-        .then(() => {
             // LISTENERS
             document.querySelectorAll("wc-bullet-chain").forEach(e => {
                 let show = true;
