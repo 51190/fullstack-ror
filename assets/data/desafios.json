@@ -86,18 +86,42 @@
 		"evaluados": [
 			{
 				"titulo": "Bases de datos relacionales",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "",
 				"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
 			},
 			{
 				"titulo": "Definición de tablas",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
 			},
 			{
 				"titulo": "Modelos entidad relación",
 				"github_page": "desafios/evaluados/entidad-relacion/index.html"
+			}
+		],
+		"examen": {
+			"titulo": "Fundamentos base de datos relacionales",
+			"github": "",
+			"github_page": "",
+			"youtube": "https://www.youtube.com/watch?v=DdTgsNYJ170"
+		}
+	},
+	{
+		"modulo": "Introducción a la programación con Ruby",
+		"badges": {
+			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
+		},
+		"guiados": [],
+		"evaluados": [
+			{
+				"titulo": "Flujo, ciclos y Métodos",
+				"github": "",
+				"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
 			}
 		],
 		"examen": {

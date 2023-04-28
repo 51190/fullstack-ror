@@ -29,6 +29,7 @@ const crearDetalle = (badge, desafio, modo) => {
     details.style.border = "1px solid #aaa";
     details.style.borderRadius = "4px";
     details.style.padding = "0.5em 0.5em";
+    details.style.backgroundColor = "#FFF";
     const summary = document.createElement("summary");
     summary.style.fontWeight = "bold";
     summary.style.fontWeight = "#82d";
@@ -65,14 +66,23 @@ const crearDetalle = (badge, desafio, modo) => {
     }
     return details;
 }
+const show = () => {
+    alert("holas")
+}
 
 const crearItem = (item, index, arreglo) => {
     const bullet = document.createElement("wc-bullet-chain");
+    bullet.style.borderRadius = "10px";
+    bullet.style.paddingRight = "30px";
+    bullet.style.margin = "10px auto";
+    bullet.style.backgroundColor = "#FFCFCF";
     let li = document.createElement("li");
     li.innerHTML = item.modulo;
+    li.setAttribute("class", "title");
     li.style.fontSize = "22px";
     li.style.color = "#c15";
     li.style.fontWeight = "bold";
+    li.style.cursor = "pointer";
     bullet.appendChild(li);
     // GUIADOS
     const guiados = arreglo.map((item) => item.guiados);
@@ -107,6 +117,27 @@ main.getAttribute("id") === "main" ?
         .then((desafios) => {
             desafios.forEach((item, index, arr) => {
                 main.appendChild(crearItem(item, index, arr));
+            })
+        })
+        .then(() => {
+            // LISTENERS
+            document.querySelectorAll("wc-bullet-chain").forEach(e => {
+                let show = true;
+                e.shadowRoot.querySelector(".title").onclick = () => {
+                    if (show) {
+                        e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                            detail.parentElement.style.display = "none";
+                            e.shadowRoot.querySelector(".title").style.color = "#555";
+                            show = false;
+                        })
+                    } else {
+                        e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                            detail.parentElement.style.display = "block";
+                            e.shadowRoot.querySelector(".title").style.color = "#c15";
+                            show = true;
+                        })
+                    }
+                }
             })
         })
         .catch(err => console.error(err.message))
