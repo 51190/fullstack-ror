@@ -54,9 +54,9 @@
 			},
 			{
 				"titulo": "Ricomida",
-				"badge": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/ricomida",
-				"github_page": "desafios/ricomida/index.html"
+				"github_page": "desafios/ricomida/index.html",
+				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/ricomida.zip"
 			}
 		],
 		"examen": {
