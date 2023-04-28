@@ -116,25 +116,27 @@ main.getAttribute("id") === "main" ?
             desafios.forEach((item, index, arr) => {
                 main.appendChild(crearItem(item, index, arr));
             })
-            // LISTENERS
-            document.querySelectorAll("wc-bullet-chain").forEach(e => {
-                let show = true;
-                e.shadowRoot.querySelector(".title").onclick = () => {
-                    if (show) {
-                        e.shadowRoot.querySelectorAll("details").forEach(detail => {
-                            detail.parentElement.style.display = "none";
-                            e.shadowRoot.querySelector(".title").style.color = "#555";
-                            show = false;
-                        })
-                    } else {
-                        e.shadowRoot.querySelectorAll("details").forEach(detail => {
-                            detail.parentElement.style.display = "block";
-                            e.shadowRoot.querySelector(".title").style.color = "#c15";
-                            show = true;
-                        })
+            setTimeout(() => {
+                // LISTENERS
+                document.querySelectorAll("wc-bullet-chain").forEach(e => {
+                    let show = true;
+                    e.shadowRoot.querySelector(".title").onclick = () => {
+                        if (show) {
+                            e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                                detail.parentElement.style.display = "none";
+                                e.shadowRoot.querySelector(".title").style.color = "#555";
+                                show = false;
+                            })
+                        } else {
+                            e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                                detail.parentElement.style.display = "block";
+                                e.shadowRoot.querySelector(".title").style.color = "#c15";
+                                show = true;
+                            })
+                        }
                     }
-                }
-            })
+                })
+            }, 1000)
         })
         .catch(err => console.error(err.message))
 
