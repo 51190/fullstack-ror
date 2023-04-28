@@ -64,6 +64,12 @@ const crearDetalle = (badge, desafio, modo) => {
             "Descargar zip",
             badge.zip));
     }
+    if (desafio.maqueta) {
+        details.appendChild(crearLink(
+            desafio.maqueta,
+            "Ir a maqueta",
+            badge.adobe));
+    }
     return details;
 }
 

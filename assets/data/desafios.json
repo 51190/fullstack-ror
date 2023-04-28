@@ -2,6 +2,7 @@
 	{
 		"modulo": "Fundamentos de desarrollo front-end",
 		"badges": {
+			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/adobe-xd.png' alt='logo' ><span>maqueta</span></div>",
 			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
@@ -50,12 +51,14 @@
 				"titulo": "Cuppon",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/cuppon",
 				"github_page": "desafios/evaluados/cuppon/index.html",
+				"maqueta": "https://xd.adobe.com/spec/aad024b9-c153-43f1-4dd6-da519734e1ee-dce1/grid",
 				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/cuppon.zip"
 			},
 			{
 				"titulo": "Ricomida",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/ricomida",
 				"github_page": "desafios/evaluados/ricomida/index.html",
+				"maqueta": "https://xd.adobe.com/spec/d60d3e21-4554-4e17-4fb1-e61d39f3d2b3-a03c/grid",
 				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/ricomida.zip"
 			}
 		],
@@ -68,6 +71,7 @@
 	{
 		"modulo": "Fundamentos de base de datos",
 		"badges": {
+			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
@@ -108,6 +112,7 @@
 	{
 		"modulo": "Introducción a la programación con Ruby",
 		"badges": {
+			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
 			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
 			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
@@ -121,14 +126,14 @@
 			{
 				"titulo": "Flujo, ciclos y Métodos",
 				"github": "",
-				"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
+				"youtube": ""
 			}
 		],
 		"examen": {
-			"titulo": "Fundamentos base de datos relacionales",
+			"titulo": "",
 			"github": "",
 			"github_page": "",
-			"youtube": "https://www.youtube.com/watch?v=DdTgsNYJ170"
+			"youtube": ""
 		}
 	}
 ]
