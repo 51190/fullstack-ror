@@ -45,7 +45,10 @@ export class CustomButton extends HTMLElement {
             this.button.style.right = "55px"
             this.button.title = "Ver en Codepen"
         } else if (this.btn === "compiler") {
-            console.log("compiler")
+            this.button.style.background = "url(".concat(ASSETS, "compiler.svg", ")")
+            this.button.style.top = "15px"
+            this.button.style.right = "55px"
+            this.button.title = "Ejecutar"
         } else if (this.btn === "top") {
             this.button.style.position = 'fixed'
             this.button.style.background = "url(".concat(ASSETS, "top.svg", ")")
@@ -74,12 +77,10 @@ export class CustomButton extends HTMLElement {
         // handleOnclick
         this.button.addEventListener("click", () => {
             if (this.btn === "codepen") {
-
                 const lang = this.parentNode.parentNode.classList[0].split("-");
-
                 this.createPen(lang[1], this.parentNode.firstElementChild.textContent);
             } else if (this.btn === "compiler") {
-                console.log("compiler")
+                this.openCompiler(this.parentNode.firstElementChild.textContent, this.getAttribute("data-lang"), this.getAttribute("data-ext"))
             } else if (this.btn === "top") {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }
@@ -128,6 +129,50 @@ export class CustomButton extends HTMLElement {
         if (selection) {
             document.getSelection().removeAllRanges();
             document.getSelection().addRange(selection);
+        }
+    }
+
+    openCompiler(content, lang = "nodejs", ext = "js") {
+
+        const ifr = document.createElement("iframe");
+        ifr.src = 'https://onecompiler.com/embed/?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
+        ifr.width = "100%";
+        ifr.frameBorder = "0"
+        ifr.style.height = "100vh";
+        ifr.allowFullscreen = "true";
+        const childWindow = window.open("", "_blank");
+        childWindow.document.body.style.boxSizing = "border-box"
+        childWindow.document.body.style.padding = "0"
+        childWindow.document.body.style.margin = "0"
+        childWindow.document.body.appendChild(ifr);
+        const eliminarCookies = () => {
+            childWindow.document.cookie.split(";").forEach(function (c) {
+                childWindow.document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+        }
+        ifr.onload = () => {
+            ifr.contentWindow.postMessage({
+                eventType: 'populateCode',
+                language: lang,
+                files: [
+                    {
+                        "name": "911." + ext,
+                        "content": content.trim()
+                    }
+                ]
+            }, "*");
+
+            ifr.contentWindow.postMessage({
+                eventType: 'triggerRun'
+            }, '*')
+        }
+        childWindow.document.onreadystatechange = () => {
+            if (childWindow.document.readyState === "interactive") {
+                eliminarCookies()
+            }
+            if (childWindow.document.readyState === "complete") {
+                childWindow.console.log(childWindow.document.cookie)
+            }
         }
     }
 }

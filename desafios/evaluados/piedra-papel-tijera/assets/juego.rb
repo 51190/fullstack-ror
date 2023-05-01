@@ -4,11 +4,11 @@ $opcion_computador = $opciones[Random.new.rand(3)]
 
 def jugar()
     if ($opcion_usuario == $opcion_computador)
-        return "Tu haz elegido %s y el computador %s. Empate" % [$opcion_usuario, $opcion_computador]
+        return "Tú haz elegido %s y el computador %s. Empate" % [$opcion_usuario, $opcion_computador]
     elsif es_ganador($opciones.index($opcion_usuario), $opciones.index($opcion_computador))
-        return "Tu haz elegido %s y el computador %s. Ganaste" % [$opcion_usuario, $opcion_computador]
+        return "Tú haz elegido %s y el computador %s. Ganaste" % [$opcion_usuario, $opcion_computador]
     else
-        return "Tu haz elegido %s y el computador %s. Perdiste" % [$opcion_usuario, $opcion_computador]
+        return "Tú haz elegido %s y el computador %s. Perdiste" % [$opcion_usuario, $opcion_computador]
     end
 end
 

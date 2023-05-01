@@ -125,10 +125,17 @@
 		"guiados": [],
 		"evaluados": [
 			{
-				"titulo": "Flujo, ciclos y Métodos",
+				"titulo": "Flujo, ciclos y Métodos (I)",
 				"github": "https://github.com/mach-911/fullstack-ror/tree/piedra-papel-tijera",
 				"github_page": "desafios/evaluados/piedra-papel-tijera/index.html",
 				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/piedra-papel-tijera.zip",
+				"youtube": ""
+			},
+			{
+				"titulo": "Flujo, ciclos y Métodos (II)",
+				"github": "",
+				"github_page": "desafios/evaluados/pares-impares-tabla-muplitiplicar/index.html",
+				"zip": "",
 				"youtube": ""
 			}
 		],
