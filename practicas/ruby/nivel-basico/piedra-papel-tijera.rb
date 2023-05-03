@@ -17,3 +17,4 @@ else
         puts "Tú haz elegido %s y el computador %s. Perdiste" % [opcion_usuario, opcion_computador]
     end
 end
+
