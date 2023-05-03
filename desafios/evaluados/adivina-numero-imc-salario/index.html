@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio evaluado: 3 Ruby</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <div class="doc-body">
+        <h1 align="center">Desafío evaluado: Flujo, ciclos y Métodos (III)</h1><br>
+        <h4 align="center">Marco Contreras</h4>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Algoritmo del ejercicio 3 - Calcular el nivel de IMC
+                </strong>
+            </legend>
+            <figure>
+                <iframe frameborder="0" style="width:100%;height:572px;"
+                    src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=#R7Vvfk9o2EP5b%2BsAk1xluLP%2F2Y3KXJp1p2szcQ5unjs4WoJ6wXFkc0L8%2Bki2BbYkLBzZH6D2BpJUsr77d%2FXYFI%2B9mvvrIYDH7TDNERq6TrUbe7ch1gQMi8SF71nWPGzlu3TNlOFNS2447%2FB%2FSU1XvAmeobAlySgnHRbszpXmOUt7qg4zRZVtsQkn7qQWcIqPjLoXE7P0TZ3xW98ZutO3%2FhPB0pp8MwqQemUMtrN6knMGMLhtd3oeRd8Mo5fW3%2BeoGEak9rZd63i87RjcbYyjn%2B0zw1JZLvtYvhzLxrqqZ01x8vE8X7BHJGUA0GF3kWdVyRIsyPqNTmkPyG6WFEvkHcb5WxwYXnIquGZ8TNYry7J08BNGkBcpFT8kh40oe%2BLVIs1nSBUvRF8TwHHHE7gqY4nwqRmMxKOZOEd8xKNTA1n%2FJvV4HuvlVbb1q3K5arbVurTBvTBOtr3r34vt2kmzoOabu1XHU21dYV3CtNq2kwrpPKr4xTx3YR0TFe7G1EGCIQI4f2yCECsvTjdz2uMUXdeL201ebeYRkoRbFOU4xNTFBiLAtCYXlDHMkdSxHlsK%2B22e7UwePiHG0evL11KgbhNdRUM9SDmLsgkAZzHJrb8BVips1bM13jldL5JgKGN4oDgTqKY1pKKMITKPQff0ZhZr6hWKxkw3aPBcYaANx0EGR0lk9tQOkzV72wlZgmtw8HUkvHcK5NCbCpdbkiOP514mBRDaj8%2FtFeRpTDP2uZmKLHeqw3LTDuAc7DC89OB1gT4f6ib3sMPZNQzyRHYIwNu0w8YL2OkqdPdhhHLz6%2BH59fAch3wUbsHj9GoAnYD7A9MPCA1e%2Btyxg3gJG%2BO9C0vH3KSWUjbx3cj%2FT%2B7fCwYnHOPrjqlKEyCVyPp7AOSbrWvQTIo%2BI4xQ2xsvqqOQocItVc6B%2BqBzJKZtD0hh7hAxD8UnwFPIFk%2FnPk3IpLHaJLJWjloO%2BUx%2BhQwR2ERuXGg7dmZQVM5irJd26T8QRPoZiR3ndnYoDR6wxhoXF5OpJjn7VaoQzsdhErK%2BfVBlcHVmqBK3xmCVlWXtjm7XEu9w%2FYLGcXLPkjD6gsYpNLbl7mD5MKwsed87RDUB9hM0vV42dZiilTMCP5mM%2Bw%2BlDjkq1PcGWOdb66co2zvJJucZ2WnITQiHvKifDZUHgWosTLAZc5yc8L4Q%2FgnnFHTaAFd%2Bm8hMSgRcoSUZFK4S1ldec%2Fj3RiL9nWlL3CPOpzUB3d0lIyxWegIj4YSchcICFiPjRdWBSEa8HKuLFF05Fzi1P1klxK1E%2BERdxzQQUJF1Cu4OKmAkGsKSzTjdN7S%2FB0Ip7jWyvke3iI1uBSvpjx7Xg2jWcQ2QLbckwgc31LjywqQClQ9LXVrB6ZoAyUhyjiNV7LPJtwSjuho%2B9g1FkWS0aLhi5vi0Y1YWu%2FL4satP%2FTIV7g2xOS6l24TKk8nMOCYGmKb%2BR90kMZvTNi1uv%2FWzCRJPQpv2GlhpZkBxvv%2FGLEFNNFltUccscz6iO8Xy7f24dw1a9jqMjncHe7vtZ9eTk7OrJke1eBwBbGtdHRVnf0DbUdferoRLJY9rvXtOvm5rPaKOaYEI6XYow3m7YotSNYMjknRqY4yyTj7Equ22YPejb820OylLCt3mnPtiF7%2F2%2F9B3awusJ9R25lnj7%2FfBwQAxo6%2B6Unr0Vy%2FalauaRtci1Uv2xd4kgMdg8CMF%2B7MrC%2FCITTKHT4Qw7mJ84DbhuiBVSoDySzUU2NtdF1xYJClw7QfMjQSSw0bchURMdiBq5momaLgZ7vEezMvzXctNruWl0eeUmRa0rMq1LT8J2XOft5orlZ2llVePKzHRPWJYySIvFBT5RlgIdD5LYeHow2HVLYuYpl1WVOjCDtgYua3BrZqPJsbfq9lATJE6X6u7JdQ6JM2bmdnQl6Q4JK%2BmnjnSUuVnrSJF30jpSAgz9%2Fv6HoZlzytSO83BmJeKEaVpipmmXrGzPdS2c1BJRBtO3WYY4vgy9kG9YnrMLCX1L0B7MgZiJwATnZhh%2F3i%2FJj1JKGBsByjM1Eg30K%2FLEdhF%2F9tnyhplsGkMyE3cHMzlN5h25XXwYF2t7p92uLe12Bku7kxe99jnfn68eBsOBCHKP%2BPI9G0UcDl9AL%2F3qvZ4ONS%2FlqUIADkNSENuYQne1PpEETOBcUi5%2FOHYGAMWB7sWyVNKXbxHN7f9Za%2FHt34K9D98A"></iframe>
+                <figcaption align="center">Algoritmo del ejercicio 3: Mostrar el nivel de IMC en función de las
+                    subcategorías asociada a la obesidad
+                </figcaption>
+            </figure>
+            <a href="./assets/algoritmo_imc.drawio" download>Descargar</a>
+        </fieldset>
+
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Script imc.rb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs" data-tabsize="2">
+def calcular_imc(p, a)
+    return p / (a * a)
+end
+                
+"""
+- Obesidad grado I: 30 - 34.9 - Moderado
+- Obesidad grado II: 35 - 39.9 - Severo
+- Obesidad grado III: Más de 40 - Muy severo
+"""
+def nivel_de_peso(imc)
+    if imc <= 34.9
+        return "Moderado"
+    elsif imc <= 39.9
+        return "Severo"
+    else 
+        return "Muy severo"
+    end
+end
+                
+peso = gets.to_f
+altura = gets.to_f
+puts nivel_de_peso(calcular_imc(peso, altura))
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="compiler" data-lang="ruby" data-ext="rb"></enidev-button>
+            </div>
+            <a href="./assets/imc.rb" download>Descargar</a>
+        </fieldset>
+    </div>
+    <script type="module" src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>
