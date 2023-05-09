@@ -58,3 +58,7 @@ a {
     border-radius: 8px;
     font-size: 20px;
 }
+
+.highlight {
+    position: relative;
+}

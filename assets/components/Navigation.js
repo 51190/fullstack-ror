@@ -88,6 +88,8 @@ template.innerHTML = /*html*/`
     <img src="assets/img/back-end.png" height="30" alt="imagen">
     &nbsp;
     Blog back-end</a></li>
+    <li><a href="http://enidev911.gitbook.io/ruby-on-rails" target="_blank" class="menu__link">
+    Gitbook ruby on rails</a></li>
     <li><a href="software.html" class="menu__link">
     Software</a></li>
 	</ul>
