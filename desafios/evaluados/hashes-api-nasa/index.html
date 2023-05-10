@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio evaluado: 4 Ruby</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <div class="doc-body">
+        <h1 align="center">Desafío evaluado: Arreglos, hashes y APIs</h1><br>
+        <h4 align="center">Marco Contreras</h4>
+        <br><br>
+        <h3>Requerimiento 1</h3><br>
+        <p>
+            Crear el método <strong>request</strong> que reciba una url y retorne el hash con los resultados.
+        </p>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Método - request
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs">
+require "uri"
+require "net/http"
+require "json"
+                    
+def request(url_requested)
+    url = URI(url_requested)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true 
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER # Se agrega esta línea para verificar Man in the middle
+                    
+    request  = Net::HTTP::Get.new(url)
+    request["cache-control"] = "no-cache"
+                    
+    response = http.request(request)
+    JSON.parse(response.body)
+end
+            </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <h3>Requerimiento 2</h3><br>
+        <p>
+            Crear un método llamado <strong>buid_web_page</strong> que reciba el hash de respuesta con todos
+            los datos y construya una página web.
+        </p>
+
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Método - build_web_page
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs">
+def build_web_page(hash)
+    photos = hash['photos'].map { |x| x['img_src']}
+    html = "&lt;html&gt;\n&lt;head&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\t&lt;ul&gt;\n"
+    photos.each do |photo|
+        html += "\t\t&lt;li&gt;\n\t\t\t&lt;img src=\"#{photo}\" alt=\"picture\"&gt;\n\t\t&lt;/li&gt;\n"
+    end
+    html +="\t&lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;"
+    File.write("page.html", html)
+end
+            </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+            <a href="./assets/adivina-numero.rb" download>Descargar</a>
+        </fieldset>
+
+        <h3>Requerimiento 3</h3><br>
+        <p>
+            Crear un método <strong>photos_count</strong> que reciba el hash de respuesta y devuelva un nuevo
+            hash con el nombre de la cámara y la cantidad de fotos
+        </p>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Método - photos_count
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs" data-tabsize="2">
+def photos_count(hash)
+    checkcam = 0
+    mahli = 0
+    navcam = 0
+    nombre_camaras = hash['photos'].map { |x|
+        if x['camera']['name'] == "CHEMCAM"
+            checkcam += 1
+            [x['camera']['name'], checkcam] 
+        elsif x['camera']['name'] == "MAHLI"
+            mahli += 1
+            [x['camera']['name'], mahli] 
+        else 
+            navcam += 1
+            [x['camera']['name'], navcam] 
+        end
+    }
+    nombre_camaras.to_h 
+end
+                    </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+    </div>
+    <script type="module" src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>
