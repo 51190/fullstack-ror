@@ -1,7 +1,6 @@
 require "uri"
 require "net/http"
 require "json"
-# https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=Zrvsp1PxhM2gD1SPMiytALMZh6iMjxGg8kdxlSxx
                     
 def request(url_requested)
     url = URI(url_requested)
@@ -48,6 +47,5 @@ def photos_count(hash)
     }
     nombre_camaras.to_h 
 end
-
 
 print photos_count(request(endpoint))
