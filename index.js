@@ -142,7 +142,7 @@ main.getAttribute("id") === "main" ?
                         }
                     }
                 })
-            }, 2000)
+            }, 1500)
         })
         .catch(err => console.error(err.message))
 
