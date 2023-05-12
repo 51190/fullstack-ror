@@ -19,31 +19,24 @@ end
                     
 def build_web_page(hash)
     photos = hash['photos'].map { |x| x['img_src']}
-    html = "\n\n\n\n\t\n"
+    html = "<html>\n<head>\n</head>\n<body>\n\t<ul>\n"
     photos.each do |photo|
-        html += "\t\t\n\t\t\t\n\t\t\n"
+        html += "\t\t<li>\n\t\t\t<img src=\"#{photo}\" alt=\"picture\">\n\t\t</li>\n"
     end
-    html +="\t\n\n"
+    html +="\t</ul>\n</body>\n</html>"
     File.write("page.html", html)
 end
                                         
 def photos_count(hash)
-    checkcam = 0
-    mahli = 0
-    navcam = 0
-    nombre_camaras = hash['photos'].map { |x|
-        if x['camera']['name'] == "CHEMCAM"
-            checkcam += 1
-            [x['camera']['name'], checkcam] 
-        elsif x['camera']['name'] == "MAHLI"
-            mahli += 1
-            [x['camera']['name'], mahli] 
-        else 
-            navcam += 1
-            [x['camera']['name'], navcam] 
-        end
+    cameras = hash['photos'].map { |x| 
+        [
+            x['camera']['name'], 
+            hash['photos'].count{ |y|
+                y['camera']['name'] == x['camera']['name'] 
+            } 
+        ] 
     }
-    nombre_camaras.to_h 
+    cameras.to_h
 end
 
 api_key = "Zrvsp1PxhM2gD1SPMiytALMZh6iMjxGg8kdxlSxx"

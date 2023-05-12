@@ -89,22 +89,15 @@ end
             <div class="highlight">
                 <pre><code class="ruby hljs" data-tabsize="2">
 def photos_count(hash)
-    checkcam = 0
-    mahli = 0
-    navcam = 0
-    nombre_camaras = hash['photos'].map { |x|
-        if x['camera']['name'] == "CHEMCAM"
-            checkcam += 1
-            [x['camera']['name'], checkcam] 
-        elsif x['camera']['name'] == "MAHLI"
-            mahli += 1
-            [x['camera']['name'], mahli] 
-        else 
-            navcam += 1
-            [x['camera']['name'], navcam] 
-        end
+    cameras = hash['photos'].map { |x|
+        [
+            x['camera']['name'],
+            hash['photos'].count { |y|
+                y['camera']['name'] == x['camera']['name']
+            }
+        ]
     }
-    nombre_camaras.to_h 
+    cameras.to_h
 end
                     </code></pre>
                 <enidev-button></enidev-button>
@@ -149,22 +142,15 @@ def build_web_page(hash)
 end
                                         
 def photos_count(hash)
-    checkcam = 0
-    mahli = 0
-    navcam = 0
-    nombre_camaras = hash['photos'].map { |x|
-        if x['camera']['name'] == "CHEMCAM"
-            checkcam += 1
-            [x['camera']['name'], checkcam] 
-        elsif x['camera']['name'] == "MAHLI"
-            mahli += 1
-            [x['camera']['name'], mahli] 
-        else 
-            navcam += 1
-            [x['camera']['name'], navcam] 
-        end
+    cameras = hash['photos'].map { |x|
+        [
+            x['camera']['name'],
+            hash['photos'].count { |y|
+                y['camera']['name'] == x['camera']['name']
+            }
+        ]
     }
-    nombre_camaras.to_h 
+    cameras.to_h 
 end
 
 api_key = "Zrvsp1PxhM2gD1SPMiytALMZh6iMjxGg8kdxlSxx"
@@ -176,6 +162,7 @@ print photos_count(request(endpoint))
                     </code></pre>
                 <enidev-button></enidev-button>
             </div>
+            <a href="./assets/hashes-api-nasa.rb" download>Descargar</a>
         </fieldset>
     </div>
 
