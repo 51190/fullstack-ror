@@ -1,34 +1,32 @@
 require "uri"
 require "net/http"
 require "json"
-                    
+                                        
 def request(url_requested)
     url = URI(url_requested)
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true 
-    http.verify_mode = OpenSSL::SSL::VERIFY_PEER # Se agrega esta línea para verificar Man in the middle
-                    
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER 
+    
+                                        
     request  = Net::HTTP::Get.new(url)
     request["cache-control"] = "no-cache"
-                    
+                                        
     response = http.request(request)
     JSON.parse(response.body)
 end
-
-
+                    
+                    
 def build_web_page(hash)
     photos = hash['photos'].map { |x| x['img_src']}
-    html = "<html>\n<head>\n</head>\n<body>\n\t<ul>\n"
+    html = "\n\n\n\n\t\n"
     photos.each do |photo|
-        html += "\t\t<li>\n\t\t\t<img src=\"#{photo}\" alt=\"picture\">\n\t\t</li>\n"
+        html += "\t\t\n\t\t\t\n\t\t\n"
     end
-    html +="\t</ul>\n</body>\n</html>"
+    html +="\t\n\n"
     File.write("page.html", html)
 end
-
-api_key = "Zrvsp1PxhM2gD1SPMiytALMZh6iMjxGg8kdxlSxx"
-endpoint = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key="+api_key
-
+                                        
 def photos_count(hash)
     checkcam = 0
     mahli = 0
@@ -48,4 +46,9 @@ def photos_count(hash)
     nombre_camaras.to_h 
 end
 
+api_key = "Zrvsp1PxhM2gD1SPMiytALMZh6iMjxGg8kdxlSxx"
+params = "sol=10&api_key="+api_key
+endpoint = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?"+params
+
+build_web_page(request(endpoint))
 print photos_count(request(endpoint))
