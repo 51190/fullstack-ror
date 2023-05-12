@@ -140,11 +140,11 @@ end
                     
 def build_web_page(hash)
     photos = hash['photos'].map { |x| x['img_src']}
-    html = "<html>\n<head>\n</head>\n<body>\n\t<ul>\n"
+    html = "&lt;html&gt;\n&lt;head&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\t&lt;ul&gt;\n"
     photos.each do |photo|
-        html += "\t\t<li>\n\t\t\t<img src=\"#{photo}\" alt=\"picture\">\n\t\t</li>\n"
+        html += "\t\t&lt;li&gt;\n\t\t\t&lt;img src=\"#{photo}\" alt=\"picture\"&gt;\n\t\t&lt;/li&gt;\n"
     end
-    html +="\t</ul>\n</body>\n</html>"
+    html +="\t&lt;/ul&gt;\n&lt;/body&gt;\n&lt;/html&gt;"
     File.write("page.html", html)
 end
                                         
