@@ -11,7 +11,7 @@ template.innerHTML = /*html*/`
     height: 75px;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 9999;
 		background: #D30001;
     font-family: sans-serif;
   }
@@ -81,11 +81,11 @@ template.innerHTML = /*html*/`
 	<ul class="menu" id="main-menu">
 		<li><a href=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror" : "/"} class="menu__link">Fullstack Ruby On Rails</a></li>
 		<li><a href="https://dblogging.github.io/enidev-frontend/" target="_blank" class="menu__link">
-    <img src="assets/img/front-end.png" height="30" alt="imagen">
+    <img src=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror/assets/img/front-end.png" : "/assets/img/front-end.png"} height="30" alt="imagen">
     &nbsp;
     Blog front-end</a></li>
     <li><a href="https://dblogging.github.io/" target="_blank" class="menu__link">
-    <img src="assets/img/back-end.png" height="30" alt="imagen">
+    <img src=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror/assets/img/back-end.png" : "/assets/img/back-end.png"} height="30" alt="imagen">
     &nbsp;
     Blog back-end</a></li>
     <li><a href="http://enidev911.gitbook.io/ruby-on-rails" target="_blank" class="menu__link">
