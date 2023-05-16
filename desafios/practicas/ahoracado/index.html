@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Ahorcado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <div class="doc-body">
+        <h1 align="center">Juego de Adivinar Palabras</h1>
+        <h2>Descripción</h2>
+        <p>Hacer un juego de adivinanza de palabras. Utilizando la gema "<strong>faker</strong>" seleccionar una palabra
+            al azar de un
+            tema
+            que elijan ustedes.
+            El juego debe mostrar la palabra oculta indicando la cantidad de letras que tiene representadas por guiones
+            bajos.</p>
+        <p>Se debe ir adivinando letra por letra y sólo tienes 5 vidas para adivinar la palabra.
+            Cada vez que adivinas una letra el juego debe revelar la letra en la posición que corresponde, al no
+            adivinar
+            debe descontar una vida.
+        </p>
+        <p>De la siguiente forma:</p>
+        <ul>
+            <li>
+                Adivina la palabra oculta!!! Tienes 5 vidas:<br>
+                <code>_ _ _ _ _ a</code>
+            </li>
+            <li>
+                La letra no está en la palabra! Te quedan 4 vidas:<br>
+                <code>_ _ _ _ _ e</code>
+            </li>
+            <li>
+                Muy bien! La letra está en la palabra, adivina otra.<br>
+                <code> _ _ e _ _ g</code>
+            </li>
+        </ul>
+        <p>Así hasta adivinar la palabra o quedarte sin vidas entregando un mensaje acorde a la situación.</p>
+        <p>1- Generar la clase <strong>GeneradorPalabras</strong> en donde estará la lógica en un método para generar
+            palabras al azar utilizando la gema "<strong>faker</strong>"
+            y otro método dónde creemos una lista con palabras relacionadas al curso. El generardor debe elegir palabras
+            al azar de uno u otro tema al azar también</p>
+
+        <p>
+            2- Generar la clase Juego en donde estará la lógica del juego en sí utilizando los métodos necesarios para
+            ello.
+        </p>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Clase - GeneradorPalabra
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs">
+require "faker"
+                        
+class GeneradorPalabra
+                    
+    def self.generar
+        al_azar = rand(0..1)
+        if al_azar == 0
+            return generar_palabra
+        else
+            return generar_palabra
+        end
+    end
+                    
+    private 
+                    
+    def self.generar_planeta
+        Faker::Space.planet.downcase
+    end
+                    
+    def self.generar_palabra
+        palabras_secretas = [
+            "ruby", "desarrollador", "javascript", 
+            "herencia", "sql", "programa", "computador", 
+            "gema", "html", "github", "compilador"
+        ]
+        palabras_secretas[rand(0..palabras_secretas.size-1)]
+    end
+    
+end 
+                </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+    </div>
+    <script type="module" src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>

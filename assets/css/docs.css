@@ -14,17 +14,27 @@
     background-color: rgb(255, 255, 255);
 }
 
+h2,
+h3 {
+    margin: 15px 0;
+}
+
+p {
+    margin: 15px 0;
+}
+
 iframe {
     border-radius: 10px;
 }
 
 figure {
-    width: 90%;
+    width: 100%;
     margin: 40px auto;
+    text-align: center;
 }
 
 figure img {
-    width: 100%;
+    width: 70%;
 }
 
 fieldset {
@@ -65,4 +75,18 @@ a {
 
 .highlight {
     position: relative;
+}
+
+ul,
+ol {
+    padding-left: 20px;
+}
+
+blockquote {
+    background-color: rgb(245, 236, 236);
+    padding: 10px;
+}
+
+code.inline {
+    font-size: 17px;
 }

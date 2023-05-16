@@ -84,14 +84,10 @@ template.innerHTML = /*html*/`
     <img src=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror/assets/img/front-end.png" : "/assets/img/front-end.png"} height="30" alt="imagen">
     &nbsp;
     Blog front-end</a></li>
-    <li><a href="https://dblogging.github.io/" target="_blank" class="menu__link">
-    <img src=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror/assets/img/back-end.png" : "/assets/img/back-end.png"} height="30" alt="imagen">
-    &nbsp;
-    Blog back-end</a></li>
     <li><a href="http://enidev911.gitbook.io/ruby-on-rails" target="_blank" class="menu__link">
     Gitbook ruby on rails</a></li>
-    <li><a href="software.html" class="menu__link">
-    Software</a></li>
+    <li><a href="practicas.html" class="menu__link">
+    Practicas</a></li>
 	</ul>
 </nav>
 `

@@ -159,5 +159,34 @@
 			"github_page": "desafios/evaluados/prueba-intro-ruby/index.html",
 			"youtube": ""
 		}
+	},
+	{
+		"modulo": "Introducción a desarrollo con Ruby on Rails",
+		"badges": {
+			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
+		},
+		"guiados": [],
+		"evaluados": [
+			{
+				"titulo": "Creación de un proyecto",
+				"github": "",
+				"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
+				"zip": "",
+				"youtube": ""
+			}
+		],
+		"examen": {
+			"titulo": "",
+			"github": "",
+			"github_page": "",
+			"youtube": ""
+		}
 	}
 ]

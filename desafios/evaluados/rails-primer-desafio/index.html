@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba: Introducción a Ruby</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="doc-body">
+        <h1 align="center">Desafío: Creación de un nuevo proyecto</h1><br>
+        <h4 align="center">Marco Contreras</h4>
+        <h2>Descripción</h2><br>
+        <p>
+            Aplicando los conceptos y herramientas aprendidas hasta ahora, pondrás en práctica los conocimientos con la
+            creación de una aplicación que contenga las siguientes rutas:
+        </p>
+        <ol>
+            <li><strong>/home</strong></li>
+            <li><strong>/projects</strong></li>
+            <li><strong>/contact</strong></li>
+        </ol>
+        <p>La idea será construir lo semejante a un portafolio en el cual puedas mostrar tus desafíos y desarrollos
+            implementando Rails.</p>
+        <blockquote><strong>Nota:</strong> Este desarrollo puede ser utilizado o iterado en varias oportunidades por lo
+            que es <strong>recomendado</strong> gestionar el versionamiento del proyecto con el uso de github
+        </blockquote>
+        <h2>Requerimiento 1</h2>
+        <p>La aplicación deberá contener 3 rutas, una para <code class="inline">/home</code>, <code
+                class="inline">/projects</code> y <code class="inline">/contact</code>. La ruta raíz de la aplicación
+            será <code class="inline">/home</code></p>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Definir las rutas - routes.rb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs" data-tabsize="2"># config/routes.rb
+Rails.application.routes.draw do
+    get 'home', to: 'portfolio#home'
+    get 'projects', to: 'portfolio#projects'
+    get 'contact', to: 'portfolio#contact'
+end</code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <h2>Requerimiento 2</h2>
+        <p>Cada ruta disponible deberá tener su correspondiente vista HTML asociada.</p>
+        <h2>Requerimiento 3</h2>
+        <p>Deberá existir un controlador que gestiona la visualización de cada vista con sus respectivos métodos</p>
+        <fieldset>
+            <legend align="center">
+                <strong>Disposición de las vistas y el controlador para la gestión de las vistas</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code>
+📂 app
+├── 📂 controllers
+│   └── portfolio_controller.rb # 👈 aquí definimos las acciones para las rutas
+│      
+└── 📂 views
+    └── 📂 portfolio # 👈 contenedor de las vistas para el controlador portfolio
+         ├── home.html.erb # 👈 la vista para la ruta raiz
+         ├── projects.html.erb # 👈 la vista para la ruta /projects
+         └── contact.html.erb # 👈 la vista para la ruta /contact
+                </code></pre>
+            </div>
+        </fieldset>
+        <h2>Requerimiento 4</h2>
+        <p>En la vista <code class="inline">/projects</code> deberás agregar al menos 3 imágenes de proyectos realizados
+            hasta el momento, podrás utilizar componentes de bootstrap y modificar el botón de <strong>ver más</strong>
+            con estilos personalizados desde <strong>CSS</strong>.</p>
+        <blockquote><strong>Nota</strong>: EL <strong>CSS</strong> que personaliza los estilos del botón debe ser
+            llamado desde la estructura de <strong>assets de Rails</strong></blockquote>
+        <fieldset>
+            <legend align="center">
+                <strong>Disposición de las vistas y el controlador para la gestión de las vistas</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code>
+📂 app
+└── 📂 assets
+    └── 📂 stylesheets
+        ├── application.css 
+        └── styles.css # 👈 aquí creamos el archivo de estilos personalizados
+    </code></pre>
+            </div>
+        </fieldset>
+        <h2>Requerimiento 5</h2>
+        <p>Agregar un menú de navegación bien sea personalizado o con la ayuda de bootstrap. Este menú debe verse en
+            todas las vistas de la aplicación y rederigir según corresponda en cada interacción utilizando el helper
+            <strong>link_to</strong>.
+        </p>
+
+    </div>
+    <script type="module" src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>
