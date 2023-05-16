@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba: Introducción a Ruby</title>
+    <title>Desafio: Creación de un proyecto en Rails</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -41,11 +41,12 @@
                 </strong>
             </legend>
             <div class="highlight">
-                <pre><code class="ruby hljs" data-tabsize="2"># config/routes.rb
+                <pre><code class="ruby hljs"># config/routes.rb
 Rails.application.routes.draw do
-    get 'home', to: 'portfolio#home'
-    get 'projects', to: 'portfolio#projects'
-    get 'contact', to: 'portfolio#contact'
+    root 'portfolio#home'
+    get 'home', to: 'portfolio#home', as: 'home'
+    get 'projects', to: 'portfolio#projects', as: 'projects'
+    get 'contact', to: 'portfolio#contact', as: 'contact'
 end</code></pre>
                 <enidev-button></enidev-button>
             </div>
@@ -59,7 +60,7 @@ end</code></pre>
                 <strong>Disposición de las vistas y el controlador para la gestión de las vistas</strong>
             </legend>
             <div class="highlight">
-                <pre><code>
+                <pre><code class="hljs">
 📂 app
 ├── 📂 controllers
 │   └── portfolio_controller.rb # 👈 aquí definimos las acciones para las rutas
@@ -80,10 +81,10 @@ end</code></pre>
             llamado desde la estructura de <strong>assets de Rails</strong></blockquote>
         <fieldset>
             <legend align="center">
-                <strong>Disposición de las vistas y el controlador para la gestión de las vistas</strong>
+                <strong>Disposición de los estilos personalizado</strong>
             </legend>
             <div class="highlight">
-                <pre><code>
+                <pre><code class="hljs">
 📂 app
 └── 📂 assets
     └── 📂 stylesheets
@@ -97,7 +98,92 @@ end</code></pre>
             todas las vistas de la aplicación y rederigir según corresponda en cada interacción utilizando el helper
             <strong>link_to</strong>.
         </p>
+        <blockquote><strong>Nota:</strong> puedes agregar la clase <strong>container</strong> de bootstrap al
+            <strong>yeld</strong> para modificar los márgenes.
+        </blockquote>
+        <p>Para tener un poco más de orden y organizar la explicación voy a dejar el bloque de código de
+            <strong>HTML</strong> que corresponde a la navegación. Además el contenido lo tendré aislado en una carpeta
+            <strong>shared</strong> en un archivo llamado <strong>_nav.html.erb</strong>, para luego incluirlo a través
+            de un helper usando el método <strong>render</strong>
+        </p>
+        <fieldset>
+            <legend align="center">
+                <strong>Navegación</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html">
+&lt;!-- app/views/shared/_nav.html.erb --&gt;
+&lt;nav class="navbar navbar-dark navbar-expand-lg bg-dark border-bottom border-2 border-primary"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;%= link_to "Portafolio", "#", class: "navbar-brand" %&gt;
+    &lt;%= button_tag type: :button,
+        class: "navbar-toggler",
+        data: {bs_toggle: "collapse", bs_target: "#navbar"} do %&gt;
+          &lt;%= tag.span class: "navbar-toggler-icon" %&gt;
+    &lt;% end %&gt;
+    &lt;div class="collapse navbar-collapse" id="navbar"&gt;
+      &lt;div class="navbar-nav"&gt;
+        &lt;%= link_to "Home", root_path, class: "nav-link" %&gt;
+        &lt;%= link_to "Proyectos", projects_path, class: "nav-link" %&gt;
+        &lt;%= link_to "Contacto", contact_path, class: "nav-link" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+    </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>Main layout</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html">
+&lt;!-- app/views/layouts/application.html.erb --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Portafolio&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+  &lt;%= csrf_meta_tags %&gt;
+  &lt;%= csp_meta_tag %&gt;
+  &lt;%= stylesheet_link_tag "application", "data-turbo-track": "reload" %&gt;
+  &lt;!-- CDN CSS bootstrap --&gt;
+  &lt;link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"&gt;
+&lt;/head&gt;
+&lt;body class="bg-dark text-light"&gt;
+  &lt;!-- Incluimos y renderizamos la navegación --&gt;
+  &lt;%= render "shared/nav" %&gt;
+  &lt;div class="container my-4 min-vh-100"&gt;
+    &lt;%= yield %&gt;
+  &lt;/div&gt;
+  &lt;!-- CDN JS bootstrap --&gt;
+  &lt;script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <h2>Requerimiento 6</h2>
+        <p>Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
+            aplicación.</p>
 
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Replit - proyecto completo
+                </strong>
+            </legend>
+            <iframe src="https://replit.com/@marcocontreraas/primer-desafio-rails?embed=true" width="100%"
+                height="600"></iframe>
+        </fieldset>
     </div>
     <script type="module" src="./assets/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>

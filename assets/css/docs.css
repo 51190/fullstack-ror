@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .doc-body {
     font-family: sans-serif;
     width: 85%;
@@ -89,4 +88,5 @@ blockquote {
 
 code.inline {
     font-size: 17px;
+    background-color: #bbd;
 }
