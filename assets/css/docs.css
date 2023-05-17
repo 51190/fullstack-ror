@@ -41,7 +41,7 @@ fieldset {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    position: relative;
+    flex-wrap: wrap;
 }
 
 legend {
@@ -52,6 +52,7 @@ legend {
 pre {
     font-size: 17px;
     font-family: Consolas;
+    white-space: pre-wrap;
 }
 
 h4 {
@@ -74,6 +75,7 @@ a {
 
 .highlight {
     position: relative;
+    overflow-x: scroll;
 }
 
 ul,
@@ -88,5 +90,4 @@ blockquote {
 
 code.inline {
     font-size: 17px;
-    background-color: #bbd;
 }

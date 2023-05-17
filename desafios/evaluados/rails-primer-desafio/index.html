@@ -57,7 +57,7 @@ end</code></pre>
         <p>Deberá existir un controlador que gestiona la visualización de cada vista con sus respectivos métodos</p>
         <fieldset>
             <legend align="center">
-                <strong>Disposición de las vistas y el controlador para la gestión de las vistas</strong>
+                <strong>Disposición de las vistas y el controlador</strong>
             </legend>
             <div class="highlight">
                 <pre><code class="hljs">
@@ -67,10 +67,149 @@ end</code></pre>
 │      
 └── 📂 views
     └── 📂 portfolio # 👈 contenedor de las vistas para el controlador portfolio
-         ├── home.html.erb # 👈 la vista para la ruta raiz
-         ├── projects.html.erb # 👈 la vista para la ruta /projects
-         └── contact.html.erb # 👈 la vista para la ruta /contact
+        ├── home.html.erb # 👈 la vista para la ruta raiz
+        ├── projects.html.erb # 👈 la vista para la ruta /projects
+        └── contact.html.erb # 👈 la vista para la ruta /contact
                 </code></pre>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Controlador - portfolio_controller.rb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="ruby hljs"># app/controllers/portfolio_controller.rb
+class PortfolioController &lt; ApplicationController
+    def home
+    end
+          
+    def projects
+    end
+          
+    def contact
+    end
+end</code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Vista - home.html.erb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html hljs">&lt;div class="d-flex flex-column justify-content-center min-vh-100"&gt;
+  &lt;h1 class="text-center mb-5"&gt;Portafolio Marco Contreras&lt;/h1&gt;
+  &lt;p class="text-center"&gt;
+    &lt;%= link_to "Mis proyectos", projects_path, class: "fs-4 nav-link d-inline me-3" %&gt;
+    &lt;%= link_to "Contacto", contact_path, class: "fs-4 nav-link d-inline" %&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Vista - projects.html.erb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html hljs">&lt;!-- app/views/portfolio/projects.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Mis trabajos&lt;/h2&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "iguana-page", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+       &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Iguana Page&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/iguana-page", 
+          target: "_blank", 
+          class: "my-btn" %&gt; 
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/iguana-page/", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;                  
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "cuppons", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Cuppons&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "ricomida", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Ricomida&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/ricomida", 
+          target:"_blank", class: 
+          "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/ricomida/", 
+          target:"_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>
+                    Vista - contact.html.erb
+                </strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html hljs">&lt;!-- app/views/portfolio/contact.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Contacto&lt;/h2&gt;
+  &lt;div class="row mt-5"&gt;
+   &gt;div class="col-10 col-md-6 mx-auto"&gt;
+     &lt;div class="card p-3 bg-dark"&gt;
+       &lt;%= form_tag("", method: "get", id:"formulario") do %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= text_field_tag(:name, "", class: "form-control", placeholder:"Nombre", required: true)  %&gt;
+           &lt;%= label_tag(:name, "Nombre") %&gt;
+         &lt;% end %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= email_field_tag(:email, "", class: "form-control", placeholder:"Email")  %&gt;
+           &lt;%= label_tag(:email, "Email") %&gt;
+         &lt;% end %&gt;
+         &gt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= text_area_tag(:message, "", class: "form-control", placeholder:"Mensaje", style: "height: 100px")  %&gt;
+           &lt;%= label_tag(:message, "Mensaje") %&gt;
+         &lt;% end %&gt;
+         &lt;%= submit_tag("Enviar", class: "btn btn-outline-light px-4") %&gt;
+       &lt;% end %&gt;
+    &gt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <enidev-button></enidev-button>
             </div>
         </fieldset>
         <h2>Requerimiento 4</h2>
@@ -81,15 +220,20 @@ end</code></pre>
             llamado desde la estructura de <strong>assets de Rails</strong></blockquote>
         <fieldset>
             <legend align="center">
-                <strong>Disposición de los estilos personalizado</strong>
+                <strong>Disposición de los assets</strong>
             </legend>
             <div class="highlight">
                 <pre><code class="hljs">
 📂 app
 └── 📂 assets
-    └── 📂 stylesheets
-        ├── application.css 
-        └── styles.css # 👈 aquí creamos el archivo de estilos personalizados
+    ├── 📂 stylesheets
+    │   ├── application.css 
+    │   └── styles.css # 👈 aquí creamos el archivo de estilos personalizados
+    └── 📂 images # 👈 aquí almacenamos las imagenes necesarias
+        ├── bg_attach.png 
+        ├── iguana.png
+        ├── cuppon.png
+        └── ricomida.png
     </code></pre>
             </div>
         </fieldset>
@@ -174,7 +318,19 @@ end</code></pre>
         <h2>Requerimiento 6</h2>
         <p>Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
             aplicación.</p>
+        <fieldset style="cursor: pointer; text-align: center;"
+            onclick="{window.open('//github.com/mach-911/portfolio-rails-d1', '_blank')}">
+            <legend>
+                <strong>
+                    mach-911/portfolio-rails-d1
+                </strong>
+            </legend>
+            <div>
+                <img src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/github.svg"
+                    alt="logo github" height="100" style="margin-left: 30px;"> &nbsp;&nbsp;
+            </div>
 
+        </fieldset>
         <fieldset>
             <legend align="center">
                 <strong>
