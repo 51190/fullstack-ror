@@ -121,6 +121,7 @@ end</code></pre>
                 <pre><code class="html hljs">&lt;!-- app/views/portfolio/projects.html.erb --&gt;
 &lt;h2 class="text-center text-uppercase py-4"&gt;Mis trabajos&lt;/h2&gt;
 &lt;div class="row"&gt;
+&lt;!-- proyecto 1 --&gt;
   &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
     &lt;div class="card shadow"&gt;
       &lt;%= image_tag "iguana-page", class: "card-img-top" %&gt;
@@ -139,6 +140,7 @@ end</code></pre>
       &lt;/div&gt;
     &lt;/div&gt;  
   &lt;/div&gt;
+&lt;!-- proyecto 2 --&gt;
   &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;                  
     &lt;div class="card shadow"&gt;
       &lt;%= image_tag "cuppons", class: "card-img-top" %&gt;
@@ -157,6 +159,7 @@ end</code></pre>
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+ &lt;!-- proyecto 3 --&gt;
   &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
     &lt;div class="card shadow"&gt;
       &lt;%= image_tag "ricomida", class: "card-img-top" %&gt;
@@ -189,7 +192,7 @@ end</code></pre>
                 <pre><code class="html hljs">&lt;!-- app/views/portfolio/contact.html.erb --&gt;
 &lt;h2 class="text-center text-uppercase py-4"&gt;Contacto&lt;/h2&gt;
   &lt;div class="row mt-5"&gt;
-   &gt;div class="col-10 col-md-6 mx-auto"&gt;
+   &lt;div class="col-10 col-md-6 mx-auto"&gt;
      &lt;div class="card p-3 bg-dark"&gt;
        &lt;%= form_tag("", method: "get", id:"formulario") do %&gt;
          &lt;%= tag.div class: "form-floating mb-3" do %&gt;
@@ -200,13 +203,13 @@ end</code></pre>
            &lt;%= email_field_tag(:email, "", class: "form-control", placeholder:"Email")  %&gt;
            &lt;%= label_tag(:email, "Email") %&gt;
          &lt;% end %&gt;
-         &gt;%= tag.div class: "form-floating mb-3" do %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
            &lt;%= text_area_tag(:message, "", class: "form-control", placeholder:"Mensaje", style: "height: 100px")  %&gt;
            &lt;%= label_tag(:message, "Mensaje") %&gt;
          &lt;% end %&gt;
          &lt;%= submit_tag("Enviar", class: "btn btn-outline-light px-4") %&gt;
        &lt;% end %&gt;
-    &gt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 <enidev-button></enidev-button>
@@ -243,13 +246,28 @@ end</code></pre>
             <strong>link_to</strong>.
         </p>
         <blockquote><strong>Nota:</strong> puedes agregar la clase <strong>container</strong> de bootstrap al
-            <strong>yeld</strong> para modificar los márgenes.
+            <strong>yield</strong> para modificar los márgenes.
         </blockquote>
         <p>Para tener un poco más de orden y organizar la explicación voy a dejar el bloque de código de
-            <strong>HTML</strong> que corresponde a la navegación. Además el contenido lo tendré aislado en una carpeta
-            <strong>shared</strong> en un archivo llamado <strong>_nav.html.erb</strong>, para luego incluirlo a través
+            <strong>HTML</strong> que corresponde a la navegación aislado en una carpeta
+            <strong>shared</strong> en un archivo llamado <strong>_nav.html.erb</strong>, y ya que estamos en eso. ¿Por
+            qué no hacer lo mismo para el footer?, claro que si, para luego incluir ambos archivos a través
             de un helper usando el método <strong>render</strong>
         </p>
+        <fieldset>
+            <legend align="center">
+                <strong>Disposición de los parciales</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="hljs">
+📂 app
+└── 📂 views
+    └── 📂 shared # 👈 contenedor de los partials
+        ├── _nav.html.erb # 👈 fragmento reutilizable
+        └── _footer.html.erb # 👈 fragmento reutilizable
+        </code></pre>
+            </div>
+        </fieldset>
         <fieldset>
             <legend align="center">
                 <strong>Navegación</strong>
@@ -257,7 +275,7 @@ end</code></pre>
             <div class="highlight">
                 <pre><code class="html">
 &lt;!-- app/views/shared/_nav.html.erb --&gt;
-&lt;nav class="navbar navbar-dark navbar-expand-lg bg-dark border-bottom border-2 border-primary"&gt;
+&lt;nav class="navbar navbar-dark navbar-expand-lg border-bottom border-2 border-secondary"&gt;
   &lt;div class="container-fluid"&gt;
     &lt;%= link_to "Portafolio", "#", class: "navbar-brand" %&gt;
     &lt;%= button_tag type: :button,
@@ -275,6 +293,19 @@ end</code></pre>
   &lt;/div&gt;
 &lt;/nav&gt;
     </code></pre>
+                <enidev-button></enidev-button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend align="center">
+                <strong>Footer</strong>
+            </legend>
+            <div class="highlight">
+                <pre><code class="html hljs">
+&lt;footer class="text-center fw-bold py-3 text-dark"&gt;
+    Portafolio &lt;span class="badge bg-warning text-dark"&gt;EniDev911&lt;/span&gt;
+&lt;/footer&gt;
+        </code></pre>
                 <enidev-button></enidev-button>
             </div>
         </fieldset>
@@ -300,7 +331,7 @@ end</code></pre>
     referrerpolicy="no-referrer"&gt;
 &lt;/head&gt;
 &lt;body class="bg-dark text-light"&gt;
-  &lt;!-- Incluimos y renderizamos la navegación --&gt;
+  &lt;!-- renderizamos la navegación --&gt;
   &lt;%= render "shared/nav" %&gt;
   &lt;div class="container my-4 min-vh-100"&gt;
     &lt;%= yield %&gt;
@@ -318,23 +349,25 @@ end</code></pre>
         <h2>Requerimiento 6</h2>
         <p>Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
             aplicación.</p>
-        <fieldset style="cursor: pointer; text-align: center;"
-            onclick="{window.open('//github.com/mach-911/portfolio-rails-d1', '_blank')}">
+        <fieldset style="cursor: pointer; text-align: center;">
             <legend>
                 <strong>
-                    mach-911/portfolio-rails-d1
+                    despliegue/repositorio
                 </strong>
             </legend>
             <div>
+                <img src="https://fly.io/static/images/brand/logo-portrait.svg" height="100"
+                    onclick='{window.open("https://portfolio-rails-d1.fly.dev/", "_blank")}'>
                 <img src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/github.svg"
-                    alt="logo github" height="100" style="margin-left: 30px;"> &nbsp;&nbsp;
+                    alt="logo github" height="100" style="margin-left: 30px;"
+                    onclick="{window.open('//github.com/mach-911/portfolio-rails-d1', '_blank')}">
             </div>
 
         </fieldset>
         <fieldset>
             <legend align="center">
                 <strong>
-                    Replit - proyecto completo
+                    Replit
                 </strong>
             </legend>
             <iframe src="https://replit.com/@marcocontreraas/primer-desafio-rails?embed=true" width="100%"

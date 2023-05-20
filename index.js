@@ -4,7 +4,6 @@ import { Card } from './assets/components/Card.js'
 customElements.define("main-nav", Navigation);
 customElements.define("enidev-card", Card);
 
-
 const main = document.querySelector("main");
 
 const verificar = (item) => {
@@ -68,6 +67,12 @@ const crearDetalle = (badge, desafio, modo) => {
             desafio.maqueta,
             "Ir a maqueta",
             badge.adobe));
+    }
+    if (desafio.fly_io) {
+        details.appendChild(crearLink(
+            desafio.fly_io,
+            "Despliegue fly.io",
+            badge.fly_io));
     }
     return details;
 }
