@@ -68,6 +68,12 @@ const crearDetalle = (badge, desafio, modo) => {
             "Ir a maqueta",
             badge.adobe));
     }
+    if (desafio.notion) {
+        details.appendChild(crearLink(
+            desafio.notion,
+            "Ver en notion",
+            badge.notion));
+    }
     if (desafio.fly_io) {
         details.appendChild(crearLink(
             desafio.fly_io,
@@ -117,37 +123,44 @@ const crearItem = (item, index, arreglo) => {
     return bullet;
 }
 
-
-
-
 main.getAttribute("id") === "main" ?
     fetch("assets/data/desafios.json")
         .then(res => res.json())
-        .then((desafios) => {
-            desafios.forEach((item, index, arr) => {
-                main.appendChild(crearItem(item, index, arr));
-            })
-            setTimeout(() => {
-                // LISTENERS
-                document.querySelectorAll("wc-bullet-chain").forEach(e => {
-                    let show = true;
-                    e.shadowRoot.querySelector(".title").onclick = () => {
-                        if (show) {
-                            e.shadowRoot.querySelectorAll("details").forEach(detail => {
-                                detail.parentElement.style.display = "none";
-                                e.shadowRoot.querySelector(".title").style.color = "#555";
-                                show = false;
-                            })
-                        } else {
-                            e.shadowRoot.querySelectorAll("details").forEach(detail => {
-                                detail.parentElement.style.display = "block";
-                                e.shadowRoot.querySelector(".title").style.color = "#c15";
-                                show = true;
-                            })
-                        }
-                    }
+        .then((data) => {
+            if (window.prompt('Código de autorización') === data.codigo) {
+                data.modulos.forEach((item, index, arr) => {
+                    main.appendChild(crearItem(item, index, arr));
                 })
-            }, 1500)
+                setTimeout(() => {
+                    // LISTENERS
+                    document.querySelectorAll("wc-bullet-chain").forEach(e => {
+                        let show = true;
+                        e.shadowRoot.querySelector(".title").onclick = () => {
+                            if (show) {
+                                e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                                    detail.parentElement.style.display = "none";
+                                    e.shadowRoot.querySelector(".title").style.color = "#555";
+                                    show = false;
+                                })
+                            } else {
+                                e.shadowRoot.querySelectorAll("details").forEach(detail => {
+                                    detail.parentElement.style.display = "block";
+                                    e.shadowRoot.querySelector(".title").style.color = "#c15";
+                                    show = true;
+                                })
+                            }
+                        }
+                    })
+                }, 1500)
+            } else {
+                document.write(`
+                    <body style='display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:100vh;'>
+                    <main-nav></main-nav>
+                        <h1 style='text-align: center'>No estás autorizado</h1>
+                        <img src='https://media.tenor.com/G8tm3S_8Un4AAAAd/que-cochino-emoji-triste.gif' alt='gif' height='200' style='border-radius: 50%'/>
+                    </body>
+                `)
+            }
         })
         .catch(err => console.error(err.message))
 

@@ -1,201 +1,210 @@
-[
-	{
-		"modulo": "Fundamentos de desarrollo front-end",
-		"badges": {
-			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/adobe-xd.png' alt='logo' ><span>maqueta</span></div>",
-			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
-			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
-			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
-			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+{
+	"modulos": [
+		{
+			"modulo": "Fundamentos de desarrollo front-end",
+			"badges": {
+				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/adobe-xd.png' alt='logo' ><span>maqueta</span></div>",
+				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+				"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+				"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>"
+			},
+			"guiados": [
+				{
+					"titulo": "Meet and coffee",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/meet-and-coffee",
+					"github_page": "desafios/meet-and-coffee/index.html"
+				},
+				{
+					"titulo": "Suricata",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/suricata",
+					"github_page": "desafios/suricata/index.html"
+				},
+				{
+					"titulo": "Olivia ros",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/olivia-ros",
+					"github_page": "desafios/guiados/olivia-ros/index.html",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/olivia-ros.zip"
+				},
+				{
+					"titulo": "Notas finales",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/guiados/notas-finales",
+					"github_page": "desafios/guiados/notas-finales/index.html"
+				}
+			],
+			"evaluados": [
+				{
+					"titulo": "Curriculum Vitae",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/curriculum-vitae",
+					"github_page": "desafios/evaluados/curriculum-vitae/index.html",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/curriculum-vitae.zip"
+				},
+				{
+					"titulo": "Iguana Page",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/iguana-page",
+					"github_page": "desafios/evaluados/iguana-page/index.html",
+					"maqueta": "https://xd.adobe.com/spec/ae4025b8-0f4b-4775-4fd9-480cb31faa76-d871/grid",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/iguana-page.zip"
+				},
+				{
+					"titulo": "Cuppon",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/cuppon",
+					"github_page": "desafios/evaluados/cuppon/index.html",
+					"maqueta": "https://xd.adobe.com/spec/aad024b9-c153-43f1-4dd6-da519734e1ee-dce1/grid",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/cuppon.zip"
+				},
+				{
+					"titulo": "Ricomida",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/ricomida",
+					"github_page": "desafios/evaluados/ricomida/index.html",
+					"maqueta": "https://xd.adobe.com/spec/d60d3e21-4554-4e17-4fb1-e61d39f3d2b3-a03c/grid",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/ricomida.zip"
+				}
+			],
+			"examen": {
+				"titulo": "Viajes Chile",
+				"github": "https://github.com/mach-911/viajes-chile",
+				"github_page": "https://mach-911.github.io/viajes-chile/"
+			}
 		},
-		"guiados": [
-			{
-				"titulo": "Meet and coffee",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/meet-and-coffee",
-				"github_page": "desafios/meet-and-coffee/index.html"
+		{
+			"modulo": "Fundamentos de base de datos",
+			"badges": {
+				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+				"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+				"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
 			},
-			{
-				"titulo": "Suricata",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/suricata",
-				"github_page": "desafios/suricata/index.html"
-			},
-			{
-				"titulo": "Olivia ros",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/olivia-ros",
-				"github_page": "desafios/guiados/olivia-ros/index.html",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/olivia-ros.zip"
-			},
-			{
-				"titulo": "Notas finales",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/guiados/notas-finales",
-				"github_page": "desafios/guiados/notas-finales/index.html"
+			"guiados": [
+				{
+					"titulo": "Modelo entidad-relación - Películas Actores",
+					"github": "",
+					"github_page": "desafios/guiados/actores-peliculas/index.html"
+				}
+			],
+			"evaluados": [
+				{
+					"titulo": "Bases de datos relacionales",
+					"github": "",
+					"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
+				},
+				{
+					"titulo": "Definición de tablas",
+					"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
+				},
+				{
+					"titulo": "Modelos entidad relación",
+					"github_page": "desafios/evaluados/entidad-relacion/index.html"
+				}
+			],
+			"examen": {
+				"titulo": "Modelos Entidad/Relación y normalización",
+				"github": "",
+				"github_page": "",
+				"youtube": "https://www.youtube.com/watch?v=DdTgsNYJ170"
 			}
-		],
-		"evaluados": [
-			{
-				"titulo": "Curriculum Vitae",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/curriculum-vitae",
-				"github_page": "desafios/evaluados/curriculum-vitae/index.html",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/curriculum-vitae.zip"
-			},
-			{
-				"titulo": "Iguana Page",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/iguana-page",
-				"github_page": "desafios/evaluados/iguana-page/index.html",
-				"maqueta": "https://xd.adobe.com/spec/ae4025b8-0f4b-4775-4fd9-480cb31faa76-d871/grid",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/iguana-page.zip"
-			},
-			{
-				"titulo": "Cuppon",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/cuppon",
-				"github_page": "desafios/evaluados/cuppon/index.html",
-				"maqueta": "https://xd.adobe.com/spec/aad024b9-c153-43f1-4dd6-da519734e1ee-dce1/grid",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/cuppon.zip"
-			},
-			{
-				"titulo": "Ricomida",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/ricomida",
-				"github_page": "desafios/evaluados/ricomida/index.html",
-				"maqueta": "https://xd.adobe.com/spec/d60d3e21-4554-4e17-4fb1-e61d39f3d2b3-a03c/grid",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/ricomida.zip"
-			}
-		],
-		"examen": {
-			"titulo": "Viajes Chile",
-			"github": "https://github.com/mach-911/viajes-chile",
-			"github_page": "https://mach-911.github.io/viajes-chile/"
-		}
-	},
-	{
-		"modulo": "Fundamentos de base de datos",
-		"badges": {
-			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
-			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
-			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
-			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
 		},
-		"guiados": [
-			{
-				"titulo": "Modelo entidad-relación - Películas Actores",
-				"github": "",
-				"github_page": "desafios/guiados/actores-peliculas/index.html"
-			}
-		],
-		"evaluados": [
-			{
-				"titulo": "Bases de datos relacionales",
-				"github": "",
-				"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
+		{
+			"modulo": "Introducción a la programación con Ruby",
+			"badges": {
+				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+				"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+				"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>",
+				"notion": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/notion.svg' alt='logo' height='48' width='48'><span>notion</span></div>"
 			},
-			{
-				"titulo": "Definición de tablas",
-				"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
-			},
-			{
-				"titulo": "Modelos entidad relación",
-				"github_page": "desafios/evaluados/entidad-relacion/index.html"
-			}
-		],
-		"examen": {
-			"titulo": "Modelos Entidad/Relación y normalización",
-			"github": "",
-			"github_page": "",
-			"youtube": "https://www.youtube.com/watch?v=DdTgsNYJ170"
-		}
-	},
-	{
-		"modulo": "Introducción a la programación con Ruby",
-		"badges": {
-			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
-			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
-			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
-			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
-		},
-		"guiados": [],
-		"evaluados": [
-			{
-				"titulo": "Flujo, ciclos y Métodos (I)",
-				"github": "https://github.com/mach-911/fullstack-ror/tree/piedra-papel-tijera",
-				"github_page": "desafios/evaluados/piedra-papel-tijera/index.html",
-				"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/piedra-papel-tijera.zip",
-				"youtube": ""
-			},
-			{
-				"titulo": "Flujo, ciclos y Métodos (II)",
+			"guiados": [],
+			"evaluados": [
+				{
+					"titulo": "Flujo, ciclos y Métodos (I)",
+					"github": "https://github.com/mach-911/fullstack-ror/tree/piedra-papel-tijera",
+					"github_page": "desafios/evaluados/piedra-papel-tijera/index.html",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/piedra-papel-tijera.zip",
+					"youtube": "",
+					"notion": "https://enidev911.notion.site/Flujo-ciclos-y-M-todos-I-27ebd2b0467e40e49acac4cc47d7e869"
+				},
+				{
+					"titulo": "Flujo, ciclos y Métodos (II)",
+					"github": "",
+					"github_page": "desafios/evaluados/pares-impares-tabla-muplitiplicar/index.html",
+					"zip": "",
+					"youtube": "",
+					"notion": "https://enidev911.notion.site/Flujo-ciclos-y-M-todos-II-1549f818503847058ca4032a0fba51c9"
+				},
+				{
+					"titulo": "Flujo, ciclos y Métodos (III)",
+					"github": "",
+					"github_page": "desafios/evaluados/adivina-numero-imc-salario/index.html",
+					"zip": "",
+					"youtube": "",
+					"notion": "https://enidev911.notion.site/Flujo-ciclo-y-M-todo-III-7996825e4cc34bc4a12e38f561d87b81"
+				},
+				{
+					"titulo": "Arreglos, hashes y APIs",
+					"github": "",
+					"github_page": "desafios/evaluados/hashes-api-nasa/index.html",
+					"zip": "",
+					"youtube": "",
+					"notion": "https://enidev911.notion.site/Arreglos-Hashes-y-APIs-80d052a1ab1a4aa9b349da40d980a501"
+				}
+			],
+			"examen": {
+				"titulo": "Herencia y polimorfismo",
 				"github": "",
-				"github_page": "desafios/evaluados/pares-impares-tabla-muplitiplicar/index.html",
-				"zip": "",
-				"youtube": ""
-			},
-			{
-				"titulo": "Flujo, ciclos y Métodos (III)",
-				"github": "",
-				"github_page": "desafios/evaluados/adivina-numero-imc-salario/index.html",
-				"zip": "",
-				"youtube": ""
-			},
-			{
-				"titulo": "Arreglos, hashes y APIs",
-				"github": "",
-				"github_page": "desafios/evaluados/hashes-api-nasa/index.html",
-				"zip": "",
-				"youtube": ""
-			}
-		],
-		"examen": {
-			"titulo": "Herencia y polimorfismo",
-			"github": "",
-			"github_page": "desafios/evaluados/prueba-intro-ruby/index.html",
-			"youtube": ""
-		}
-	},
-	{
-		"modulo": "Introducción a desarrollo con Ruby on Rails",
-		"badges": {
-			"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
-			"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
-			"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
-			"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
-			"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
-			"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-			"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>",
-			"fly_io": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/fly_io.svg' alt='logo' height='48' width='48'><span>fly.io</span></div>"
-		},
-		"guiados": [],
-		"evaluados": [
-			{
-				"titulo": "Creación de un proyecto",
-				"github": "https://github.com/mach-911/portfolio-rails-d1",
-				"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
-				"zip": "",
+				"github_page": "desafios/evaluados/prueba-intro-ruby/index.html",
 				"youtube": "",
-				"fly_io": "https://portfolio-rails-d1.fly.dev/"
+				"notion": "https://enidev911.notion.site/Examen-Herencia-y-polimorfismo-03c49bd4aafe465e8d679200f5b8a7c9"
+			}
+		},
+		{
+			"modulo": "Introducción a desarrollo con Ruby on Rails",
+			"badges": {
+				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
+				"evaluado": "<small style='color: #222; background: #f67; padding: 3px 5px; border-radius: 8px'>evaluado</small>",
+				"examen": "<small style='color: #fddfff; background: #807cc9; padding: 3px 5px; border-radius: 8px'>examen</small>",
+				"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
+				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
+				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
+				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>",
+				"fly_io": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/fly_io.svg' alt='logo' height='48' width='48'><span>fly.io</span></div>"
 			},
-			{
-				"titulo": "Acelerar la construcción de un proyecto",
+			"guiados": [],
+			"evaluados": [
+				{
+					"titulo": "Creación de un proyecto",
+					"github": "https://github.com/mach-911/portfolio-rails-d1",
+					"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
+					"zip": "",
+					"youtube": "",
+					"fly_io": "https://portfolio-rails-d1.fly.dev/"
+				},
+				{
+					"titulo": "Acelerar la construcción de un proyecto",
+					"github": "",
+					"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
+					"zip": "",
+					"youtube": ""
+				}
+			],
+			"examen": {
+				"titulo": "",
 				"github": "",
-				"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
-				"zip": "",
+				"github_page": "",
 				"youtube": ""
 			}
-		],
-		"examen": {
-			"titulo": "",
-			"github": "",
-			"github_page": "",
-			"youtube": ""
 		}
-	}
-]
+	],
+	"codigo": "eni911"
+}
