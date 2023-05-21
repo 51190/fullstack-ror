@@ -3,7 +3,6 @@
 - **Módulo**: Introducción a la programación con Ruby 
 - **Programa**: Desarrollo Ruby on Rails para emprendimientos de tipo Startup - 0047
 
-![image](https://github.com/mach-911/fullstack-ror/assets/70834807/c10baa0e-83b8-42a5-939b-d241a5fefc16)
 
 ---
 
