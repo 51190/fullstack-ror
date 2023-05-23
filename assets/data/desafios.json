@@ -178,7 +178,8 @@
 				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
 				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>",
-				"fly_io": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/fly_io.svg' alt='logo' height='48' width='48'><span>fly.io</span></div>"
+				"fly_io": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/fly_io.svg' alt='logo' height='48' width='48'><span>fly.io</span></div>",
+				"notion": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/notion.svg' alt='logo' height='48' width='48'><span>notion</span></div>"
 			},
 			"guiados": [],
 			"evaluados": [
@@ -188,14 +189,24 @@
 					"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
 					"zip": "",
 					"youtube": "",
+					"notion": "https://enidev911.notion.site/Creaci-n-de-un-proyecto-f8d9a111ac1245a09c0f6e661d069eaf",
 					"fly_io": "https://portfolio-rails-d1.fly.dev/"
 				},
 				{
 					"titulo": "Acelerar la construcción de un proyecto",
-					"github": "",
-					"github_page": "desafios/evaluados/rails-primer-desafio/index.html",
+					"github": "https://github.com/mach-911/template-rails-d2",
+					"zip": "https://github.com/mach-911/template-rails-d2/archive/refs/heads/main.zip",
+					"youtube": "",
+					"notion": "",
+					"fly_io": "https://template-rails-d2.fly.dev/"
+				},
+				{
+					"titulo": "Almacenado datos en rails",
+					"github": "https://github.com/mach-911/rails-movies-d3",
 					"zip": "",
-					"youtube": ""
+					"youtube": "",
+					"notion": "",
+					"fly_io": "https://rails-movies-d3.fly.dev/"
 				}
 			],
 			"examen": {
