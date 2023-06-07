@@ -127,7 +127,7 @@ main.getAttribute("id") === "main" ?
     fetch("assets/data/desafios.json")
         .then(res => res.json())
         .then((data) => {
-            if (window.prompt('Código de autorización') === data.codigo) {
+            if (localStorage.getItem("auth") === data.codigo) {
                 data.modulos.forEach((item, index, arr) => {
                     main.appendChild(crearItem(item, index, arr));
                 })
@@ -152,7 +152,12 @@ main.getAttribute("id") === "main" ?
                         }
                     })
                 }, 1500)
-            } else {
+            }
+            else if (window.prompt('Código de autorización') === data.codigo) {
+                localStorage.setItem("auth", data.codigo);
+                location.reload();
+            }
+            else {
                 document.write(`
                     <body style='display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:100vh;'>
                     <main-nav></main-nav>

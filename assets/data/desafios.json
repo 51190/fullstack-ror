@@ -80,7 +80,8 @@
 				"github": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github</span></div>",
 				"github_page": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/github.png' alt='logo' height='48' width='48'><span>github pages</span></div>",
 				"zip": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
-				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>"
+				"youtube": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/youtube.png' alt='logo' ><span>youtube</span></div>",
+				"notion": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/notion.svg' alt='logo' height='48' width='48'><span>notion</span></div>"
 			},
 			"guiados": [
 				{
@@ -91,16 +92,23 @@
 			],
 			"evaluados": [
 				{
-					"titulo": "Bases de datos relacionales",
+					"titulo": "1. Bases de datos relacionales",
 					"github": "",
+					"notion": "https://enidev911.notion.site/Desaf-o-1-Introducci-n-a-bases-de-datos-8bf76b9c3d2d41a79976f1ca932c338e",
 					"youtube": "https://www.youtube.com/watch?v=XyKzqBwZQtw&feature=youtu.be"
 				},
 				{
-					"titulo": "Definición de tablas",
-					"github": "https://github.com/mach-911/desafio3-definicion-de-tablas"
+					"titulo": "2. Manipulación de datos",
+					"github_page": "https://mach-911.github.io/desafio2-manipulando-datos/",
+					"zip": "https://github.com/mach-911/desafio2-manipulando-datos/archive/refs/heads/pdf.zip"
 				},
 				{
-					"titulo": "Modelos entidad relación",
+					"titulo": "3. Definición de tablas",
+					"github": "https://github.com/mach-911/desafio3-definicion-de-tablas",
+					"notion": "https://enidev911.notion.site/Desaf-o-2-Definici-n-de-tablas-492579b741174239b60c6103688a02ca"
+				},
+				{
+					"titulo": "4. Modelos entidad relación",
 					"github_page": "desafios/evaluados/entidad-relacion/index.html"
 				}
 			],
