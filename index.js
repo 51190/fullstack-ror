@@ -80,6 +80,12 @@ const crearDetalle = (badge, desafio, modo) => {
             "Despliegue fly.io",
             badge.fly_io));
     }
+    if (desafio.hackmd) {
+        details.appendChild(crearLink(
+            desafio.hackmd,
+            "Despliegue fly.io",
+            badge.hackmd));
+    }
     return details;
 }
 
