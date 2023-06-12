@@ -245,7 +245,12 @@
 					"hackmd": "https://hackmd.io/@enidev911/bookstore-guiado"
 				}
 			],
-			"evaluados": [],
+			"evaluados": [
+				{
+					"titulo": "2. The rial news",
+					"hackmd": "https://hackmd.io/@enidev911/desafio-2-therialnews"
+				}
+			],
 			"examen": {
 				"titulo": "",
 				"github": "",
