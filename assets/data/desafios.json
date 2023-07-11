@@ -1,7 +1,7 @@
 {
 	"modulos": [
 		{
-			"modulo": "Fundamentos de desarrollo front-end",
+			"modulo": "M-2: Fundamentos de desarrollo front-end",
 			"badges": {
 				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/adobe-xd.png' alt='logo' ><span>maqueta</span></div>",
 				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
@@ -71,7 +71,7 @@
 			}
 		},
 		{
-			"modulo": "Fundamentos de base de datos",
+			"modulo": "M-3: Fundamentos de base de datos",
 			"badges": {
 				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
@@ -120,7 +120,7 @@
 			}
 		},
 		{
-			"modulo": "Introducción a la programación con Ruby",
+			"modulo": "M-4: Introducción a la programación con Ruby",
 			"badges": {
 				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
@@ -176,7 +176,7 @@
 			}
 		},
 		{
-			"modulo": "Introducción a desarrollo con Ruby on Rails",
+			"modulo": "M-5: Introducción a desarrollo con Ruby on Rails",
 			"badges": {
 				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
@@ -225,7 +225,7 @@
 			}
 		},
 		{
-			"modulo": "Desarrollo de aplicaciones con Ruby on Rails",
+			"modulo": "M-6: Desarrollo de aplicaciones con Ruby on Rails",
 			"badges": {
 				"adobe": "<div style='display:inline-flex; flex-direction: column; align-items: center'><img src='assets/img/zip.png' alt='logo' ><span>descargar zip</span></div>",
 				"guiado": "<small style='color: #222; background: #8d0; padding: 3px 5px; border-radius: 8px'>guiado</small>",
@@ -241,6 +241,11 @@
 			},
 			"guiados": [
 				{
+					"titulo": "Primer blog",
+					"hackmd": "https://hackmd.io/@desarrollo-aplicaciones-ruby-on-rails/primer-blog",
+					"github": "https://github.com/EniDev911/little-blog-rails"
+				},
+				{
 					"titulo": "Relaciones 1-N Bookstore",
 					"hackmd": "https://hackmd.io/@enidev911/bookstore-guiado"
 				}
@@ -248,7 +253,8 @@
 			"evaluados": [
 				{
 					"titulo": "2. The rial news",
-					"hackmd": "https://hackmd.io/@enidev911/desafio-2-therialnews"
+					"hackmd": "https://hackmd.io/@enidev911/desafio-2-therialnews",
+					"github": "https://github.com/mach-911/the_rial_news"
 				}
 			],
 			"examen": {
