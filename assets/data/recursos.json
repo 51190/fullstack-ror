@@ -1,0 +1,23 @@
+{
+    "rs_pdf": {
+        "guias":{
+            "git": [
+                {
+                    "title": "GIT guía inicial",
+                    "path": "assets/pdf/git-guia-inicial.pdf?#"
+                },
+                {
+                    "title": "GIT Cheatsheet",
+                    "path": "assets/pdf/git-cheatsheet.pdf?#"
+                }
+            ],
+            "html": [
+                {
+                    "title": "HTML Cheatsheet",
+                    "path": "assets/pdf/html-cheatsheet.pdf?#"
+                }
+            ]
+        }
+
+    }
+}

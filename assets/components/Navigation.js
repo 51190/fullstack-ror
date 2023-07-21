@@ -88,6 +88,8 @@ template.innerHTML = /*html*/`
     Gitbook ruby on rails</a></li>
     <li><a href="software.html" class="menu__link">
     Software</a></li>
+    <li><a href="recursos.html" class="menu__link">
+    Recursos</a></li>
 	</ul>
 </nav>
 `
