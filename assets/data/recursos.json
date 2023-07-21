@@ -4,17 +4,27 @@
             "git": [
                 {
                     "title": "GIT guía inicial",
-                    "path": "assets/pdf/git-guia-inicial.pdf?#"
+                    "path": "assets/pdf/git-guia-inicial.pdf?#view=fitH"
                 },
                 {
                     "title": "GIT Cheatsheet",
-                    "path": "assets/pdf/git-cheatsheet.pdf?#"
+                    "path": "assets/pdf/git-cheatsheet.pdf?#view=fitH"
                 }
             ],
             "html": [
                 {
                     "title": "HTML Cheatsheet",
-                    "path": "assets/pdf/html-cheatsheet.pdf?#"
+                    "path": "assets/pdf/html-cheatsheet.pdf?#view=fitH"
+                }
+            ],
+            "ruby": [
+                {
+                    "title": "RUBY Arrays",
+                    "path": "assets/pdf/ruby-arrays.pdf?#view=fit"
+                },
+                {
+                    "title": "Helper rails",
+                    "path": "assets/pdf/rails-helpers-views.pdf?#view=fitH"
                 }
             ]
         }

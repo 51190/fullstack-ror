@@ -72,6 +72,7 @@
   <div class="group-btn-">
     <button id="git" class="btn" onclick="{fetch_guias('git')}">Git</button>
     <button id="git" class="btn" onclick="{fetch_guias('html')}">Html</button>
+    <button id="git" class="btn" onclick="{fetch_guias('ruby')}">Ruby</button>
   </div>
     <ul id="list">
     </ul><br>
@@ -117,7 +118,7 @@
             data.rs_pdf.guias[cat].forEach((pdf, index, arr) => {
                 const li = document.createElement("li");
                 li.textContent = pdf.title;
-                li.onclick = () => ifr.src = pdf.path+"view=fitH";
+                li.onclick = () => ifr.src = pdf.path;
                 ul.style.alignSelf = "start"
                 ul.appendChild(li);
             });
