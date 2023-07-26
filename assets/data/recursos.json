@@ -25,6 +25,11 @@
                 {
                     "title": "Helper rails",
                     "path": "assets/pdf/rails-helpers-views.pdf?#view=fitH"
+                },
+                {  
+                    "title": "Rais 7 link_to",
+                    "path": "assets/pdf/rails-link_to.pdf?#view=fitH"
+
                 }
             ]
         }
