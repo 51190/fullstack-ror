@@ -23,6 +23,10 @@
                     "path": "assets/pdf/ruby-arrays.pdf?#view=fit"
                 },
                 {
+                    "title": "Ruby Hash",
+                    "path": "assets/pdf/ruby-hash.pdf?#view=fit"
+                },
+                {
                     "title": "Helper rails",
                     "path": "assets/pdf/rails-helpers-views.pdf?#view=fitH"
                 },
