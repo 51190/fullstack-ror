@@ -23,7 +23,7 @@
         border: 2px solid #323639;
     }
 
-    button {
+    button.ifr-btn {
         background: #f93939;
         border: none;
         padding: 7px 14px;
@@ -31,13 +31,15 @@
         cursor: pointer;
     }
     button.btn {
-        background: #191919;
+        background: transparent;
         border: none;
-        padding: 7px 14px;
-        border-radius: 6px;
+        height: 40px;
         color: #fff;
         cursor: pointer;
         display: inline-block;
+    }
+    button.btn img {
+        height:100%;
     }
     .group-btn {
         display: flex;
@@ -57,33 +59,51 @@
     #list {
         list-style: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        gap:18px;
     }
     #list > * {
         cursor: pointer;
         font-weight: 600;
         color: #f93939;
+        text-decoration: underline wavy 2px;
+        text-underline-offset: 10px;
+    }
+    #list > *:hover {
+        background-color: #04010339;
+    }
+    .flex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap:0;
     }
     </style>
 </head>
 
 <body>
     <main-nav></main-nav>
-
   <div class="group-btn-">
-    <button id="git" class="btn" onclick="{fetch_guias('git')}">Git</button>
-    <button id="git" class="btn" onclick="{fetch_guias('html')}">Html</button>
-    <button id="git" class="btn" onclick="{fetch_guias('ruby')}">Ruby</button>
+    <button id="git" class="btn" onclick="{fetch_guias('git')}">
+    <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=plastic" alt="Git Badge">
+    </button>
+    <button id="git" class="btn" onclick="{fetch_guias('html')}">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=plastic" alt="HTML5 Badge">
+    </button>
+    <button id="git" class="btn" onclick="{fetch_guias('ruby')}">
+    <img src="https://img.shields.io/badge/Ruby-CC342D?logo=ruby&logoColor=fff&style=plastic" alt="Ruby Badge">
+    </button>
   </div>
     <ul id="list">
     </ul><br>
+    <div class="flex">
     <div class="group-btn-ifr">
-        <button onclick="{document.getElementById('myframe').requestFullscreen()}" style="display: block;">fullscreen</button>
-        <button id="open_blank">Abrir en nueva ventana</button>
-        <button id="toolbar">Ocultar toolbar</button>
+        <button class="ifr-btn" onclick="{document.getElementById('myframe').requestFullscreen()}" style="display: block;">fullscreen</button>
+        <button id="open_blank" class="ifr-btn">Abrir en nueva ventana</button>
+        <button id="toolbar" class="ifr-btn">Ocultar toolbar</button>
     </div>
     <iframe id="myframe" name="myframe" src="./assets/pdf/git-cheatsheet.pdf?#zoom=100&view=fitH&navpanes=0&scrollbar=0" style="width:90%;height: 600px; overflow: hidden !important;" type="application/pdf" scrolling="no" frameborder="0"></iframe>
-
- 
+    </div>
 <script>
     const toolbar_btn = document.querySelector("#toolbar");
     const open_blank = document.getElementById("open_blank");

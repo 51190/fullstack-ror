@@ -254,7 +254,12 @@
 				{
 					"titulo": "2. The rial news",
 					"hackmd": "https://hackmd.io/@desarrollo-aplicaciones-ruby-on-rails/desafio-2-therialnews",
-					"github": "https://github.com/mach-911/the_rial_news"
+					"github": "https://github.com/mach-911/the_rial_news",
+					"fly_io": "https://autumn-snow-2074.fly.dev/"
+				},
+				{
+					"titulo": "3. Crazy4Cats",
+					"hackmd": "https://hackmd.io/@desarrollo-aplicaciones-ruby-on-rails/crazy-4-cats"
 				}
 			],
 			"examen": {
