@@ -17,6 +17,12 @@
                     "path": "assets/pdf/html-cheatsheet.pdf?#view=fitH"
                 }
             ],
+            "css": [
+                {
+                    "title": "CSS3 Cheatsheet",
+                    "path": "assets/pdf/css3-cheatsheet.pdf?#view=fitH"
+                }
+            ],
             "ruby": [
                 {
                     "title": "RUBY Arrays",
