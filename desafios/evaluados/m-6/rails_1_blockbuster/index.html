@@ -20,7 +20,51 @@
     <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser requeridos</p>
  
       <button id="download_btn" class="download" onclick="{this.textContent='Descargando...'; download_file('../../../../assets/zip/apoyo_desafio_blockbuster.zip')}">Material de apoyo</button>
-   
+   <p>Tenemos que fijarnos en la versión que se creo el proyecto el material de apoyo:</p>
+  <fieldset class="first">
+    <legend align="center"><strong>Levantar el servidor</strong></legend>
+    <div class="highlight">
+      <pre><code class="bash hljs">rails server</code></pre>
+      <enidev-button></enidev-button>
+    </div>
+  </fieldset>
+<blockquote>Podemos observar en la terminal que si tenemos la versión que indica se ejecutará el servidor pero nos pedira instalar las dependencias, de lo contrario nos mostrará un mensaje. <strong>Ejemplo:</strong>
+  <br><br>
+  <div class="highlight">
+    <pre><code class="bash hljs">Your Ruby version is 3.0.3, but your Gemfile specified 3.1.1</code></pre>
+  </div>
+</blockquote>
+<p>Si ese es el caso, debemos cambiar a la versión de Ruby que tenemos en el sistema y luego ejecutamos el comando para instalar las dependencias:</p>
+  <fieldset class="first">
+    <legend align="center"><strong>Instalar dependencias</strong></legend>
+    <div class="highlight">
+      <pre><code class="bash hljs">bundle install</code></pre>
+      <enidev-button></enidev-button>
+    </div>
+  </fieldset>
+  <blockquote>Esto puede tardar varios segundos o minutos</blockquote>
+  <p>Bueno ahora repetimos el primer paso, para lanzar el servidor usando el comando: <code style="font-size:17px"><mark>rails server</mark></code> <br>y entramos a  <a href="http://localhost:3000" target="_blank" class="link">http://localhost:3000</a></p>
+
+  <figure>
+    <img src="./assets/01.png" alt="lanzando el servidor">
+    <figcaption>captura de pantalla: lanzando el servidor</figcaption>
+  </figure>
+<p>El mensaje es claro, no se pudo establecer conexión con el servidor de Postgres, para solucionarlo debemos agregar nuestros datos de conexión en <span class="path">config/database.yml</span>:</p>
+  <fieldset class="first">
+    <legend align="center"><strong>Agregar datos de conexión</strong></legend>
+    <div class="highlight">
+      <pre><code class="yml hljs">username: postgres
+password: postgres</code></pre>
+      <enidev-button></enidev-button>
+    </div>
+  </fieldset>
+  <p>Para comprobar que está correcta nuestra conexión con Postgres, ejecutamos el comando para crear la base de datos:</p>
+  <fieldset class="first">
+    <legend align="center"><strong>Crear la base de datos</strong></legend>
+    <div class="highlight">
+      <pre><code class="bash hljs">rails db:create</code></pre>
+      <enidev-button></enidev-button>
+    </div>
   </div>
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -48,7 +92,6 @@
         a.click();
         window.URL.revokeObjectURL(url);
         btn_download.textContent = "Material de Apoyo"
-        // btn_download.disabled = false
       }).catch((e) => alert(e.message))
     }
   </script>
