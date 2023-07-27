@@ -252,6 +252,10 @@
 			],
 			"evaluados": [
 				{
+					"titulo": "1. BlockBuster",
+					"github_page": "desafios/evaluados/m-6/rails_1_blockbuster/index.html"
+				},
+				{
 					"titulo": "2. The rial news",
 					"hackmd": "https://hackmd.io/@desarrollo-aplicaciones-ruby-on-rails/desafio-2-therialnews",
 					"github": "https://github.com/mach-911/the_rial_news",

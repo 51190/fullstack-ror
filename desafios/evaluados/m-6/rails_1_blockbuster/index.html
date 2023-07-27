@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio evaluado: M6 - 1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <div class="doc-body">
+    <h1 align="center">Desafío evaluado: M6 1. BlockBuster</h1><br>
+    <h4 align="center">Marco Contreras</h4>
+
+    <h2>Requerimientos</h2>
+
+    <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser requeridos</p>
+ 
+      <button id="download_btn" class="download" onclick="{this.textContent=''; this.disabled = true; download_file('https://drive.google.com/uc?export=download&confirm=t&id=1JnboGpZ_PdTf26R1So7o-2dkZYqa7nIa')}">Material de apoyo</button>
+   
+  </div>
+  <script type="module" src="./assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll()
+    const btn_download = document.getElementById("download_btn");
+
+    const download_file = (url) => {
+      fetch(url, { 
+        method: "GET",
+        mode: "no-cors"
+      })
+      .then(response => {
+        return response.blob()
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = "Apoyo_BluckBuster.zip"
+        a.click();
+        window.URL.revokeObjectURL(url);
+        btn_download.textContent = "Material de Apoyo"
+        btn_download.disabled = false
+      }).catch((e) => alert(e.message))
+    }
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,23 @@
+@import "../../../../../assets/css/docs.css";
+
+button.download {
+  display: inline-block;
+  border: none;
+  padding: 7px 12px;
+  color: rgb(233, 46, 102);
+  z-index: 3;
+  background: transparent;
+  position: relative;
+  margin:0;
+  font-size: 18px;
+  justify-self: start;
+  cursor: pointer;
+}
+
+button.download:hover {
+  background: #efe3e3;
+}
+
+button.download:disabled {
+  color: #383939;
+}
