@@ -13,9 +13,9 @@
 <body>
   <div class="doc-body">
     <h1 align="center">Desafío evaluado: M6 1. BlockBuster</h1><br>
-    <h4 align="center">Marco Contreras</h4>
+    <h4 align="center"><small>Marco Contreras</small></h4>
 
-    <h2>Requerimientos</h2>
+    <h2>Requerimiento 1</h2>
 
     <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser corregidos</p>
  
@@ -75,18 +75,69 @@
       <enidev-button></enidev-button>
     </div>
     </fieldset>
+<p>
+  Volvemos a lanzar el servidor, y veremos otro error pero se trata de que aún no se han creado las tablas y existen archivos de migración pendientes por ejecutar. Simplemente presionamos el botón que nos ofrece para correr las migraciones:
+</p>
+<figure>
+  <img src="assets/03.png" alt="migraciones">
+  <figcaption>captura de pantalla: correr las migraciones</figcaption>
+</figure>
 
-      <fieldset class="first">
-        <legend align="center"><strong>Crear la base de datos</strong></legend>
-        <div class="highlight">
-          <pre><code class="ruby hljs">class Comment < ApplicationRecord
-  belongs_to :publication 
-  belongs_to :user 
-end
-</code></pre>
-          <enidev-button></enidev-button>
-        </div>
-      </fieldset>
+<p>Ya estaría mostrando el proyecto de forma normal y con esto se corrigieron los errores que se mencionaban al comienzo</p>
+
+<figure>
+  <img src="assets/04.png" alt="interfaz del proyecto" style="box-shadow: 3px 4px 12px #00000018;">
+  <figcaption>captura de pantalla: proyecto funcionando</figcaption>
+</figure>
+<h2>Requerimiento 2</h2>
+<p>Al editar una película se le puede asignar un cliente</p>
+<p>Si nos fijamos al momento de haber creado la película ya la estamos asignando a un cliente</p>
+<h2>Requerimiento 3</h2>
+<p>El index de clientes debe mostrar si un cliente tiene una pelicula arrendada</p>
+<p>Para eso nos dirigimos a la vista <span class="path">app/views/clients/_client.html.erb</span> y añadimos lo siguiente:</p>
+<fieldset class="first">
+  <legend align="center"><strong>
+    partial - _client.html.erb
+  </strong></legend>
+  <div class="highlight">
+    <pre>
+<code class="erb hljs">&lt;div id="<%= dom_id client %>"&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;
+      <%= client.id %>
+    &lt;/th&gt;
+    &lt;td&gt;
+      <%= client.name %>
+    &lt;/td&gt;
+    &lt;td&gt;
+      <%= client.age %>
+    &lt;/td&gt;
+    &lt;td&gt;
+    <% if client.movies.present? %>
+      <%= select_tag 'movies' , options_for_select(client.movies), class: 'form-select' %>
+    <% else %>
+      No tiene película arrendada
+    <% end %>
+    &lt;/td&gt;
+    &lt;td align="center"&gt;
+      <%= link_to "Ver cliente" , client, class: 'btn btn-info' %>
+    &lt;/td&gt;
+    &lt;td align="center"&gt;
+      <%= link_to edit_client_path(client) do %>
+        &lt;i class="fa fa-pen bg-warning rounded p-2 text-dark"&gt;&lt;/i&gt;
+      <% end %>
+    &lt;/td&gt;
+    &lt;td align="center"&gt;
+      <%= button_to @client, method: :delete, class: 'border-0 bg-body' do %>
+        &lt;i class="fa fa-times bg-danger rounded p-2 text-light"&gt;&lt;/i&gt;
+      <% end %>
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+  </div>
+</fieldset>
+
   </div>
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
