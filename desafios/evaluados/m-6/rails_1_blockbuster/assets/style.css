@@ -39,3 +39,16 @@ a.link {
   left: 0;
   top:0;
 }
+
+
+.yml_db {
+  padding-left: 33px !important;
+}
+.yml_db::before {
+  content: "17\A 18\A 19\A 20\A 21\A 22";
+  position: absolute;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}

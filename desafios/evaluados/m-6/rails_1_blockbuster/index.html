@@ -17,7 +17,7 @@
 
     <h2>Requerimientos</h2>
 
-    <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser requeridos</p>
+    <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser corregidos</p>
  
       <button id="download_btn" class="download" onclick="{this.textContent='Descargando...'; download_file('../../../../assets/zip/apoyo_desafio_blockbuster.zip')}">Material de apoyo</button>
    <p>Tenemos que fijarnos en la versión que se creo el proyecto el material de apoyo:</p>
@@ -35,6 +35,10 @@
   </div>
 </blockquote>
 <p>Si ese es el caso, debemos cambiar a la versión de Ruby que tenemos en el sistema y luego ejecutamos el comando para instalar las dependencias:</p>
+  <figure>
+    <img src="assets/gemfile.png" alt="gemfile">
+    <figcaption>captura de pantalla: gemfile</figcaption>
+  </figure>
   <fieldset class="first">
     <legend align="center"><strong>Instalar dependencias</strong></legend>
     <div class="highlight">
@@ -53,8 +57,13 @@
   <fieldset class="first">
     <legend align="center"><strong>Agregar datos de conexión</strong></legend>
     <div class="highlight">
-      <pre><code class="yml hljs">username: postgres
-password: postgres</code></pre>
+      <pre>
+<code class="yml hljs yml_db">default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres # 👈 tu usuario para postgres
+  password: postgres # 👈 tu password para postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %></code></pre>
       <enidev-button></enidev-button>
     </div>
   </fieldset>
@@ -65,11 +74,27 @@ password: postgres</code></pre>
       <pre><code class="bash hljs">rails db:create</code></pre>
       <enidev-button></enidev-button>
     </div>
+    </fieldset>
+
+      <fieldset class="first">
+        <legend align="center"><strong>Crear la base de datos</strong></legend>
+        <div class="highlight">
+          <pre><code class="ruby hljs">class Comment < ApplicationRecord
+  belongs_to :publication 
+  belongs_to :user 
+end
+</code></pre>
+          <enidev-button></enidev-button>
+        </div>
+      </fieldset>
   </div>
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script>
     hljs.highlightAll()
+
+    // const block = document.querySelector(".yml");
+
     const btn_download = document.getElementById("download_btn");
 
     const download_file = (url) => {
