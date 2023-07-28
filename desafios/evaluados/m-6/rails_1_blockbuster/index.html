@@ -254,17 +254,56 @@
     <%= form.text_field :age, class: "form-control" %>
   &lt;/div&gt;
   &lt;div&gt;
-      <%= form.submit "Crear" , class: "btn btn-success" %>
+      <%= form.submit class: "btn btn-success" %>
   &lt;/div&gt;
 <% end %></code></pre>
 <enidev-button></enidev-button>
   </div>
 </fieldset>
+<p>Ahora remplazamos el contenido en <span class="path">config/locales/en.yml</span>:</p>
+<fielsed class="first">
+  <legend align="center">
+    <strong>Traducir mensajes</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="yml hljs">en:
+  activerecord:
+    models:
+      client: cliente
+      movie: "película"
+    helpers:
+      submit:
+        create: "Crear %{model}"
+        update: "Actualizar cambios en %{model}"</code></pre>
+  <enidev-button></enidev-button>
+  </div>
+</fielsed>
 <p>Y como resultado tenemos la vista de nuevo cliente mejorada:</p>
 <figure>
   <img src="assets/clientes-new.png" alt="vista new de clientes" style="box-shadow: 3px 4px 12px #00000018;">
   <figcaption>captura de pantalla: vista de nuevo cliente</figcaption>
 </figure>
+  <p>Ahora le toca al turno a la vista de editar <span class="path">app/views/clients/edit.html.erb</span>:</p>
+  <fieldset class="first">
+    <legend align="center"><strong>Edit - Clientes</strong></legend>
+    <div class="highlight">
+      <pre><code class="hljs html">&lt;h2 align="center"&gt;Editar cliente&lt;/h2&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-10 col-md-6 mx-auto"&gt;
+    <%= render "form" , client: @client %>
+    &lt;br&gt;
+    <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info" %>
+    <%= link_to "Ver cliente" , @client, class: "btn btn-primary" %>
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+    </div>
+  </fieldset>
+  <p>Y como resultado, tenemos la vista de editar cliente mejorada:</p>
+  <figure>
+    <img src="assets/clientes-edit.png" alt="vista edit de clientes" style="box-shadow: 3px 4px 12px #00000018;">
+    <figcaption>captura de pantalla: vista de editar cliente</figcaption>
+  </figure>
   </div>
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
