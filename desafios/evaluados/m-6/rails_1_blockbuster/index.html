@@ -17,7 +17,8 @@
 
     <h2>Requerimiento 1</h2>
 
-    <p>Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser corregidos</p>
+    <p class="req">Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser corregidos (recuerda el uso de Faker)</p>
+    <small style="display: block; text-align: center">el uso de Faker lo dejaré para el final 😆</small><br>
  
       <button id="download_btn" class="download" onclick="{this.textContent='Descargando...'; download_file('../../../../assets/zip/apoyo_desafio_blockbuster.zip')}">Material de apoyo</button>
    <p>Tenemos que fijarnos en la versión que se creo el proyecto el material de apoyo:</p>
@@ -84,7 +85,6 @@
 </figure>
 
 <p>Ya estaría mostrando el proyecto de forma normal y con esto se corrigieron los errores que se mencionaban al comienzo</p>
-
 <figure>
   <img src="assets/04.png" alt="interfaz del proyecto" style="box-shadow: 3px 4px 12px #00000018;">
   <figcaption>captura de pantalla: proyecto funcionando</figcaption>
@@ -304,7 +304,65 @@
     <img src="assets/clientes-edit.png" alt="vista edit de clientes" style="box-shadow: 3px 4px 12px #00000018;">
     <figcaption>captura de pantalla: vista de editar cliente</figcaption>
   </figure>
+  <p>Ahora nos queda hacer una vista mejor para el detalle del cliente, vamos a <span class="app/views/clients/show.html.erb"></span></p>
+  <fieldset class="first">
+    <legend align="center">
+      <strong>Show - Clientes</strong>
+    </legend>
+    <div class="highlight">
+      <pre><code class="html hljs">&lt;p style="color: green"&gt;
+  &lt;%= notice %&gt;
+&lt;/p&gt;
+&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Nombre: <%= @client.name %>&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Películas arrendadas:&lt;/p&gt;
+    &lt;%= select_tag 'movies' , options_for_select(@client.movies.present? ? @client.movies : ["No tiene películas aún"]),
+      class: 'form-select' %&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info" %>
+    <%= link_to "Editar cliente" , edit_client_path(@client), class: "btn btn-warning" %>
+    <%= link_to "Eliminar cliente" , @client, class: "btn btn-danger" , data: {turbo_method: :delete} %>
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+    </div>
+  </fieldset>
+  <p>El resultado de lo anterior:</p>
+    <figure>
+      <img src="assets/clientes-show.png" alt="vista show de clientes" style="box-shadow: 3px 4px 12px #00000018;">
+      <figcaption>captura de pantalla: vista del detalle de cliente</figcaption>
+    </figure>
+  <p>Pasando a las películas, voy a comenzar modificando la vista del detalle <span class="path">app/views/movies/show.html.erb</span>:</p>
+  <fieldset class="first">
+    <legend align="center">
+      <strong>Show - Películas</strong>
+    </legend>
+    <div class="highlight">
+      <pre><code class="html hljs">&lt;p style="color: green"&gt;
+  <%= notice %>
+&lt;/p&gt;
+<%= render @movie %>
+&lt;div&gt;
+  <%= link_to edit_movie_path(@movie), class: "btn btn-warning" do %>
+    &lt;i class="fa fa-pen"&gt;&lt;/i&gt;
+  <% end %>
+  <%= link_to "Volver to películas" , movies_path, class: "btn btn-info" %>
+  <%= link_to @movie, class: "btn btn-danger" , data: {turbo_method: :delete} do %>
+      &lt;i class="fa fa-times text-light"&gt;&lt;/i&gt;
+  <% end %>
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+    </div>
+  </fieldset>
+  <p>El resultado de lo anterior:</p>
+      <figure>
+        <img src="assets/peliculas-show.png" alt="vista show de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
+        <figcaption>captura de pantalla: vista del detalle de la película</figcaption>
+      </figure>
   </div>
+
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script>
