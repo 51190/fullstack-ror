@@ -361,6 +361,94 @@
         <img src="assets/peliculas-show.png" alt="vista show de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
         <figcaption>captura de pantalla: vista del detalle de la película</figcaption>
       </figure>
+      <p>Ahora hacemos unas modificaciones en la vista index <span class="path">app/views/movies/index.html.erb</span>:</p>
+      <fieldsed class="first">
+        <legend align="center">
+          <strong>
+            Index - Películas
+          </strong>
+        </legend>
+        <div class="highlight">
+          <pre><code class="html hljs">&lt;p style="color: green"&gt;
+  <%= notice %>
+&lt;/p&gt;
+&lt;div class="container"&gt;
+  &lt;h2 align="center"&gt;Películas&lt;/h2&gt;
+  <%= link_to new_movie_path, class:"text-decoration-none" do %>
+    &lt;i class="fa fa-plus-circle fs-4"&gt;&lt;/i&gt;
+    &lt;span&gt;Película&lt;/span&gt;
+  <% end %>
+  &lt;div id="movies"&gt;
+    &lt;div class="row"&gt;
+      <%= render @movies %>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+        </div>
+      </fieldsed>
+  <p>El resultado de lo anterior:</p>
+        <figure>
+          <img src="assets/peliculas-index.png" alt="vista index de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
+          <figcaption>captura de pantalla: vista index de películas</figcaption>
+        </figure>
+<p>Ahora sigo con el partial de <code>_form</code> <span class="path">app/views/movies/_form.html.erb</span>:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>partial form - Películas</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="html hljs">
+<%= form_with(model: movie) do |form| %>
+  <% if movie.errors.any? %>
+    &lt;div style="color: red"&gt;
+    &lt;h2&gt;
+      <%= pluralize(movie.errors.count, "error" ) %> prohibited this movie from being saved:
+    &lt;/h2&gt;
+    &lt;ul&gt;
+      <% movie.errors.each do |error| %>
+        &lt;li&gt;<%= error.full_message %>&lt;/li&gt;
+      <% end %>
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  <% end %>
+  &lt;div class="mb-3"&gt;
+    <%= form.label :name, "Nombre" , style: "display: block" %>
+    <%= form.text_field :name, class:"form-control" %>
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    <%= form.label :client_id, "Cliente" , style: "display: block" %>
+    <%= form.select :client_id, options_for_select(@clients), {}, {class: "form-select" } %>
+  &lt;/div&gt;
+  &lt;div&gt;
+    <%= form.submit class: "btn btn-success" %>
+  &lt;/div&gt;
+<% end %></code></pre>
+<enidev-button></enidev-button>
+  </div>
+</fieldset>
+<p>Para centrarlo vamos añadir algunas clases en <span class="path">app/views/movies/new.html.erb</span></p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>New - Películas</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="html hljs">&lt;h2 align="center">Nueva película&lt;/h2&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-10 col-md-6 mx-auto"&gt;
+    <%= render "form" , movie: @movie %>
+    &lt;br&gt;
+    <%= link_to "Volver a películas" , movies_path, class: "btn btn-info" %>
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<enidev-button></enidev-button>
+  </div>
+</fieldset>
+<p>EL resultado de lo anterior:</p>
+      <figure>
+        <img src="assets/peliculas-new.png" alt="vista new de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
+        <figcaption>captura de pantalla: vista de nueva película</figcaption>
+      </figure>
   </div>
 
   <script type="module" src="./assets/script.js"></script>
