@@ -253,7 +253,8 @@
 			"evaluados": [
 				{
 					"titulo": "1. BlockBuster",
-					"github_page": "desafios/evaluados/m-6/rails_1_blockbuster/index.html"
+					"github_page": "desafios/evaluados/m-6/rails_1_blockbuster/index.html",
+					"fly_io": "https://rails-m6-blockbuster.fly.dev/"
 				},
 				{
 					"titulo": "2. The rial news",
