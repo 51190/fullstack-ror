@@ -8,6 +8,9 @@ body {
     background-color: #292929;
 }
 .doc-body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     font-family: sans-serif;
     width: 85%;
     margin: 90px auto;
@@ -42,7 +45,8 @@ figure img {
 fieldset {
     margin: 60px 0;
     padding: 10px;
-    position: relative;
+    display: block;
+    min-width: 0;
 }
 
 legend {
@@ -50,11 +54,6 @@ legend {
     padding: 0 20px;
 }
 
-pre {
-    font-size: 17px;
-    font-family: Consolas;
-    white-space: pre-wrap;
-}
 
 h4 {
     font-weight: normal;
@@ -74,10 +73,25 @@ a {
     font-size: 20px;
 }
 
+pre {
+    font-size: 17px;
+    font-family: Consolas;
+    white-space: pre;
+}
+
+.hljs {
+    display: inline-block;
+    overflow-x: scroll;
+    padding: 0.5em;
+    padding-right: 100%;
+    -webkit-text-size-adjust: none;
+    position: relative;
+}
 .highlight {
     position: relative;
-    overflow-x: scroll;
+    width: 100%;
 }
+
 
 ul,
 ol {

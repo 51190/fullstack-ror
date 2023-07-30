@@ -51,8 +51,8 @@ export class CustomButton extends HTMLElement {
             this.button.title = "Ejecutar"
         } else if (this.btn === "top") {
             this.button.style.position = 'fixed'
-            this.button.style.background = "url(".concat(ASSETS, "top.svg", ")")
-            this.button.style.backgroundColor = "#222";
+            this.button.style.background = "url(".concat(ASSETS, "arrow-up.svg", ")")
+            this.button.style.backgroundColor = "#c5d812";
             this.button.style.bottom = "40px";
             this.button.style.right = "-140px";
             this.button.style.backgroundRepeat = "no-repeat";

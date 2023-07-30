@@ -1,0 +1,26 @@
+#database_connect {
+  padding-left: 33px !important;
+}
+
+#database_connect::before {
+  content: "17\A 18\A 19\A 20\A 21\A 22";
+  position: absolute;
+  height: auto;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}
+
+#modelo-cliente_req1 {
+  padding-left: 33px !important;
+}
+#modelo-cliente_req1::before {
+  content: "1\A 2\A 3\A 4\A 5";
+    position: absolute;
+    height: auto;
+    top: 18px;
+    line-height: 21px;
+    left: 6px;
+    color: #ccc;
+}

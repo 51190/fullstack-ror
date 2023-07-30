@@ -1,4 +1,33 @@
 @import "../../../../../assets/css/docs.css";
+@import "block_numbers.css";
+
+figure img {
+  box-shadow: 3px 4px 12px #00000018;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.btn_req {
+  position: relative;
+    margin: 30px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.hl {
+  background-color: yellow;
+}
+a {
+      display: inline-block;
+      border: none;
+      color: rgb(233, 46, 102);
+      z-index: 3;
+      position: relative;
+      font-size: 18px;
+      transform: translate(0);
+      left: 0;
+      top: 0;
+}
 
 button.download {
   display: inline-block;
@@ -10,7 +39,6 @@ button.download {
   position: relative;
   margin:0;
   font-size: 18px;
-  justify-self: start;
   cursor: pointer;
 }
 
@@ -39,19 +67,6 @@ a.link {
   left: 0;
   top:0;
   font-size: 16px;
-}
-
-
-.yml_db {
-  padding-left: 33px !important;
-}
-.yml_db::before {
-  content: "17\A 18\A 19\A 20\A 21\A 22";
-  position: absolute;
-  top: 18px;
-  line-height: 21px;
-  left: 6px;
-  color: #ccc;
 }
 
 .req {

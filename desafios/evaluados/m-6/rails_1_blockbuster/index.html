@@ -8,19 +8,26 @@
   <title>Desafio evaluado: M6 - 1</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
   <link rel="stylesheet" href="assets/style.css">
+
+
 </head>
 
 <body>
   <div class="doc-body">
+    <enidev-button data-btn="top"></enidev-button>
     <h1 align="center">Desafío evaluado: M6 1. BlockBuster</h1><br>
     <h4 align="center"><small>Marco Contreras</small></h4>
-
-    <h2>Requerimiento 1</h2>
-
+    <div class="btn_req">
+      <a href="#req-2">Requerimiento 2</a>
+      <a href="#req-3">Requerimiento 3</a>
+      <a href="#req-4">Requerimiento 4</a>
+      <a href="#req-5">Requerimiento 5</a>
+    </div>
+    <h2 id="#req-1">Requerimiento 1</h2>
     <p class="req">Set-up inicial del proyecto, el proyecto viene con algunos errores que deben ser corregidos (recuerda el uso de Faker)</p>
     <small style="display: block; text-align: center">el uso de Faker lo dejaré para el final 😆</small><br>
  
-      <button id="download_btn" class="download" onclick="{this.textContent='Descargando...'; download_file('../../../../assets/zip/apoyo_desafio_blockbuster.zip')}">Material de apoyo</button>
+  <button id="download_btn" class="download" onclick="{this.textContent='Descargando...'; download_file('../../../../assets/zip/apoyo_desafio_blockbuster.zip')}">Material de apoyo</button>
    <p>Tenemos que fijarnos en la versión que se creo el proyecto el material de apoyo:</p>
   <fieldset class="first">
     <legend align="center"><strong>Levantar el servidor</strong></legend>
@@ -58,8 +65,8 @@
   <fieldset class="first">
     <legend align="center"><strong>Agregar datos de conexión</strong></legend>
     <div class="highlight">
-      <pre>
-<code class="yml hljs yml_db">default: &default
+<pre>
+<code class="yml hljs" id="database_connect">default: &default
   adapter: postgresql
   encoding: unicode
   username: postgres # 👈 tu usuario para postgres
@@ -83,17 +90,38 @@
   <img src="assets/03.png" alt="migraciones">
   <figcaption>captura de pantalla: correr las migraciones</figcaption>
 </figure>
-
 <p>Ya estaría mostrando el proyecto de forma normal y con esto se corrigieron los errores que se mencionaban al comienzo</p>
 <figure>
-  <img src="assets/04.png" alt="interfaz del proyecto" style="box-shadow: 3px 4px 12px #00000018;">
+  <img src="assets/04.png" alt="interfaz del proyecto">
   <figcaption>captura de pantalla: proyecto funcionando</figcaption>
 </figure>
-<h2>Requerimiento 2</h2>
+<p>Un problema relacionado con el funcionamiento de la aplicación es cuando intentamos eliminar un cliente existente y se
+le asigna una película existente, dando como resultado el siguiente error:</p>
+<figure>
+  <img src="assets/error_al_eliminar.png" alt="error al eliminar cliente">
+  <figcaption>captura de pantalla: error al eliminar</figcaption>
+</figure>
+<p>Es bastante descriptivo el mensaje de error, ya que tenemos una relación entre ambas entidades, debemos indicarle que acciones vamos a tomar cuando se elimine un objeto que referencia a otras instancias del modelo asociado, podemos establecer algunas de las siguientes acciones en <span class="path">app/models/client.rb</span>: </p>
+<fieldset class="first">
+  <legend align="center">Modelo - Cliente<strong>
+      </strong></legend>
+    <div class="highlight">
+      <pre><code class="ruby hlj" id="modelo-cliente_req1">class Client &lt; ApplicationRecord
+  has_many :movies,
+  # dependent: :destroy # 👈 elimina todas las instancias asociadas al objeto
+  dependent: :nullify # 👈 establecerá el valor de NULL a las instancias asociadas al objeto
+end
+</code></pre>
+<enidev-button></enidev-button>
+    </div>
+</fieldset>
+<blockquote>Como se observa en el ejemplo anterior, se ha dejado configurado <code><mark>:nullify</mark></code> por que no necesitamos eliminar las películas que estén asociadan a los clientes, ya que quedarán disponible para ser arrendadas por otro cliente.</blockquote>
+<hr>
+<h2 id="req-2">Requerimiento 2</h2>
 <p class="req">Al editar una película se le puede asignar un cliente</p>
 <p>Primero que nada, debemos crear un cliente:</p>
 <figure>
-  <img src="assets/crear-cliente.png" alt="crear cliente" style="box-shadow: 3px 4px 12px #00000018;">
+  <img src="assets/crear-cliente.png" alt="crear cliente">
   <figcaption>captura de pantalla: creando un cliente</figcaption>
 </figure>
 <p>Segundo, nos cambiamos a la vista de Películas (<em>movies</em>) y presionamos en crear una película:</p>
@@ -111,16 +139,16 @@
   <img src="assets/editar-pelicula-2.png" alt="editar pelicula" style="box-shadow: 3px 4px 12px #00000018;">
   <figcaption>captura de pantalla: asignar un usuario a una película</figcaption>
 </figure>
-<h2>Requerimiento 3</h2>
+<h2 id="req-3">Requerimiento 3</h2>
 <p class="req">El index de clientes debe mostrar si un cliente tiene una pelicula arrendada</p>
-<p>Para eso nos dirigimos a la vista <span class="path">app/views/clients/_client.html.erb</span> y añadimos lo siguiente:</p>
+<p>Para eso nos dirigimos a la vista <span class="path">app/views/clients/_client.html.erb</span> y remplazamos el contenido por lo siguiente:</p>
 <fieldset class="first">
   <legend align="center"><strong>
     partial - _client.html.erb
   </strong></legend>
   <div class="highlight">
     <pre>
-<code class="erb hljs">&lt;div id="<%= dom_id client %>"&gt;
+<code class="html hljs">&lt;div id="<%= dom_id client %>"&gt;
   &lt;tr&gt;
     &lt;th scope="row"&gt;
       <%= client.id %>
@@ -147,7 +175,7 @@
       <% end %>
     &lt;/td&gt;
     &lt;td align="center"&gt;
-      <%= button_to @client, method: :delete, class: 'border-0 bg-body' do %>
+      <%= button_to client, method: :delete, data: { turbo_confirm: "¿Seguro de eliminar al cliente #{client.name}?" }, class: 'border-0 bg-body' do %>
         &lt;i class="fa fa-times bg-danger rounded p-2 text-light"&gt;&lt;/i&gt;
       <% end %>
     &lt;/td&gt;
@@ -166,7 +194,8 @@
     <enidev-button></enidev-button>
   </div>
 </fieldset>
-<h2>Requerimiento 4</h2>
+<hr>
+<h2 id="req-4">Requerimiento 4</h2>
 <p class="req">Modificar el diseño de la aplicación, no puede ser igual al entregado en el proyecto</p>
 <p>En el requerimiento anterior ya habíamos modificado la vista de película un poco, asi que ahora continuamos pero agregando lo siguiente en <span class="path">app/views/clients/index.html.erb</span>:</p>
 <fieldset class="first">
@@ -207,61 +236,64 @@
   <img src="assets/vista-clientes2.png" alt="vista clientes2" style="box-shadow: 3px 4px 12px #00000018;"/>
   <figcaption>captura de pantalla: vista clientes, estilos modificados demarcados en rojo</figcaption>
 </figure>
-<p>Ahora vamos a modificar la vista en <span class="path">app/views/clients/new.html.erb</span> y añadimos lo siguiente:</p>
+<p>Ahora vamos a modificar la vista en <span class="path">app/views/clients/new.html.erb</span> y remplazamos el contenido por el siguiente:</p>
 <fieldset class="first">
   <legend align="center">
     <strong>New - Clientes</strong>
   </legend>
     <div class="highlight">
       <pre><code class="html hljs">&lt;h2 align="center"&gt;Cliente nuevo&lt;/h2&gt;
-&lt;div class="row"&gt;
-  &lt;div class="col-10 col-md-6 mx-auto"&gt;
-    &lt;%= render "form", client: @client %&gt;
-    &lt;br&gt;
-    &lt;%= link_to "Volver a clientes", clients_path, class: "btn btn-info" %&gt;
-  &lt;/div&gt;
+&lt;%= render "form", client: @client %&gt;
+&lt;br&gt;
+&lt;div align="center"&gt;
+  &lt;%= link_to "Volver a clientes", clients_path, class: "btn btn-info col-10 col-md-6" %&gt;
 &lt;/div&gt;</code></pre>
-  <enidev-button></enidev-button>
-    </div>
+<enidev-button></enidev-button>
+</div>
 </fieldset>
+
 <p>Ahora lo mismo, pero modificamos el archivo <span class="path">app/views/clients/_form.html.erb</span>:</p>
-<fieldset>
+<fieldset class="first">
   <legend align="center">
     <strong>partial _form - Clientes</strong>
   </legend>
   <div class="highlight">
-    <pre><code class="html hljs"><%= form_with(model: client) do |form| %>
-  <% if client.errors.any? %>
-  &lt;div style="color: red"&gt;
-    &lt;h2&gt;
-      <%= pluralize(client.errors.count, "error" ) %> prohibited this client from being saved:
-    &lt;/h2&gt;
-    &lt;ul&gt;
-      <% client.errors.each do |error| %>
-        &lt;li&gt;
-          <%= error.full_message %>
-        &lt;/li&gt;
+    <pre><code class="html hljs">&lt;div class="row justify-content-center"&gt;
+  &lt;div class="col-10 col-md-6"&gt;
+    <%= form_with(model: client) do |form| %>
+      <% if client.errors.any? %>
+      &lt;div style="color: red"&gt;
+        &lt;h2&gt;
+          <%= pluralize(client.errors.count, "error" ) %> prohibited this client from being saved:
+        &lt;/h2&gt;
+        &lt;ul&gt;
+          <% client.errors.each do |error| %>
+            &lt;li&gt;
+              <%= error.full_message %>
+            &lt;/li&gt;
+          <% end %>
+        &lt;/ul&gt;
+      &lt;/div&gt;
       <% end %>
-    &lt;/ul&gt;
+      &lt;div&gt;
+        <%= form.label :name, "Nombre" , style: "display: block" %>
+        <%= form.text_field :name, class: "form-control" %>
+      &lt;/div&gt;
+      &lt;div class="mb-3"&gt;
+        <%= form.label :age, "Edad" , style: "display: block" %>
+        <%= form.text_field :age, class: "form-control" %>
+      &lt;/div&gt;
+      &lt;div&gt;
+          <%= form.submit class: "btn btn-success" %>
+      &lt;/div&gt;
+    <% end %>
   &lt;/div&gt;
-  <% end %>
-  &lt;div&gt;
-    <%= form.label :name, "Nombre" , style: "display: block" %>
-    <%= form.text_field :name, class: "form-control" %>
-  &lt;/div&gt;
-  &lt;div class="mb-3"&gt;
-    <%= form.label :age, "Edad" , style: "display: block" %>
-    <%= form.text_field :age, class: "form-control" %>
-  &lt;/div&gt;
-  &lt;div&gt;
-      <%= form.submit class: "btn btn-success" %>
-  &lt;/div&gt;
-<% end %></code></pre>
+&lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
   </div>
 </fieldset>
 <p>Ahora remplazamos el contenido en <span class="path">config/locales/en.yml</span>:</p>
-<fielsed class="first">
+<fieldset class="first">
   <legend align="center">
     <strong>Traducir mensajes</strong>
   </legend>
@@ -271,13 +303,13 @@
     models:
       client: cliente
       movie: "película"
-    helpers:
-      submit:
-        create: "Crear %{model}"
-        update: "Actualizar cambios en %{model}"</code></pre>
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar cambios en %{model}"</code></pre>
   <enidev-button></enidev-button>
   </div>
-</fielsed>
+</fieldset>
 <p>Y como resultado tenemos la vista de nuevo cliente mejorada:</p>
 <figure>
   <img src="assets/clientes-new.png" alt="vista new de clientes" style="box-shadow: 3px 4px 12px #00000018;">
@@ -288,13 +320,11 @@
     <legend align="center"><strong>Edit - Clientes</strong></legend>
     <div class="highlight">
       <pre><code class="hljs html">&lt;h2 align="center"&gt;Editar cliente&lt;/h2&gt;
-&lt;div class="row"&gt;
-  &lt;div class="col-10 col-md-6 mx-auto"&gt;
-    <%= render "form" , client: @client %>
-    &lt;br&gt;
-    <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info" %>
-    <%= link_to "Ver cliente" , @client, class: "btn btn-primary" %>
-  &lt;/div&gt;
+<%= render "form" , client: @client %>
+&lt;br&gt;
+&lt;div align="center"&gt;
+  <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info col-10 col-md-3" %>
+  <%= link_to "Ver cliente" , @client, class: "btn btn-primary col-10 col-md-3 mt-2 mt-md-0" %>
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
     </div>
@@ -304,7 +334,7 @@
     <img src="assets/clientes-edit.png" alt="vista edit de clientes" style="box-shadow: 3px 4px 12px #00000018;">
     <figcaption>captura de pantalla: vista de editar cliente</figcaption>
   </figure>
-  <p>Ahora nos queda hacer una vista mejor para el detalle del cliente, vamos a <span class="app/views/clients/show.html.erb"></span></p>
+  <p>Ahora nos queda hacer una vista mejor para el detalle del cliente, vamos a <span class="path">app/views/clients/show.html.erb</span>:</p>
   <fieldset class="first">
     <legend align="center">
       <strong>Show - Clientes</strong>
@@ -334,7 +364,32 @@
       <img src="assets/clientes-show.png" alt="vista show de clientes" style="box-shadow: 3px 4px 12px #00000018;">
       <figcaption>captura de pantalla: vista del detalle de cliente</figcaption>
     </figure>
-  <p>Pasando a las películas, voy a comenzar modificando la vista del detalle <span class="path">app/views/movies/show.html.erb</span>:</p>
+  <p>Pasando a las películas, voy a comenzar modificando la vista del detalle <span class="path">app/views/movies/_movie.html.erb</span>:</p>
+<fieldset class="first">
+<legend align="center">
+  <strong>partial _movie - Películas</strong>
+</legend>
+<div class="highlight">
+  <pre><code class="html hljs">&lt;div class="col-4 py-2"&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;<%= movie.name %>&lt;/h5&gt;
+      <% if movie.id.to_s==params[:id] %>
+        <% if movie.client.present? %>
+          &lt;div&gt;Arrendada por <%= movie.client.name %>&lt;/div&gt;
+        <% else %>
+          &lt;div class="text-success"&gt;Disponible para arriendo&lt;/div&gt;
+        <% end %>
+      <% else %>
+        <%= link_to "Ver película" , movie, class: "btn btn-primary" %>
+      <% end %>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  <enidev-button></enidev-button>
+</div>
+</fieldset>
+  <p>Y ahora remplazamos el contenido de <span class="path">app/views/movies/show.html.erb</span>:</p>
   <fieldset class="first">
     <legend align="center">
       <strong>Show - Películas</strong>
@@ -362,7 +417,7 @@
         <figcaption>captura de pantalla: vista del detalle de la película</figcaption>
       </figure>
       <p>Ahora hacemos unas modificaciones en la vista index <span class="path">app/views/movies/index.html.erb</span>:</p>
-      <fieldsed class="first">
+      <fieldset class="first">
         <legend align="center">
           <strong>
             Index - Películas
@@ -386,7 +441,7 @@
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
         </div>
-      </fieldsed>
+      </fieldset>
   <p>El resultado de lo anterior:</p>
         <figure>
           <img src="assets/peliculas-index.png" alt="vista index de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
@@ -399,47 +454,49 @@
   </legend>
   <div class="highlight">
     <pre><code class="html hljs">
-<%= form_with(model: movie) do |form| %>
-  <% if movie.errors.any? %>
-    &lt;div style="color: red"&gt;
-    &lt;h2&gt;
-      <%= pluralize(movie.errors.count, "error" ) %> prohibited this movie from being saved:
-    &lt;/h2&gt;
-    &lt;ul&gt;
-      <% movie.errors.each do |error| %>
-        &lt;li&gt;<%= error.full_message %>&lt;/li&gt;
+&lt;div class="row justify-content-center"&gt;
+  &lt;div class="col-10 col-md-6"&gt;
+    <%= form_with(model: movie) do |form| %>
+      <% if movie.errors.any? %>
+        &lt;div style="color: red"&gt;
+        &lt;h2&gt;
+          <%= pluralize(movie.errors.count, "error" ) %> prohibited this movie from being saved:
+        &lt;/h2&gt;
+        &lt;ul&gt;
+          <% movie.errors.each do |error| %>
+            &lt;li&gt;<%= error.full_message %>&lt;/li&gt;
+          <% end %>
+        &lt;/ul&gt;
+      &lt;/div&gt;
       <% end %>
-    &lt;/ul&gt;
+      &lt;div class="mb-3"&gt;
+        <%= form.label :name, "Nombre" , style: "display: block" %>
+        <%= form.text_field :name, class:"form-control" %>
+      &lt;/div&gt;
+      &lt;div class="mb-3"&gt;
+        <%= form.label :client_id, "Cliente" , style: "display: block" %>
+        <%= form.select :client_id, options_for_select(@clients), {include_blank: "Selecciona un cliente"}, {class: "form-select" } %>
+      &lt;/div&gt;
+      &lt;div&gt;
+        <%= form.submit class: "btn btn-success" %>
+      &lt;/div&gt;
+    <% end %>
   &lt;/div&gt;
-  <% end %>
-  &lt;div class="mb-3"&gt;
-    <%= form.label :name, "Nombre" , style: "display: block" %>
-    <%= form.text_field :name, class:"form-control" %>
-  &lt;/div&gt;
-  &lt;div class="mb-3"&gt;
-    <%= form.label :client_id, "Cliente" , style: "display: block" %>
-    <%= form.select :client_id, options_for_select(@clients), {}, {class: "form-select" } %>
-  &lt;/div&gt;
-  &lt;div&gt;
-    <%= form.submit class: "btn btn-success" %>
-  &lt;/div&gt;
-<% end %></code></pre>
+&lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
   </div>
 </fieldset>
-<p>Para centrarlo vamos añadir algunas clases en <span class="path">app/views/movies/new.html.erb</span></p>
+<p>Ahora remplazamos el contenido en <span class="path">app/views/movies/new.html.erb</span> por el siguiente</p>
 <fieldset class="first">
   <legend align="center">
     <strong>New - Películas</strong>
   </legend>
   <div class="highlight">
     <pre><code class="html hljs">&lt;h2 align="center">Nueva película&lt;/h2&gt;
-&lt;div class="row"&gt;
-  &lt;div class="col-10 col-md-6 mx-auto"&gt;
-    <%= render "form" , movie: @movie %>
-    &lt;br&gt;
-    <%= link_to "Volver a películas" , movies_path, class: "btn btn-info" %>
-  &lt;/div&gt;
+<%= render "form", movie: @movie %>
+&lt;br&gt;
+&lt;div align="center"&gt;
+  <%= link_to "Volver a películas" , movies_path, class: "btn btn-info col-10 col-md-6" %>
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
   </div>
@@ -449,12 +506,46 @@
         <img src="assets/peliculas-new.png" alt="vista new de peliculas" style="box-shadow: 3px 4px 12px #00000018;">
         <figcaption>captura de pantalla: vista de nueva película</figcaption>
       </figure>
+<p>Ahora en la vista editar películas <span class="path">app/views/movies/edit.html.erb</span>:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>Edit - Películas</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="html hljs">&lt;h2 align="center">Editar película&lt;/h2&gt;
+<%= render "form", movie: @movie %>
+&lt;br&gt;
+&lt;div align="center"&gt;
+  <%= link_to "Volver a películas" , movies_path, class: "btn btn-info col-10 col-md-3" %>
+  <%= link_to "Ver película" , @movie, class: "btn btn-primary col-10 col-md-3 mt-2 mt-md-0" %>
+&lt;/div&gt;</code></pre>
+    <enidev-button></enidev-button>
   </div>
-
+</fieldset>
+<p>EL resultado de lo anterior:</p>
+<figure>
+  <img src="assets/edit-pelicula.png" alt="vista edit de peliculas">
+  <figcaption>captura de pantalla: vista de editar película</figcaption>
+</figure>
+<hr>
+<h2 id="req-5">Requerimiento 5</h2>
+<p class="req">Hacer deploy de la aplicación</p>
+<p>Aplicación deplegada <a href="https://rails-m6-blockbuster.fly.dev/" target="_blank">aquí</a> 👈</p>
+</div>
   <script type="module" src="./assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script>
     hljs.highlightAll()
+    document.querySelectorAll("img").forEach(element => {
+      element.onclick = () => {
+        const h = screen.height;
+        const w = screen.width;
+        window.open(element.src, 'test', `width=${w},height=${h}`);
+      }
+    })
+
+    
+
     const btn_download = document.getElementById("download_btn");
     const download_file = (url) => {
       // DRIVE RESOURCE: https://drive.google.com/uc?export=download&confirm=t&id=1JnboGpZ_PdTf26R1So7o-2dkZYqa7nIa
@@ -478,6 +569,8 @@
         btn_download.textContent = "Material de Apoyo"
       }).catch((e) => alert(e.message))
     }
+
+
   </script>
 </body>
 
