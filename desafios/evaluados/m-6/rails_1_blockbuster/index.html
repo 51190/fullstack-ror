@@ -353,7 +353,7 @@ end
   &lt;div class="card-footer"&gt;
     <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info" %>
     <%= link_to "Editar cliente" , edit_client_path(@client), class: "btn btn-warning" %>
-    <%= link_to "Eliminar cliente" , @client, class: "btn btn-danger" , data: {turbo_method: :delete} %>
+    <%= link_to "Eliminar cliente" , @client, class: "btn btn-danger" , data: {turbo_method: :delete, turbo_confirm: "¿Seguro de eliminar el cliente #{@client.name}"} %>
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
@@ -404,7 +404,7 @@ end
     &lt;i class="fa fa-pen"&gt;&lt;/i&gt;
   <% end %>
   <%= link_to "Volver to películas" , movies_path, class: "btn btn-info" %>
-  <%= link_to @movie, class: "btn btn-danger" , data: {turbo_method: :delete} do %>
+  <%= link_to @movie, class: "btn btn-danger" , data: {turbo_method: :delete, turbo_confirm: "¿Seguro de eliminar la película #{@movie.name}?"} do %>
       &lt;i class="fa fa-times text-light"&gt;&lt;/i&gt;
   <% end %>
 &lt;/div&gt;</code></pre>
