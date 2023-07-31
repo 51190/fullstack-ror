@@ -353,7 +353,7 @@ end
   &lt;div class="card-footer"&gt;
     <%= link_to "Volver a clientes" , clients_path, class: "btn btn-info" %>
     <%= link_to "Editar cliente" , edit_client_path(@client), class: "btn btn-warning" %>
-    <%= link_to "Eliminar cliente" , @client, class: "btn btn-danger" , data: {turbo_method: :delete, turbo_confirm: "¿Seguro de eliminar el cliente #{@client.name}"} %>
+    <%= link_to "Eliminar cliente" , @client, class: "btn btn-danger" , data: {turbo_method: :delete, turbo_confirm: "¿Seguro de eliminar el cliente #{@client.name}?"} %>
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
@@ -527,6 +527,36 @@ end
   <img src="assets/edit-pelicula.png" alt="vista edit de peliculas">
   <figcaption>captura de pantalla: vista de editar película</figcaption>
 </figure>
+<p>Ahora vamos a modificar la barra de navegación, mejor dicho el partial <span class="path">app/views/shared/_navbar.html.erb</span>:</p>
+<fieldset class="first">
+<legend align="center"><strong>
+    partial _navbar - Application</strong>
+</legend>
+  <div class="highlight">
+    <pre><code class="html hljs">&lt;nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient shadow"&gt;
+  &lt;div class="container"&gt;
+    <%= link_to root_path, class: 'navbar-brand position-absolute mt-5 d-none d-md-block' do %>
+      <%= image_tag 'logo' , height: '90px' %>
+    <% end %>
+    &lt;button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&lt;
+    &lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+      &lt;ul class="navbar-nav ms-auto mb-2 mb-lg-0"&gt;
+        &lt;li class="nav-item"&gt;
+          <%= link_to 'Clientes' , clients_path, class: 'nav-link' %>
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          <%= link_to 'Películas' , movies_path, class: 'nav-link' %>
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+  </div>
+</fieldset>
 <hr>
 <h2 id="req-5">Requerimiento 5</h2>
 <p class="req">Hacer deploy de la aplicación</p>
