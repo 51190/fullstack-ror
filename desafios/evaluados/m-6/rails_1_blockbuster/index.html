@@ -343,6 +343,45 @@ end</code></pre>
 <enidev-button></enidev-button>
   </div>
 </fieldset>
+<p>Ahora debemos ir al controlador <span class="path">app/controllers/clients_controller.rb</span> y remplazar las siguientes líneas:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>método create - controller Cliente</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="ruby hljs" id="controller_client_create">  format.html { redirect_to client_url(@client), notice: t('.notice') }</code></pre>
+    <enidev-button></enidev-button>
+  </div>
+</fieldset>
+<fieldset class="first">
+  <legend align="center">
+    <strong>método update - controller Cliente</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="ruby hljs" id="controller_client_update">  format.html { redirect_to client_url(@client), notice: t('.notice') }</code></pre>
+    <enidev-button></enidev-button>
+  </div>
+</fieldset>
+<p>Debemos aplicar el mismo procedimiento el controlador de películas <span class="path">app/controllers/movies_controller.rb</span>:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>método create - controller Película</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="ruby hljs" id="controller_movie_create">  format.html { redirect_to movie_url(@movie), notice: t('.notice') }</code></pre>
+    <enidev-button></enidev-button>
+  </div>
+</fieldset>
+
+<fieldset class="first">
+  <legend align="center">
+    <strong>método update - controller Película</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="ruby hljs" id="controller_movie_update">  format.html { redirect_to movie_url(@movie), notice: t('.notice') }</code></pre>
+    <enidev-button></enidev-button>
+  </div>
+</fieldset>
 
 
 <p>Y como resultado tenemos la vista de nuevo cliente mejorada:</p>
@@ -651,7 +690,7 @@ end</code></pre>
 </fieldset>
 <p>El resultado sería el siguiente:</p>
 <figure>
-  <img src="assets/vista_final" alt="vista resultado final">
+  <img src="assets/vista_final.png" alt="vista resultado final">
   <figcaption>captura de pantalla: vista resultado final</figcaption>
 </figure>
 <hr>

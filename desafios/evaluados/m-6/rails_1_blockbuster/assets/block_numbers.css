@@ -24,3 +24,56 @@
     left: 6px;
     color: #ccc;
 }
+
+#controller_client_create {
+  padding-left: 33px !important;
+}
+#controller_client_create::before {
+  content: "28\A";
+  position: absolute;
+  height: auto;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}
+
+#controller_client_update {
+  padding-left: 33px !important;
+}
+
+#controller_client_update::before {
+  content: "41\A";
+  position: absolute;
+  height: auto;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}
+#controller_movie_create {
+  padding-left: 33px !important;
+}
+
+#controller_movie_create::before {
+  content: "29\A";
+  position: absolute;
+  height: auto;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}
+
+#controller_movie_update {
+  padding-left: 33px !important;
+}
+#controller_movie_update::before {
+  content: "42\A";
+  position: absolute;
+  height: auto;
+  top: 18px;
+  line-height: 21px;
+  left: 6px;
+  color: #ccc;
+}
