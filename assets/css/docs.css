@@ -43,7 +43,7 @@ figure img {
 }
 
 fieldset {
-    margin: 60px 0;
+    margin: 15px 0;
     padding: 10px;
     display: block;
     min-width: 0;
@@ -105,4 +105,12 @@ blockquote {
 
 code.inline {
     font-size: 17px;
+}
+
+/* UTILITIES */
+
+.req {
+    background-color: #ef2323;
+    color: rgb(246, 253, 255);
+    padding: 10px;
 }

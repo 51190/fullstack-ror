@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio: Creación de un proyecto en Rails</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <enidev-button data-btn="top"></enidev-button>
+  <div class="doc-body">
+    <h1 align="center">Desafío: Creación de un nuevo proyecto</h1><br>
+    <h4 align="center"><small>Marco Contreras</small></h4>
+    <h2>Descripción</h2>
+    <p>
+      Aplicando los conceptos y herramientas aprendidas hasta ahora, pondrás en práctica los conocimientos con la
+      creación de una aplicación que contenga las siguientes rutas:
+    </p>
+    <ol>
+      <li><strong>/home</strong></li>
+      <li><strong>/projects</strong></li>
+      <li><strong>/contact</strong></li>
+    </ol>
+    <p>La idea será construir lo semejante a un portafolio en el cual puedas mostrar tus desafíos y desarrollos
+      implementando Rails.</p>
+    <blockquote><strong>Nota:</strong> Este desarrollo puede ser utilizado o iterado en varias oportunidades por lo
+      que es <strong>recomendado</strong> gestionar el versionamiento del proyecto con el uso de github
+    </blockquote>
+    <h2>Requerimiento 1</h2>
+    <p class="req">La aplicación deberá contener 3 rutas, una para <strong>/home</strong>, <strong>/projects</strong> y <strong>/contact</strong>. La ruta raíz
+      de la aplicación
+      será <strong>/home</strong>.</p>
+    <fieldset>
+      <legend align="center"><strong>Iniciar del proyecto</strong></legend>
+      <div class="highlight">
+        <pre><code class="bash hljs">rails new portfolio_m6_d1</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Definir las rutas - routes.rb
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="ruby hljs"># config/routes.rb
+Rails.application.routes.draw do
+    root 'portfolio#home'
+    get 'home', to: 'portfolio#home', as: 'home'
+    get 'projects', to: 'portfolio#projects', as: 'projects'
+    get 'contact', to: 'portfolio#contact', as: 'contact'
+end</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <hr>
+    <h2 id="req-2">Requerimiento 2</h2>
+    <p class="req">Cada ruta disponible deberá tener su correspondiente vista HTML asociada.</p>
+    <fieldset>
+      <legend align="center">
+        <strong>Disposición de las vistas</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="hljs">
+📂 app
+├── 📂 assets
+├── 📂 channels
+├── 📂 controllers
+├── 📂 helpers
+├── 📂 javascript      
+├── 📂 jobs      
+├── 📂 mailers      
+├── 📂 models      
+└── 📂 views
+    └── 📂 portfolio # 👈 contenedor de las vistas para el controlador portfolio
+        ├── home.html.erb # 👈 la vista para la ruta raiz
+        ├── projects.html.erb # 👈 la vista para la ruta /projects
+        └── contact.html.erb # 👈 la vista para la ruta /contact</code></pre>
+      </div>
+    </fieldset>
+    <h2 id="req-3">Requerimiento 3</h2>
+    <p class="req">Deberá existir un controlador que gestiona la visualización de cada vista con sus respectivos métodos</p>
+    <fieldset>
+      <legend align="center">
+        <strong>Disposición para el controlador Portfolio</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="hljs">
+📂 app
+├── 📂 assets
+├── 📂 channels
+├── 📂 controllers
+│   └── portfolio_controller.rb # 👈 aquí definimos las acciones para las rutas
+├── 📂 helpers
+├── 📂 javascript
+├── 📂 jobs
+├── 📂 mailers
+├── 📂 models
+└── 📂 views
+      </code></pre>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Controlador - portfolio_controller.rb
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="ruby hljs"># app/controllers/portfolio_controller.rb
+class PortfolioController &lt; ApplicationController
+    def home
+    end
+          
+    def projects
+    end
+          
+    def contact
+    end
+end</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - home.html.erb
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">&lt;div class="d-flex flex-column justify-content-center min-vh-100"&gt;
+  &lt;h1 class="text-center mb-5"&gt;Portafolio Marco Contreras&lt;/h1&gt;
+  &lt;p class="text-center"&gt;
+    &lt;%= link_to "Mis proyectos", projects_path, class: "fs-4 nav-link d-inline me-3" %&gt;
+    &lt;%= link_to "Contacto", contact_path, class: "fs-4 nav-link d-inline" %&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - projects.html.erb
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">&lt;!-- app/views/portfolio/projects.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Mis trabajos&lt;/h2&gt;
+&lt;div class="row"&gt;
+&lt;!-- proyecto 1 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "iguana-page", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+       &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Iguana Page&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/iguana-page", 
+          target: "_blank", 
+          class: "my-btn" %&gt; 
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/iguana-page/", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+&lt;!-- proyecto 2 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;                  
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "cuppons", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Cuppons&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;!-- proyecto 3 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "ricomida", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Ricomida&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/ricomida", 
+          target:"_blank", class: 
+          "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/ricomida/", 
+          target:"_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - contact.html.erb
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">&lt;!-- app/views/portfolio/contact.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Contacto&lt;/h2&gt;
+  &lt;div class="row mt-5"&gt;
+   &lt;div class="col-10 col-md-6 mx-auto"&gt;
+     &lt;div class="card p-3 bg-dark"&gt;
+       &lt;%= form_tag("", method: "get", id:"formulario") do %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= text_field_tag(:name, "", class: "form-control", placeholder:"Nombre", required: true)  %&gt;
+           &lt;%= label_tag(:name, "Nombre") %&gt;
+         &lt;% end %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= email_field_tag(:email, "", class: "form-control", placeholder:"Email")  %&gt;
+           &lt;%= label_tag(:email, "Email") %&gt;
+         &lt;% end %&gt;
+         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+           &lt;%= text_area_tag(:message, "", class: "form-control", placeholder:"Mensaje", style: "height: 100px")  %&gt;
+           &lt;%= label_tag(:message, "Mensaje") %&gt;
+         &lt;% end %&gt;
+         &lt;%= submit_tag("Enviar", class: "btn btn-outline-light px-4") %&gt;
+       &lt;% end %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <h2>Requerimiento 4</h2>
+    <p>En la vista <code class="inline">/projects</code> deberás agregar al menos 3 imágenes de proyectos realizados
+      hasta el momento, podrás utilizar componentes de bootstrap y modificar el botón de <strong>ver más</strong>
+      con estilos personalizados desde <strong>CSS</strong>.</p>
+    <blockquote><strong>Nota</strong>: EL <strong>CSS</strong> que personaliza los estilos del botón debe ser
+      llamado desde la estructura de <strong>assets de Rails</strong></blockquote>
+    <fieldset>
+      <legend align="center">
+        <strong>Disposición de los assets</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="hljs">
+📂 app
+└── 📂 assets
+    ├── 📂 stylesheets
+    │   ├── application.css 
+    │   └── styles.css # 👈 aquí creamos el archivo de estilos personalizados
+    └── 📂 images # 👈 aquí almacenamos las imagenes necesarias
+        ├── bg_attach.png 
+        ├── iguana.png
+        ├── cuppon.png
+        └── ricomida.png
+    </code></pre>
+      </div>
+    </fieldset>
+    <h2>Requerimiento 5</h2>
+    <p>Agregar un menú de navegación bien sea personalizado o con la ayuda de bootstrap. Este menú debe verse en
+      todas las vistas de la aplicación y rederigir según corresponda en cada interacción utilizando el helper
+      <strong>link_to</strong>.
+    </p>
+    <blockquote><strong>Nota:</strong> puedes agregar la clase <strong>container</strong> de bootstrap al
+      <strong>yield</strong> para modificar los márgenes.
+    </blockquote>
+    <p>Para tener un poco más de orden y organizar la explicación voy a dejar el bloque de código de
+      <strong>HTML</strong> que corresponde a la navegación aislado en una carpeta
+      <strong>shared</strong> en un archivo llamado <strong>_nav.html.erb</strong>, y ya que estamos en eso. ¿Por
+      qué no hacer lo mismo para el footer?, claro que si, para luego incluir ambos archivos a través
+      de un helper usando el método <strong>render</strong>
+    </p>
+    <fieldset>
+      <legend align="center">
+        <strong>Disposición de los parciales</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="hljs">
+📂 app
+└── 📂 views
+    └── 📂 shared # 👈 contenedor de los partials
+        ├── _nav.html.erb # 👈 fragmento reutilizable
+        └── _footer.html.erb # 👈 fragmento reutilizable
+        </code></pre>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>Navegación</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html">
+&lt;!-- app/views/shared/_nav.html.erb --&gt;
+&lt;nav class="navbar navbar-dark navbar-expand-lg border-bottom border-2 border-secondary"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;%= link_to "Portafolio", "#", class: "navbar-brand" %&gt;
+    &lt;%= button_tag type: :button,
+        class: "navbar-toggler",
+        data: {bs_toggle: "collapse", bs_target: "#navbar"} do %&gt;
+          &lt;%= tag.span class: "navbar-toggler-icon" %&gt;
+    &lt;% end %&gt;
+    &lt;div class="collapse navbar-collapse" id="navbar"&gt;
+      &lt;div class="navbar-nav"&gt;
+        &lt;%= link_to "Home", root_path, class: "nav-link" %&gt;
+        &lt;%= link_to "Proyectos", projects_path, class: "nav-link" %&gt;
+        &lt;%= link_to "Contacto", contact_path, class: "nav-link" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+    </code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>Footer</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">
+&lt;footer class="text-center fw-bold py-3 text-dark"&gt;
+    Portafolio &lt;span class="badge bg-warning text-dark"&gt;EniDev911&lt;/span&gt;
+&lt;/footer&gt;
+        </code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>Main layout</strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html">
+&lt;!-- app/views/layouts/application.html.erb --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Portafolio&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+  &lt;%= csrf_meta_tags %&gt;
+  &lt;%= csp_meta_tag %&gt;
+  &lt;%= stylesheet_link_tag "application", "data-turbo-track": "reload" %&gt;
+  &lt;!-- CDN CSS bootstrap --&gt;
+  &lt;link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"&gt;
+&lt;/head&gt;
+&lt;body class="bg-dark text-light"&gt;
+  &lt;!-- renderizamos la navegación --&gt;
+  &lt;%= render "shared/nav" %&gt;
+  &lt;div class="container my-4 min-vh-100"&gt;
+    &lt;%= yield %&gt;
+  &lt;/div&gt;
+  &lt;!-- CDN JS bootstrap --&gt;
+  &lt;script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <h2>Requerimiento 6</h2>
+    <p>Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
+      aplicación.</p>
+    <fieldset style="cursor: pointer; text-align: center;">
+      <legend>
+        <strong>
+          despliegue/repositorio
+        </strong>
+      </legend>
+      <div>
+        <img src="https://fly.io/static/images/brand/logo-portrait.svg" height="100"
+          onclick='{window.open("https://portfolio-rails-d1.fly.dev/", "_blank")}'>
+        <img src="https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/github.svg" alt="logo github"
+          height="100" style="margin-left: 30px;"
+          onclick="{window.open('//github.com/mach-911/portfolio-rails-d1', '_blank')}">
+      </div>
+
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Replit
+        </strong>
+      </legend>
+      <iframe src="https://replit.com/@marcocontreraas/primer-desafio-rails?embed=true" width="100%"
+        height="600"></iframe>
+    </fieldset>
+  </div>
+  <script type="module" src="./assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll()
+  </script>
+</body>
+
+</html>
