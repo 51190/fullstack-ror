@@ -254,6 +254,7 @@
 				{
 					"titulo": "1. BlockBuster",
 					"github_page": "desafios/evaluados/m-6/rails_1_blockbuster/index.html",
+					"github": "https://github.com/mach-911/BlockBuster",
 					"fly_io": "https://rails-m6-blockbuster.fly.dev/"
 				},
 				{

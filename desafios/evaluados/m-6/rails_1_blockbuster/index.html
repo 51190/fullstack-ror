@@ -292,17 +292,27 @@ end
 <enidev-button></enidev-button>
   </div>
 </fieldset>
-<p>Ahora remplazamos el contenido en <span class="path">config/locales/en.yml</span>:</p>
+<p>Ahora creamos un nuevo archivo en <span class="path">config/locales/es.yml</span> y añadimos el siguiente contenido:</p>
 <fieldset class="first">
   <legend align="center">
     <strong>Traducir mensajes</strong>
   </legend>
   <div class="highlight">
-    <pre><code class="yml hljs">en:
+    <pre><code class="yml hljs">es:
   activerecord:
     models:
       client: cliente
       movie: "película"
+  clients:
+    create:
+      notice: "Cliente creado exitosamente"
+    update:
+      notice: "Cliente actualizado exitosamente"
+  movies:
+    create:
+      notice: "Película creada exitosamente"
+    update:
+      notice: "Película actualizada exitosamente"
   helpers:
     submit:
       create: "Crear %{model}"
@@ -310,6 +320,31 @@ end
   <enidev-button></enidev-button>
   </div>
 </fieldset>
+<p>Ahora para cambiar la configuración regional predeterminada para que use este archivo remplazamos el contenido en <span class="path">config/application.rb</span> por lo siguiente:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>
+      config - application.rb
+    </strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="ruby hljs">require_relative "boot"
+
+require "rails/all"
+
+Bundler.require(*Rails.groups)
+
+module BlockBuster
+  class Application < Rails::Application 
+    config.load_defaults 7.0 
+    config.i18n.default_locale=:es 
+  end 
+end</code></pre>
+<enidev-button></enidev-button>
+  </div>
+</fieldset>
+
+
 <p>Y como resultado tenemos la vista de nuevo cliente mejorada:</p>
 <figure>
   <img src="assets/clientes-new.png" alt="vista new de clientes" style="box-shadow: 3px 4px 12px #00000018;">
@@ -340,10 +375,7 @@ end
       <strong>Show - Clientes</strong>
     </legend>
     <div class="highlight">
-      <pre><code class="html hljs">&lt;p style="color: green"&gt;
-  &lt;%= notice %&gt;
-&lt;/p&gt;
-&lt;div class="card"&gt;
+      <pre><code class="html hljs">&lt;div class="card"&gt;
   &lt;div class="card-body"&gt;
     &lt;h5 class="card-title"&gt;Nombre: <%= @client.name %>&lt;/h5&gt;
     &lt;p class="card-text"&gt;Películas arrendadas:&lt;/p&gt;
@@ -395,10 +427,7 @@ end
       <strong>Show - Películas</strong>
     </legend>
     <div class="highlight">
-      <pre><code class="html hljs">&lt;p style="color: green"&gt;
-  <%= notice %>
-&lt;/p&gt;
-<%= render @movie %>
+      <pre><code class="html hljs"><%= render @movie %>
 &lt;div&gt;
   <%= link_to edit_movie_path(@movie), class: "btn btn-warning" do %>
     &lt;i class="fa fa-pen"&gt;&lt;/i&gt;
@@ -424,19 +453,14 @@ end
           </strong>
         </legend>
         <div class="highlight">
-          <pre><code class="html hljs">&lt;p style="color: green"&gt;
-  <%= notice %>
-&lt;/p&gt;
-&lt;div class="container"&gt;
-  &lt;h2 align="center"&gt;Películas&lt;/h2&gt;
-  <%= link_to new_movie_path, class:"text-decoration-none" do %>
-    &lt;i class="fa fa-plus-circle fs-4"&gt;&lt;/i&gt;
-    &lt;span&gt;Película&lt;/span&gt;
-  <% end %>
-  &lt;div id="movies"&gt;
-    &lt;div class="row"&gt;
-      <%= render @movies %>
-    &lt;/div&gt;
+          <pre><code class="html hljs">&lt;h2 align="center"&gt;Películas&lt;/h2&gt;
+<%= link_to new_movie_path, class:"text-decoration-none" do %>
+  &lt;i class="fa fa-plus-circle fs-4"&gt;&lt;/i&gt;
+  &lt;span&gt;Película&lt;/span&gt;
+<% end %>
+&lt;div id="movies"&gt;
+  &lt;div class="row"&gt;
+    <%= render @movies %>
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <enidev-button></enidev-button>
@@ -537,7 +561,7 @@ end
   <div class="highlight">
     <pre><code class="html hljs">&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient shadow"&gt;
   &lt;div class="container"&gt;
-    <%= link_to root_path, class: 'navbar-brand position-absolute mt-5 d-none d-md-block' do %>
+    <%= link_to root_path, class: 'navbar-brand position-absolute mt-5 d-none d-md-block', style: "z-index:1" do %>
       <%= image_tag 'logo' , height: '90px' %>
     <% end %>
     &lt;button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -560,6 +584,76 @@ end
 <enidev-button></enidev-button>
   </div>
 </fieldset>
+<p>Ahora vamos a crear un nuevo partial para los mensajes flashes en <span class="path">app/views/shared/_flashes.html.erb</span>: y le agregamos lo siguiente:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>partial _flashes - Application</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="html hljs"><% if notice %>
+  &lt;div class="alert alert-info alert-dismissible fade show text-center" role="alert" style="z-index: 0"&gt;
+    &lt;strong&gt;
+      <%= notice %>
+    &lt;/strong&gt;
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+<% end %>
+
+<% if alert %>
+  &lt;div class="alert alert-warning alert-dismissible fade show text-center" role="alert" style="z-index:0"&gt;
+    &lt;strong&gt;
+      <%= alert %>
+    &lt;/strong&gt;
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+<% end %></code></pre>
+  </div>
+</fieldset>
+
+<p>Ahora obviamente tenemos que renderizar este partial en el layout principal, para finalizar te dejo el contenido del <span class="path">app/views/layouts/application.html.erb</span>:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>layout principal - Application</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="html hljs">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;BlockBuster&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application" , "data-turbo-track" : "reload" %>
+  <%= javascript_include_tag "application" , "data-turbo-track" : "reload" , defer: true %>
+&lt;/head&gt;
+
+&lt;body&gt;
+  <%= render "shared/navbar" %>
+  <%= render 'shared/flashes' %>
+  &lt;div class="container my-5"&gt;
+    <%= yield %>
+  &lt;/div&gt;
+  &lt;script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </div>
+</fieldset>
+<p>Ahora como mencione en el principio, vamos a ejecutar la siembra de datos usando la gema Faker. Para ello simplemente
+  ejecutamos el siguiente comando:</p>
+<fieldset class="first">
+  <legend align="center">
+    <strong>seed - db/seeds.rb</strong>
+  </legend>
+  <div class="highlight">
+    <pre><code class="bash hljs">rails db:seed</code></pre>
+    <enidev-button></enidev-button>
+  </div>
+</fieldset>
+<p>El resultado sería el siguiente:</p>
+<figure>
+  <img src="assets/vista_final" alt="vista resultado final">
+  <figcaption>captura de pantalla: vista resultado final</figcaption>
+</figure>
 <hr>
 <h2 id="req-5">Requerimiento 5</h2>
 <p class="req">Hacer deploy de la aplicación</p>
@@ -576,9 +670,6 @@ end
         window.open(element.src, 'test', `width=${w},height=${h}`);
       }
     })
-
-    
-
     const btn_download = document.getElementById("download_btn");
     const download_file = (url) => {
       // DRIVE RESOURCE: https://drive.google.com/uc?export=download&confirm=t&id=1JnboGpZ_PdTf26R1So7o-2dkZYqa7nIa
