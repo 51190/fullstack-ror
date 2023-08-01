@@ -11,6 +11,19 @@
                     "path": "assets/pdf/git-cheatsheet.pdf?#view=fitH"
                 }
             ],
+            "github": [
+            {
+                "title": "Github CLI cheatsheet",
+                "path": "assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH"
+            },
+            {
+                "title": "Github Pages",
+                "path": "assets/pdf/github-pages.pdf?#view=fitH"
+            },{
+                "title": "Configurar SSH",
+                "path": "assets/pdf/github-configurar-ssh.pdf?#view=fitH"
+            }
+            ],
             "html": [
                 {
                     "title": "HTML Cheatsheet",
