@@ -20,6 +20,7 @@
           <a href="#req-3" class="btn">Requerimiento 3</a>
           <a href="#req-4" class="btn">Requerimiento 4</a>
           <a href="#req-5" class="btn">Requerimiento 5</a>
+          <a href="#req-6" class="btn">Requerimiento 6</a>
         </div>
     <h2>Descripción</h2>
     <p>
@@ -132,129 +133,9 @@ end</code></pre>
         <enidev-button></enidev-button>
       </div>
     </fieldset>
-    <fieldset>
-      <legend align="center">
-        <strong>
-          Vista - home.html.erb
-        </strong>
-      </legend>
-      <div class="highlight">
-        <pre><code class="html hljs">&lt;div class="d-flex flex-column justify-content-center min-vh-100"&gt;
-  &lt;h1 class="text-center mb-5"&gt;Portafolio Marco Contreras&lt;/h1&gt;
-  &lt;p class="text-center"&gt;
-    &lt;%= link_to "Mis proyectos", projects_path, class: "fs-4 nav-link d-inline me-3" %&gt;
-    &lt;%= link_to "Contacto", contact_path, class: "fs-4 nav-link d-inline" %&gt;
-  &lt;/p&gt;
-&lt;/div&gt;</code></pre>
-        <enidev-button></enidev-button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend align="center">
-        <strong>
-          Vista - projects.html.erb
-        </strong>
-      </legend>
-      <div class="highlight">
-        <pre><code class="html hljs">&lt;!-- app/views/portfolio/projects.html.erb --&gt;
-&lt;h2 class="text-center text-uppercase py-4"&gt;Mis trabajos&lt;/h2&gt;
-&lt;div class="row"&gt;
-&lt;!-- proyecto 1 --&gt;
-  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
-    &lt;div class="card shadow"&gt;
-      &lt;%= image_tag "iguana-page", class: "card-img-top" %&gt;
-      &lt;div class="card-body p-0"&gt;
-       &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Iguana Page&lt;/h4&gt;
-      &lt;/div&gt;
-      &lt;div class="card-footer"&gt;
-        &lt;%= link_to "Ver código", 
-          "//github.com/mach-911/fullstack-ror/tree/iguana-page", 
-          target: "_blank", 
-          class: "my-btn" %&gt; 
-        &lt;%= link_to "Ver demo", 
-          "//mach-911.github.io/fullstack-ror/desafios/evaluados/iguana-page/", 
-          target: "_blank", 
-          class: "my-btn" %&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;  
-  &lt;/div&gt;
-&lt;!-- proyecto 2 --&gt;
-  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;                  
-    &lt;div class="card shadow"&gt;
-      &lt;%= image_tag "cuppons", class: "card-img-top" %&gt;
-      &lt;div class="card-body p-0"&gt;
-        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Cuppons&lt;/h4&gt;
-      &lt;/div&gt;
-      &lt;div class="card-footer"&gt;
-        &lt;%= link_to "Ver código", 
-          "//github.com/mach-911/fullstack-ror/tree/cuppon", 
-          target: "_blank", 
-          class: "my-btn" %&gt;
-        &lt;%= link_to "Ver demo", 
-          "//mach-911.github.io/fullstack-ror/desafios/evaluados/cuppon", 
-          target: "_blank", 
-          class: "my-btn" %&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
- &lt;!-- proyecto 3 --&gt;
-  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
-    &lt;div class="card shadow"&gt;
-      &lt;%= image_tag "ricomida", class: "card-img-top" %&gt;
-      &lt;div class="card-body p-0"&gt;
-        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Ricomida&lt;/h4&gt;
-      &lt;/div&gt;
-      &lt;div class="card-footer"&gt;
-        &lt;%= link_to "Ver código", 
-          "//github.com/mach-911/fullstack-ror/tree/ricomida", 
-          target:"_blank", class: 
-          "my-btn" %&gt;
-        &lt;%= link_to "Ver demo", 
-          "//mach-911.github.io/fullstack-ror/desafios/evaluados/ricomida/", 
-          target:"_blank", 
-          class: "my-btn" %&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        <enidev-button></enidev-button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend align="center">
-        <strong>
-          Vista - contact.html.erb
-        </strong>
-      </legend>
-      <div class="highlight">
-        <pre><code class="html hljs">&lt;!-- app/views/portfolio/contact.html.erb --&gt;
-&lt;h2 class="text-center text-uppercase py-4"&gt;Contacto&lt;/h2&gt;
-  &lt;div class="row mt-5"&gt;
-   &lt;div class="col-10 col-md-6 mx-auto"&gt;
-     &lt;div class="card p-3 bg-dark"&gt;
-       &lt;%= form_tag("", method: "get", id:"formulario") do %&gt;
-         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
-           &lt;%= text_field_tag(:name, "", class: "form-control", placeholder:"Nombre", required: true)  %&gt;
-           &lt;%= label_tag(:name, "Nombre") %&gt;
-         &lt;% end %&gt;
-         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
-           &lt;%= email_field_tag(:email, "", class: "form-control", placeholder:"Email")  %&gt;
-           &lt;%= label_tag(:email, "Email") %&gt;
-         &lt;% end %&gt;
-         &lt;%= tag.div class: "form-floating mb-3" do %&gt;
-           &lt;%= text_area_tag(:message, "", class: "form-control", placeholder:"Mensaje", style: "height: 100px")  %&gt;
-           &lt;%= label_tag(:message, "Mensaje") %&gt;
-         &lt;% end %&gt;
-         &lt;%= submit_tag("Enviar", class: "btn btn-outline-light px-4") %&gt;
-       &lt;% end %&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        <enidev-button></enidev-button>
-      </div>
-    </fieldset>
-    <h2>Requerimiento 4</h2>
-    <p>En la vista <code class="inline">/projects</code> deberás agregar al menos 3 imágenes de proyectos realizados
+    <hr>
+    <h2 id="req-4">Requerimiento 4</h2>
+    <p class="req">En la vista <code class="inline">/projects</code> deberás agregar al menos 3 imágenes de proyectos realizados
       hasta el momento, podrás utilizar componentes de bootstrap y modificar el botón de <strong>ver más</strong>
       con estilos personalizados desde <strong>CSS</strong>.</p>
     <blockquote><strong>Nota</strong>: EL <strong>CSS</strong> que personaliza los estilos del botón debe ser
@@ -278,8 +159,12 @@ end</code></pre>
     </code></pre>
       </div>
     </fieldset>
-    <h2>Requerimiento 5</h2>
-    <p>Agregar un menú de navegación bien sea personalizado o con la ayuda de bootstrap. Este menú debe verse en
+          <div class="group">
+            <a class="btn" href="./assets/assets.zip" download="aseets.zip">Descargar assets</a>
+          </div>
+    <hr>
+    <h2 id="req-5">Requerimiento 5</h2>
+    <p class="req">Agregar un menú de navegación bien sea personalizado o con la ayuda de bootstrap. Este menú debe verse en
       todas las vistas de la aplicación y rederigir según corresponda en cada interacción utilizando el helper
       <strong>link_to</strong>.
     </p>
@@ -311,7 +196,7 @@ end</code></pre>
         <strong>Navegación</strong>
       </legend>
       <div class="highlight">
-        <pre><code class="html">
+        <pre><code class="html hljs">
 &lt;!-- app/views/shared/_nav.html.erb --&gt;
 &lt;nav class="navbar navbar-dark navbar-expand-lg border-bottom border-2 border-secondary"&gt;
   &lt;div class="container-fluid"&gt;
@@ -352,7 +237,7 @@ end</code></pre>
         <strong>Main layout</strong>
       </legend>
       <div class="highlight">
-        <pre><code class="html">
+        <pre><code class="html hljs">
 &lt;!-- app/views/layouts/application.html.erb --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -379,13 +264,136 @@ end</code></pre>
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
     crossorigin="anonymous"&gt;&lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-    </code></pre>
+&lt;/html&gt;</code></pre>
         <enidev-button></enidev-button>
       </div>
     </fieldset>
-    <h2>Requerimiento 6</h2>
-    <p>Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - Home
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">
+&lt;div class="d-flex flex-column justify-content-center min-vh-100"&gt;
+  &lt;h1 class="text-center mb-5"&gt;Portafolio Marco Contreras&lt;/h1&gt;
+  &lt;p class="text-center"&gt;
+    &lt;%= link_to "Mis proyectos", projects_path, class: "fs-4 nav-link d-inline me-3" %&gt;
+    &lt;%= link_to "Contacto", contact_path, class: "fs-4 nav-link d-inline" %&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - Proyectos
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">
+&lt;!-- app/views/portfolio/projects.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Mis trabajos&lt;/h2&gt;
+&lt;div class="row"&gt;
+&lt;!-- proyecto 1 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "iguana-page", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Iguana Page&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/iguana-page", 
+          target: "_blank", 
+          class: "my-btn" %&gt; 
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/iguana-page/", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+&lt;!-- proyecto 2 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;                  
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "cuppons", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Cuppons&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/cuppon", 
+          target: "_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;!-- proyecto 3 --&gt;
+  &lt;div class="col-10 col-md-6 col-lg-4 mx-auto mb-3"&gt;
+    &lt;div class="card shadow"&gt;
+      &lt;%= image_tag "ricomida", class: "card-img-top" %&gt;
+      &lt;div class="card-body p-0"&gt;
+        &lt;h4 class="card-title py-2 text-center text-warning bg-dark"&gt;Ricomida&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        &lt;%= link_to "Ver código", 
+          "//github.com/mach-911/fullstack-ror/tree/ricomida", 
+          target:"_blank", class: 
+          "my-btn" %&gt;
+        &lt;%= link_to "Ver demo", 
+          "//mach-911.github.io/fullstack-ror/desafios/evaluados/ricomida/", 
+          target:"_blank", 
+          class: "my-btn" %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend align="center">
+        <strong>
+          Vista - Contacto
+        </strong>
+      </legend>
+      <div class="highlight">
+        <pre><code class="html hljs">
+&lt;!-- app/views/portfolio/contact.html.erb --&gt;
+&lt;h2 class="text-center text-uppercase py-4"&gt;Contacto&lt;/h2&gt;
+  &lt;div class="row mt-5"&gt;
+    &lt;div class="col-10 col-md-6 mx-auto"&gt;
+      &lt;div class="card p-3 bg-dark"&gt;
+        &lt;%= form_tag("", method: "get", id:"formulario") do %&gt;
+          &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+            &lt;%= text_field_tag(:name, "", class: "form-control", placeholder:"Nombre", required: true)  %&gt;
+            &lt;%= label_tag(:name, "Nombre") %&gt;
+          &lt;% end %&gt;
+          &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+            &lt;%= email_field_tag(:email, "", class: "form-control", placeholder:"Email")  %&gt;
+            &lt;%= label_tag(:email, "Email") %&gt;
+          &lt;% end %&gt;
+          &lt;%= tag.div class: "form-floating mb-3" do %&gt;
+            &lt;%= text_area_tag(:message, "", class: "form-control", placeholder:"Mensaje", style: "height: 100px")  %&gt;
+            &lt;%= label_tag(:message, "Mensaje") %&gt;
+          &lt;% end %&gt;
+          &lt;%= submit_tag("Enviar", class: "btn btn-outline-light px-4") %&gt;
+        &lt;% end %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <enidev-button></enidev-button>
+      </div>
+    </fieldset>
+    <h2 id="req-6">Requerimiento 6</h2>
+    <p class="req">Gestionar las versiones en github haciendo al menos 3 commits que detallan el avance progesivo de la
       aplicación.</p>
     <fieldset style="cursor: pointer; text-align: center;">
       <legend>

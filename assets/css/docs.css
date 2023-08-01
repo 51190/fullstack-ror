@@ -133,3 +133,9 @@ code.inline {
     left: 0;
     top: 0;
 }
+.path {
+    color: #fc0;
+    background-color: #383939;
+    border-radius: 3px;
+    padding: 2px 3px;
+}

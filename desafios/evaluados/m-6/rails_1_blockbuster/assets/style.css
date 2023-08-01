@@ -52,12 +52,7 @@ button.download:disabled {
 fieldset.first {
   margin: 10px 0;
 }
-.path {
-  color: #fc0;
-  background-color: #383939;
-  border-radius: 3px;
-  padding: 2px 3px;
-}
+
 a.link {
   position: relative;
   display: inline;
