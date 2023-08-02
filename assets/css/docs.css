@@ -114,7 +114,19 @@ code.inline {
     color: rgb(246, 253, 255);
     padding: 10px;
 }
+.tag {
+    font-family: consolas;
+    font-weight: bold;
+    color: #2049ff;
+    font-size: 17px;
+}
+.tag::before {
+    content: "<";
+}
 
+.tag::after {
+    content: ">";
+}
 .group {
     position: relative;
     margin: 30px 0;

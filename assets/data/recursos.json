@@ -1,6 +1,6 @@
 {
     "rs_pdf": {
-        "guias":{
+        "guias": {
             "git": [
                 {
                     "title": "GIT guía inicial",
@@ -12,17 +12,18 @@
                 }
             ],
             "github": [
-            {
-                "title": "Github CLI cheatsheet",
-                "path": "assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH"
-            },
-            {
-                "title": "Github Pages",
-                "path": "assets/pdf/github-pages.pdf?#view=fitH"
-            },{
-                "title": "Configurar SSH",
-                "path": "assets/pdf/github-configurar-ssh.pdf?#view=fitH"
-            }
+                {
+                    "title": "Github CLI cheatsheet",
+                    "path": "assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH"
+                },
+                {
+                    "title": "Github Pages",
+                    "path": "assets/pdf/github-pages.pdf?#view=fitH"
+                },
+                {
+                    "title": "Configurar SSH",
+                    "path": "assets/pdf/github-configurar-ssh.pdf?#view=fitH"
+                }
             ],
             "html": [
                 {
@@ -49,13 +50,15 @@
                     "title": "Helper rails",
                     "path": "assets/pdf/rails-helpers-views.pdf?#view=fitH"
                 },
-                {  
+                {
                     "title": "Rais 7 link_to",
                     "path": "assets/pdf/rails-link_to.pdf?#view=fitH"
-
+                },
+                {
+                    "title": "Rails autenticación con Devise",
+                    "path": "https://mach-911.github.io/presentaciones/rails-devise-autenticacion/"
                 }
             ]
         }
-
     }
 }

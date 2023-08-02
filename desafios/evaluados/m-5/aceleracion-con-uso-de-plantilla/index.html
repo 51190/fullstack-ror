@@ -4,17 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desafío 2: Uso de plantilla</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
   <enidev-button data-btn="top"></enidev-button>
   <div class="doc-body">
+      <h1 align="center">Desafío evaluado: M5 2. Aceleración de un proyecto</h1>
+      <h4 align="center"><small>Marco Contreras</small></h4>
+    <div class="group">
+        <a href="#req-2" class="btn">Requerimiento 2</a>
+        <a href="#req-3" class="btn">Requerimiento 3</a>
+    </div>
     <h2>Requerimiento 1</h2>
     <p class="req">Descargar e integrar en Rails la plantilla HTML de la aplicación. Esta plantilla deberá estar en una ruta index que además será la ruta raiz.</p>
     <div class="group">
       <a class="btn" href="https://html5up.net/lens/download">descargar plantilla</a>
       <a class="btn" href="https://html5up.net/uploads/demos/lens/" target="_blank">preview de plantilla</a>
     </div>
+    <h2 id="req-2">Requerimiento 2</h2>
+    <p class="req">Los assets CSS y JS se deben incorporar en sus respectivos directorios</p>
+    <p>De los archivos descargados hablaremos pronto, por ahora creamos un nuevo proyecto</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Crear nuevo proyecto</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="bash hljs">rails new template_m6_d2 -d postgresql</code></pre>
+            <enidev-button></enidev-button>
+        </div>
+    </fieldset>
+    <p>Ahora vamos a ver la disposición de los assets</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Disposición de los assets</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="hljs">
+📂 app
+├── 📂 assets
+│   ├── 📂 images
+│   │   ├── 📂 fulls # 👈 contiene las imagenes grandes: remplazar por otras
+│   │   └── 📂 thumbs # 👈 contiene las imagenes pequeñas: remplazar por otras
+│   └── 📂 stylesheets
+│       ├── 📂 images # 👈 descomprimir desde la carpeta css de la plantilla
+│       ├── application.css 
+│       ├── extras.css # 👈 descomprimir desde la carpeta css de la plantilla
+│       ├── fontawesome-all.min.css # 👈 descomprimir desde la carpeta css de la plantilla
+│       ├── main.css # 👈 descomprimir desde la carpeta css de la plantilla
+│       └── noscript.css # 👈 descomprimir desde la carpeta css de la plantilla
+├── 📂 channels
+├── 📂 controllers
+├── 📂 helpers
+├── 📂 javascript
+│   ├── 📂 controllers
+│   ├── application.js
+│   ├── breakpoints.min.js # 👈 descomprimir desde la carpeta js de la plantilla
+│   ├── browser.min.js # 👈 descomprimir desde la carpeta js de la plantilla
+│   ├── jquery.min.js # 👈 descomprimir desde la carpeta js de la plantilla
+│   └── main.js # 👈 descomprimir desde la carpeta js de la plantilla
+├── 📂 jobs      
+├── 📂 mailers      
+├── 📂 models      
+└── 📂 views
+            </code></pre>
+        </div>
+    </fieldset>
+    <h2>Requerimiento 3</h2>
+    <p class="req">La integración de los archivos CSS y JS se realizarán desde el <strong>application.html.erb</strong>:</p>
+    <p>Para ello abrimos <span class="path">app/views/layouts/application.html.erb</span> y le añadimos lo siguiente antes del cierre de la etiqueta <span class="tag">body</span>:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>layouts - application.html.erb</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="erb hljs">
+<%= javascript_include_tag "jquery.min" %>
+<%= javascript_include_tag "browser.min" %>
+<%= javascript_include_tag "breakpoints.min" %>
+<%= javascript_include_tag "main" %>        
+            </code></pre>
+            <enidev-button></enidev-button>
+        </div>
+    </fieldset>
+    <hr>
+    <h2 id="req-4">Requerimiento 4</h2>
+    <p class="req">Implementar un controlador que retorne una vista que muestra información &quot;Acerca de&quot; que consiste la galería</p>
+    <p>Podemos crear un nuevo controlado a través del siguiente comando:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Generar un nuevo controlador: About</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="bash hljs">rails g controller about index</code></pre>
+            <enidev-button></enidev-button>
+        </div>
+    </fieldset>
+    <p>Ahora en la vista <span class="path">app/views/about/index.html.erb</span> agregamos el siguiente contenido:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Vista - About:Index</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="html hljs">
+&lt;article style="background-image: url(https://raw.githubusercontent.com/EniDev911/assets/main/gatos_ai/fulls/01.jpg); background-size: cover;"&gt;
+&lt;a class="thumbnail" href="#" data-position="left center"&gt;&lt;/a&gt;
+&lt;div class="text-about"&gt;
+    &lt;h2 class="hl"&gt;ACERCA DE ESTE SITIO&lt;/h2&gt;
+    &lt;p&gt;Para comenzar &lt;span class="hl"&gt;Cats.ai&lt;/span&gt;, es una galería creada en &lt;a href="https://rubyonrails.org/" target="_blank"&gt;Ruby On Rails&lt;/a&gt;, utilizando la plantilla de <a href="https://html5up.net/lens" target="_blank">html5up.netlens</a> adaptandola con imagenes de gatos creados con inteligencia artificial de <a href="https://app.leonardo.ai/" target="_blank">Leonardo.ai</a> para transformarlas en imágenes sorprendentes. 
+        La principal ventaja de utilizar Leonardo.ai es la facilidad de uso. Cualquiera puede utilizar esta plataforma, independientemente de sus habilidades técnicas o de diseño gráfico. Además, la inteligencia artificial de Leonardo.ai es capaz de crear imágenes sorprendentes en poco tiempo, lo que significa que podemos ser más eficientes y productivos en nuestras tareas de diseño.
+    </p>
+    <p>
+        Crea una imagen surrealista utilizando la inteligencia artificial de Leonardo.ai.
+        Transforma una imagen ordinaria en una obra de arte utilizando la plataforma.
+    Crea una imagen inspirada en un movimiento artístico específico, como el impresionismo o el arte abstracto.</p>
+</article>
+            </code></pre>
+        </div>
+    </fieldset>
   </div>
+  <script type="module" src="./assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll()
+  </script>
 </body>
 </html>
