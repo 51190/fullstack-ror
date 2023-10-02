@@ -58,6 +58,22 @@
                     "title": "Rails autenticación con Devise",
                     "path": "https://mach-911.github.io/presentaciones/rails-devise-autenticacion/"
                 }
+            ],
+            "postgres": [
+                {
+                    "title": "Instalación Windows",
+                    "path": "assets/pdf/postgres-instalacion-windows.pdf?#view=fitH"
+                },
+                {
+                    "title": "Instalación - zip",
+                    "path": "assets/pdf/postgres-instalacion-zip.pdf?#view=fitH"
+                }
+            ],
+            "javascript": [
+                {
+                    "title": "Javascript Arrays",
+                    "path": "assets/pdf/javascript-arrays.pdf?#view=fit"
+                }
             ]
         }
     }

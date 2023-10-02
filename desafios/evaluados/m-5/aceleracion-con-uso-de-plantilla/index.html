@@ -22,18 +22,174 @@
       <a class="btn" href="https://html5up.net/lens/download">descargar plantilla</a>
       <a class="btn" href="https://html5up.net/uploads/demos/lens/" target="_blank">preview de plantilla</a>
     </div>
-    <h2 id="req-2">Requerimiento 2</h2>
-    <p class="req">Los assets CSS y JS se deben incorporar en sus respectivos directorios</p>
     <p>De los archivos descargados hablaremos pronto, por ahora creamos un nuevo proyecto</p>
     <fieldset>
         <legend align="center">
             <strong>Crear nuevo proyecto</strong>
         </legend>
         <div class="highlight">
-            <pre><code class="bash hljs">rails new template_m6_d2 -d postgresql</code></pre>
+            <pre><code class="bash hljs">rails new template_m6_d2</code></pre>
             <enidev-button></enidev-button>
         </div>
     </fieldset>
+    <p>Y a continuación creamos un controlador <strong>Home</strong> que tenga una acción index para definirla como raíz:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>
+                Controlador - Home
+            </strong>
+        </legend>
+            <div class="highlight">
+                <pre><code class="bash hjls">rails g controller home index</code></pre>
+                <enidev-button></enidev-button>
+            </div>
+    </fieldset>
+    <p>Ahora añadimos el siguiente contenido para la vista index de Home:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Home - Index</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="html hljs">
+&lt;article&gt;
+    <%= link_to image_path('fulls/01'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/01", :alt => "pic") %>	
+    <% end %>	
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Tamr&lt;/h2&gt;
+        &lt;p&gt;Me hace falta un amigo para jugar.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/02'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/02", :alt => "pic") %>	
+    <% end %>	
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Osmo&lt;/h2&gt;
+        &lt;p&gt;Definitivamente aquí no venimos a jugar.&lt;/p&gt;
+    &gt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/03'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/03", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Nauto&lt;/h2&gt;
+        &lt;p&gt;Houston estamos llegando a la luna de queso.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/04'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/04", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Nauto&lt;/h2&gt;
+        &lt;p&gt;Llegamos a destino Houston.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/05'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/05", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Mobvoi&lt;/h2&gt;
+        &lt;p&gt;Ya capture el objetivo.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/06'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/06", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Arterys&lt;/h2&gt;
+        &lt;p&gt;No pinta muy bien el clima para esta misión bro.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/07'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/07", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&lt;Zoox&lt;/h2&gt;
+        &lt;p&gt;Rayos, esto se prendio.&lt;/p&gt;
+    &lt;;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/08'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/08", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Anki&lt;/h2&gt;
+        &lt;p&gt;Me tiene intrigado lo que pueda pasar en el futuro.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/09'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/09", :alt => "pic") %>	
+    <% end %>
+    <div class="text-pic">
+        &lt;h2&gt;Victorioso&lt;/h2&gt;
+        &lt;p&gt;Este ejemplar no se anda con chiquitas.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/10'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/10", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Snectus&lt;/h2&gt;
+        &lt;p&gt;Por lo tanto, hacer algo original y con poco código.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/11'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/11", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Reflektion&lt;/h2&gt;
+        &lt;p&gt;No mucho que hacer, esto se jodio.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    <%= link_to image_path('fulls/12'), 
+        :class => "thumbnail",
+        :data => { position: "left center"} do %>
+        <%= image_tag("thumbs/12", :alt => "pic") %>	
+    <% end %>
+    &lt;div class="text-pic"&gt;
+        &lt;h2&gt;Workey&lt;/h2&gt;
+        &lt;p&gt;Que tenemos para hoy en la bandeja de entrada.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+            </code></pre>
+    <enidev-button></enidev-button>
+        </div>
+    </fieldset>
+    <hr>
+    <h2 id="req-2">Requerimiento 2</h2>
+    <p class="req">Los assets CSS y JS se deben incorporar en sus respectivos directorios</p>
     <p>Ahora vamos a ver la disposición de los assets</p>
     <fieldset>
         <legend align="center">
@@ -70,7 +226,8 @@
             </code></pre>
         </div>
     </fieldset>
-    <h2>Requerimiento 3</h2>
+    <hr>
+    <h2 id="req-3">Requerimiento 3</h2>
     <p class="req">La integración de los archivos CSS y JS se realizarán desde el <strong>application.html.erb</strong>:</p>
     <p>Para ello abrimos <span class="path">app/views/layouts/application.html.erb</span> y le añadimos lo siguiente antes del cierre de la etiqueta <span class="tag">body</span>:</p>
     <fieldset>
@@ -106,20 +263,78 @@
             <strong>Vista - About:Index</strong>
         </legend>
         <div class="highlight">
-            <pre><code class="html hljs">
+            <pre><code class="html hljs" style="tab-size: 2;">
 &lt;article style="background-image: url(https://raw.githubusercontent.com/EniDev911/assets/main/gatos_ai/fulls/01.jpg); background-size: cover;"&gt;
 &lt;a class="thumbnail" href="#" data-position="left center"&gt;&lt;/a&gt;
 &lt;div class="text-about"&gt;
-    &lt;h2 class="hl"&gt;ACERCA DE ESTE SITIO&lt;/h2&gt;
-    &lt;p&gt;Para comenzar &lt;span class="hl"&gt;Cats.ai&lt;/span&gt;, es una galería creada en &lt;a href="https://rubyonrails.org/" target="_blank"&gt;Ruby On Rails&lt;/a&gt;, utilizando la plantilla de <a href="https://html5up.net/lens" target="_blank">html5up.netlens</a> adaptandola con imagenes de gatos creados con inteligencia artificial de <a href="https://app.leonardo.ai/" target="_blank">Leonardo.ai</a> para transformarlas en imágenes sorprendentes. 
+  &lt;h2 class="hl"&gt;ACERCA DE ESTE SITIO&lt;/h2&gt;
+  &lt;p&gt;Para comenzar &lt;span class="hl"&gt;Cats.ai&lt;/span&gt;, es una galería creada en &lt;a href="https://rubyonrails.org/" target="_blank"&gt;Ruby On Rails&lt;/a&gt;, utilizando la plantilla de &lt;a href="https://html5up.net/lens" target="_blank"&gt;html5up.netlens&lt;/a&gt; adaptandola con imagenes de gatos creados con inteligencia artificial de <a href="https://app.leonardo.ai/" target="_blank">Leonardo.ai</a> para transformarlas en imágenes sorprendentes. 
         La principal ventaja de utilizar Leonardo.ai es la facilidad de uso. Cualquiera puede utilizar esta plataforma, independientemente de sus habilidades técnicas o de diseño gráfico. Además, la inteligencia artificial de Leonardo.ai es capaz de crear imágenes sorprendentes en poco tiempo, lo que significa que podemos ser más eficientes y productivos en nuestras tareas de diseño.
-    </p>
-    <p>
-        Crea una imagen surrealista utilizando la inteligencia artificial de Leonardo.ai.
+  &lt;/p&gt;
+  &lt;p&gt;Crea una imagen surrealista utilizando la inteligencia artificial de Leonardo.ai.
         Transforma una imagen ordinaria en una obra de arte utilizando la plataforma.
-    Crea una imagen inspirada en un movimiento artístico específico, como el impresionismo o el arte abstracto.</p>
-</article>
+    Crea una imagen inspirada en un movimiento artístico específico, como el impresionismo o el arte abstracto.&lt;/p&gt;
+&lt;/article&gt;
             </code></pre>
+            <enidev-button></enidev-button>
+        </div>
+    </fieldset>
+    <hr>
+    <h2 id="req-5">Requerimiento 5</h2>
+    <p class="req">La información acerca de la galería deberá estar como un elemento de tipo ancla que permita redirigir a los usuarios a dicha vista.</p>
+    <p>Primero vamos a ir distribuir el código del archivo <strong>index.html</strong> descargado entre el layouts principal y demás vistas:</p>
+    <fieldset>
+        <legend align="center">
+            <strong>Layouts - Application.html.erb</strong>
+        </legend>
+        <div class="highlight">
+            <pre><code class="html hljs">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Cats AI&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+&lt;/head&gt;
+
+&lt;body class="is-preload-0 is-preload-1 is-preload-2"&gt;
+  &lt;div id="main"&gt;
+  &lt;!-- Header --&gt;
+    &lt;header id="header"&gt;
+      &lt;h1&gt;<%= link_to root_path, target:"_self" do %>Cats.ai<% end %>&lt;/h1&gt;
+      <%= link_to "Ver más información",about_path, target:"_self" %>
+      &lt;p&gt;Gatos creados con la inteligencia artificial de  
+        <%= link_to("Leonardo.ai", "https://app.leonardo.ai/", :target=>"_blank") %>
+      &lt;/p&gt;
+      &lt;ul class="icons"&gt;
+        &lt;li&gt;&lt;a href="https://twitter.com/LeonardoAi_" class="icon brands fa-twitter" target="_blank"&gt;&lt;span class="label"&gt;Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.instagram.com/leonardoaiofficial/" class="icon brands fa-instagram" target="_blank"&gt;&lt;span class="label"&gt;Instagram&lt;/span&gt;&lt;/a&gt;</li>
+        &lt;li&gt;&lt;a href="https://github.com/mach-911/template-rails-d2" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=HUrzxiHZi6o" class="icon brands fa-youtube" target="_blank"><span class="label">Email</span></a></li>
+      &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;section id="thumbnails"&gt;
+      <%= yield %>
+    &lt;/section&gt;
+    &lt;!-- Footer --&gt;
+    &lt;footer id="footer"&gt;
+      &lt;ul class="copyright"&gt;
+        &lt;li&gt;&copy; 2023&lt;/li&gt;&lt;li&gt;Enidev911.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+  <%= javascript_include_tag "jquery.min" %>
+  <%= javascript_include_tag "browser.min" %>
+  <%= javascript_include_tag "breakpoints.min" %>
+  <%= javascript_include_tag "main" %>
+  &lt;script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        <enidev-button></enidev-button>
         </div>
     </fieldset>
   </div>

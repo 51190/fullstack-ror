@@ -249,6 +249,11 @@
 				{
 					"titulo": "Relaciones 1-N Bookstore",
 					"hackmd": "https://hackmd.io/@enidev911/bookstore-guiado"
+				}, 
+				{
+					"titulo": "Travel Guide",
+					"hackmd": "https://hackmd.io/@desarrollo-aplicaciones-ruby-on-rails/travel-guide",
+					"github": "https://github.com/enidev911/travelGuide"
 				}
 			],
 			"evaluados": [
