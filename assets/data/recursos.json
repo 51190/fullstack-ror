@@ -52,7 +52,10 @@
                 {  
                     "title": "Rais 7 link_to",
                     "path": "assets/pdf/rails-link_to.pdf?#view=fitH"
-
+                },
+                {
+                    "title": "Instalación ruby y rails",
+                    "path": "https://mach-911.github.io/presentaciones/instalacion-rails/"
                 }
             ]
         }

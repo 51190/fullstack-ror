@@ -9,6 +9,7 @@ template.innerHTML = /*html*/`
         background: linear-gradient(165deg, #D3000130 50%, #fff 50%);
         border-radius: 25px;
         overflow:hidden;
+        height: 290px;
         transition: box-shadow .2s linear;
         padding: 15px;
         box-shadow: 2px 0 3px 0 #612121 inset,
@@ -24,6 +25,7 @@ template.innerHTML = /*html*/`
     }
     ::slotted(img){
         width:100%;
+        height: 180px;
         transition: transform .3s ease;
     }
     ::slotted(h5){

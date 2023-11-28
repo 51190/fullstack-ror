@@ -40,11 +40,12 @@ template.innerHTML = /*html*/`
     transform: translateY(-100%);
     box-shadow: 3px 9px 12px #00000040 inset;
     transition: transform .4s ease;
-	} 
+	}
   .menu li {
     margin-bottom: 20px;
     padding: 10px 0;
   }
+
 	.menu__link {
 		text-decoration: none;
 		color: #fff;
