@@ -11,6 +11,7 @@ button {
     cursor: pointer;   
     z-index: 2;
     transition: right .2s ease;
+    background-color: #191919;
 }
 
 @keyframes pulse {

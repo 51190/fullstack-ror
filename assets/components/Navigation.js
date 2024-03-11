@@ -80,7 +80,7 @@ template.innerHTML = /*html*/`
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" fill="#f9a9a9" /></svg>
   </div>
 	<ul class="menu" id="main-menu">
-		<li><a href=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror" : "/"} class="menu__link">Fullstack Ruby On Rails</a></li>
+		<li><a href=${import.meta.url.includes("control_visitas") ? "/control_visitas" : "/"} class="menu__link">Fullstack Ruby On Rails</a></li>
 		<li><a href="https://dblogging.github.io/enidev-frontend/" target="_blank" class="menu__link">
     <img src=${import.meta.url.includes("fullstack-ror") ? "/fullstack-ror/assets/img/front-end.png" : "/assets/img/front-end.png"} height="30" alt="imagen">
     &nbsp;

@@ -1,6 +1,6 @@
 {
     "rs_pdf": {
-        "guias":{
+        "guias": {
             "git": [
                 {
                     "title": "GIT guía inicial",
@@ -12,17 +12,18 @@
                 }
             ],
             "github": [
-            {
-                "title": "Github CLI cheatsheet",
-                "path": "assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH"
-            },
-            {
-                "title": "Github Pages",
-                "path": "assets/pdf/github-pages.pdf?#view=fitH"
-            },{
-                "title": "Configurar SSH",
-                "path": "assets/pdf/github-configurar-ssh.pdf?#view=fitH"
-            }
+                {
+                    "title": "Github CLI cheatsheet",
+                    "path": "assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH"
+                },
+                {
+                    "title": "Github Pages",
+                    "path": "assets/pdf/github-pages.pdf?#view=fitH"
+                },
+                {
+                    "title": "Configurar SSH",
+                    "path": "assets/pdf/github-configurar-ssh.pdf?#view=fitH"
+                }
             ],
             "html": [
                 {
@@ -49,7 +50,7 @@
                     "title": "Helper rails",
                     "path": "assets/pdf/rails-helpers-views.pdf?#view=fitH"
                 },
-                {  
+                {
                     "title": "Rais 7 link_to",
                     "path": "assets/pdf/rails-link_to.pdf?#view=fitH"
                 },
@@ -57,8 +58,23 @@
                     "title": "Instalación ruby y rails",
                     "path": "https://mach-911.github.io/presentaciones/instalacion-rails/"
                 }
+            ],
+            "postgres": [
+                {
+                    "title": "Instalación Windows",
+                    "path": "assets/pdf/postgres-instalacion-windows.pdf?#view=fitH"
+                },
+                {
+                    "title": "Instalación - zip",
+                    "path": "assets/pdf/postgres-instalacion-zip.pdf?#view=fitH"
+                }
+            ],
+            "javascript": [
+                {
+                    "title": "Javascript Arrays",
+                    "path": "assets/pdf/javascript-arrays.pdf?#view=fit"
+                }
             ]
         }
-
     }
 }
