@@ -1,8 +1,0 @@
-[
-    {
-        "nombre": "Visual Studio Code",
-        "subtitulo": "Editor de código",
-        "imagen": "https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.visualstudio.svg",
-        "carecteristicas": "WSL Remoto, Open-source"
-    }
-]
