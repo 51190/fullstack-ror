@@ -86,13 +86,16 @@ export class Card extends HTMLElement {
         this.attachShadow({ mode: "open" })
         console.log("inicializando")
     }
+
     link = this.getAttribute("data-href");
+    target = this.getAttribute("data-target");
+
     connectedCallback() {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
         this.addEventListener("click", () => {
             console.log(this.href)
-            window.open(this.link, "_blank")
+            window.open(this.link, this.target)
         })
     }
 

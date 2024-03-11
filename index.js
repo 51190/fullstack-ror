@@ -95,7 +95,7 @@ const crearItem = (item, index, arreglo) => {
     bullet.style.paddingRight = "30px";
     bullet.style.margin = "10px auto";
     bullet.style.backgroundColor = "#FFCFCF";
-    bullet.style.boxShadow = "3px 2px 12px #00000090";
+    bullet.style.border = "8px solid #f039";
     let li = document.createElement("li");
     li.innerHTML = item.modulo;
     li.setAttribute("class", "title");
