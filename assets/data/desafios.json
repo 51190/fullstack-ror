@@ -16,7 +16,8 @@
 				{
 					"titulo": "Meet and coffee",
 					"github": "https://github.com/mach-911/fullstack-ror/tree/gh-pages/desafios/meet-and-coffee",
-					"github_page": "desafios/meet-and-coffee/index.html"
+					"github_page": "desafios/meet-and-coffee/index.html",
+					"zip": "https://github.com/mach-911/fullstack-ror/archive/refs/heads/meet-and-coffee.zip"
 				},
 				{
 					"titulo": "Suricata",
